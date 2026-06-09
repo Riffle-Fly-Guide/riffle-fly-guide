@@ -1,8 +1,6 @@
-# Fishable Today
+# Fishing Report
 
-Fishable Today is an Idaho-first fly fishing conditions dashboard.
-
-The MVP helps anglers decide which local rivers and reaches are worth fishing today based on flows, weather, water temperature, hatch windows, and report signals.
+Fishing report is an all around website that helps fly fishermen decide where to fish given daily conditions
 
 ## Current MVP
 
