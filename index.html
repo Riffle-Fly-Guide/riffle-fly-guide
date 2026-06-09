@@ -1,0 +1,1286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fishable Today - Idaho MVP</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17211d;
+      --muted: #62706a;
+      --line: #d7ded9;
+      --bg: #f6f7f4;
+      --panel: #ffffff;
+      --green: #27724f;
+      --yellow: #a66f16;
+      --red: #aa3d35;
+      --blue: #2f6684;
+      --shadow: 0 18px 48px rgba(32, 43, 38, 0.11);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .app {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 310px minmax(0, 1fr) 390px;
+      grid-template-rows: auto 1fr;
+    }
+
+    header {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 310px minmax(0, 1fr) 390px;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 22px;
+      background: #fbfcfa;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      background: #1f4d46;
+      color: #fff;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.1;
+    }
+
+    .sub {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .search {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 10px 12px;
+      background: white;
+      color: var(--ink);
+    }
+
+    .day-meta {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: white;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    aside,
+    main,
+    .detail {
+      min-height: calc(100vh - 73px);
+    }
+
+    aside {
+      border-right: 1px solid var(--line);
+      background: #fbfcfa;
+      padding: 16px;
+      overflow: auto;
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0;
+      font-weight: 800;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .filter {
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 999px;
+      padding: 7px 10px;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .filter.active {
+      color: white;
+      background: #1f4d46;
+      border-color: #1f4d46;
+    }
+
+    .reach-list {
+      display: grid;
+      gap: 9px;
+    }
+
+    .reach-button {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--green);
+      border-radius: 8px;
+      background: white;
+      padding: 10px;
+      text-align: left;
+      cursor: pointer;
+      display: grid;
+      gap: 6px;
+    }
+
+    .reach-button.active {
+      border-color: #1f4d46;
+      box-shadow: 0 0 0 2px rgba(31, 77, 70, 0.18);
+    }
+
+    .reach-button.watch {
+      border-left-color: var(--yellow);
+    }
+
+    .reach-button.skip {
+      border-left-color: var(--red);
+    }
+
+    .reach-button.limited {
+      border-left-color: var(--blue);
+    }
+
+    .reach-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: start;
+    }
+
+    .reach-name {
+      font-weight: 800;
+      line-height: 1.18;
+    }
+
+    .status {
+      border-radius: 999px;
+      padding: 3px 7px;
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+      color: white;
+      background: var(--green);
+    }
+
+    .status.watch {
+      background: var(--yellow);
+    }
+
+    .status.skip {
+      background: var(--red);
+    }
+
+    .status.limited {
+      background: var(--blue);
+    }
+
+    .tiny {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    main {
+      padding: 20px;
+      overflow: auto;
+    }
+
+    .scoreboard {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .metric-card,
+    .today-panel,
+    .table-panel,
+    .brief-panel,
+    .report-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .metric-card {
+      padding: 14px;
+    }
+
+    .metric {
+      font-size: 28px;
+      font-weight: 850;
+      line-height: 1;
+    }
+
+    .metric-label {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .today-panel {
+      padding: 16px;
+    }
+
+    .today-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 14px;
+    }
+
+    .today-head h2 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.15;
+    }
+
+    .today-copy {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .rank-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .rank-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fbfcfa;
+      min-height: 132px;
+      cursor: pointer;
+    }
+
+    .rank-card h3 {
+      margin: 8px 0 4px;
+      font-size: 16px;
+      line-height: 1.15;
+    }
+
+    .table-panel {
+      margin-top: 18px;
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      background: #fbfcfa;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .spark {
+      width: 112px;
+      height: 30px;
+    }
+
+    .detail {
+      border-left: 1px solid var(--line);
+      background: #fbfcfa;
+      padding: 16px;
+      overflow: auto;
+    }
+
+    .brief-panel {
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+
+    .brief-panel h2 {
+      margin: 0 0 4px;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .brief-copy {
+      margin: 12px 0 0;
+      font-size: 15px;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .fact {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 10px;
+      background: #fbfcfa;
+      min-height: 70px;
+    }
+
+    .fact strong {
+      display: block;
+      font-size: 18px;
+    }
+
+    .reason-list {
+      margin: 12px 0 0;
+      padding-left: 18px;
+    }
+
+    .reason-list li {
+      margin: 6px 0;
+    }
+
+    .reports {
+      display: grid;
+      gap: 10px;
+    }
+
+    .report-card {
+      padding: 12px;
+      box-shadow: none;
+    }
+
+    .report-card a {
+      color: #1f4d46;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .report-card a:hover {
+      text-decoration: underline;
+    }
+
+    .board-toggle {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: white;
+      color: var(--ink);
+      padding: 8px 11px;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .view-hidden {
+      display: none;
+    }
+
+    .main-profile {
+      display: grid;
+      gap: 14px;
+    }
+
+    .profile-hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .profile-hero-copy {
+      padding: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .profile-hero h2 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.08;
+    }
+
+    .profile-hero p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .profile-photo-row {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 1px;
+      background: var(--line);
+      border-top: 1px solid var(--line);
+    }
+
+    .profile-photo-row .photo-slot {
+      min-height: 210px;
+      border: 0;
+      border-radius: 0;
+    }
+
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .data-tile {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .data-tile strong {
+      display: block;
+      font-size: 19px;
+      line-height: 1.15;
+    }
+
+    .profile-columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 14px;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .profile-block {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 10px;
+      background: #fbfcfa;
+    }
+
+    .profile-block.full {
+      grid-column: 1 / -1;
+    }
+
+    .profile-block h3 {
+      margin: 0 0 5px;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: var(--muted);
+      letter-spacing: 0;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .photo-slot {
+      min-height: 128px;
+      border: 1px dashed #aeb8b1;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 12px;
+      background:
+        linear-gradient(135deg, rgba(39, 114, 79, 0.12), transparent 38%),
+        #eef2ec;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 1180px) {
+      .app,
+      header {
+        grid-template-columns: 280px minmax(0, 1fr);
+      }
+
+      .detail {
+        grid-column: 1 / -1;
+        min-height: auto;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .day-meta {
+        display: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .app,
+      header {
+        display: block;
+      }
+
+      header {
+        position: static;
+      }
+
+      .search {
+        margin-top: 12px;
+      }
+
+      aside,
+      main,
+      .detail {
+        min-height: auto;
+        border: 0;
+      }
+
+      .scoreboard {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      table {
+        min-width: 760px;
+      }
+
+      .table-panel {
+        overflow-x: auto;
+      }
+
+      .rank-grid,
+      .profile-grid,
+      .photo-grid,
+      .profile-photo-row,
+      .data-grid,
+      .profile-columns {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-hero-copy {
+        display: block;
+      }
+
+      .board-toggle {
+        margin-top: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">
+        <div class="mark">FT</div>
+        <div>
+          <h1>Fishable Today</h1>
+          <p class="sub">Idaho river decisions for Tuesday, June 9</p>
+        </div>
+      </div>
+      <input class="search" id="search" type="search" placeholder="Search rivers, forks, towns, hatches">
+      <div class="day-meta">
+        <span class="pill">Updated 6:15 AM MT</span>
+        <span class="pill">USGS + NWS + shop reports</span>
+      </div>
+    </header>
+
+    <aside>
+      <p class="section-title">Condition Filters</p>
+      <div class="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="good">Best</button>
+        <button class="filter" data-filter="watch">Watch</button>
+        <button class="filter" data-filter="skip">Skip</button>
+      </div>
+      <p class="section-title">Idaho Reaches</p>
+      <div class="reach-list" id="reachList"></div>
+    </aside>
+
+    <main>
+      <div id="boardView">
+        <section class="scoreboard" aria-label="Daily summary">
+          <div class="metric-card">
+            <div class="metric" id="goodCount">0</div>
+            <div class="metric-label">Best bets today</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric" id="watchCount">0</div>
+            <div class="metric-label">Fishable with caveats</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric" id="skipCount">0</div>
+            <div class="metric-label">Skip or wait</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric">12</div>
+            <div class="metric-label">Tracked forks and sections</div>
+          </div>
+        </section>
+
+        <section class="today-panel" aria-label="Today's river recommendations">
+          <div class="today-head">
+            <div>
+              <h2>Today's Call</h2>
+              <p class="today-copy">A daily decision board beats a map for this MVP: best water, risky water, and why conditions changed.</p>
+            </div>
+            <span class="pill">Reach-first, not river-first</span>
+          </div>
+          <div class="rank-grid" id="todayGrid"></div>
+        </section>
+
+        <section class="table-panel">
+          <table>
+            <thead>
+              <tr>
+                <th>Reach</th>
+                <th>Status</th>
+                <th>Flow</th>
+                <th>Water</th>
+                <th>Weather Window</th>
+                <th>Likely Hatch</th>
+                <th>Trend</th>
+              </tr>
+            </thead>
+            <tbody id="reachTable"></tbody>
+          </table>
+        </section>
+      </div>
+
+      <section class="main-profile view-hidden" id="profileView" aria-label="River profile"></section>
+    </main>
+
+    <section class="detail" id="detail"></section>
+  </div>
+
+  <script>
+    const reaches = [
+      {
+        id: "boise-main-town",
+        name: "Boise River - In Town",
+        area: "Treasure Valley",
+        status: "good",
+        score: 86,
+        flow: "684 cfs",
+        flowNote: "stable, wade-friendly",
+        water: "54F",
+        pressure: "steady",
+        weather: "calm morning, warm after 2 PM",
+        hatch: "caddis, PMDs, yellow sallies",
+        report: "Idaho Angler",
+        reportAge: "2 days old",
+        why: "Best short-window option today. Flows are stable, water is cool enough, and the morning wind forecast is forgiving.",
+        reasons: [
+          "Stable 24-hour flow trend with no obvious runoff pulse.",
+          "Water temperature sits in the productive trout range.",
+          "Pressure is steady, with a light wind window before afternoon heat."
+        ],
+        map: { x: 36, y: 66 }
+      },
+      {
+        id: "boise-south-fork",
+        name: "Boise River - South Fork",
+        area: "Anderson Ranch",
+        status: "watch",
+        score: 69,
+        flow: "1,810 cfs",
+        flowNote: "high but settling",
+        water: "49F",
+        pressure: "rising",
+        weather: "breezy canyon by midday",
+        hatch: "caddis, stones, baetis pockets",
+        report: "Silver Creek Outfitters",
+        reportAge: "5 days old",
+        why: "Fishable from a boat or careful bank plan, but not a casual wade day. The trend matters more than the raw number here.",
+        reasons: [
+          "Flows remain high for many wade anglers.",
+          "Trend is improving, so tomorrow could be stronger if releases hold.",
+          "Cool water supports nymphing and streamer windows."
+        ],
+        map: { x: 43, y: 59 }
+      },
+      {
+        id: "boise-middle-fork",
+        name: "Boise River - Middle Fork",
+        area: "Atlanta / Backcountry",
+        status: "skip",
+        score: 38,
+        flow: "runoff",
+        flowNote: "rising fast",
+        water: "43F",
+        pressure: "falling",
+        weather: "showers likely",
+        hatch: "limited",
+        report: "No recent report",
+        reportAge: "stale",
+        why: "Too much instability. Rising flows plus unsettled weather make this a poor bet for a targeted day trip.",
+        reasons: [
+          "Rising hydrograph suggests snowmelt or storm influence.",
+          "Cold water and poor clarity reduce dry-fly opportunity.",
+          "Remote reach deserves a higher confidence threshold."
+        ],
+        map: { x: 48, y: 55 }
+      },
+      {
+        id: "henrys-fork-box",
+        name: "Henry's Fork - Box Canyon",
+        area: "Island Park",
+        status: "good",
+        score: 91,
+        flow: "735 cfs",
+        flowNote: "excellent",
+        water: "50F",
+        pressure: "steady",
+        weather: "cloud cover late",
+        hatch: "golden stones, caddis",
+        report: "Henry's Fork Anglers",
+        reportAge: "1 day old",
+        why: "One of the better Idaho options today. Stable release, cool water, and useful cloud cover later.",
+        reasons: [
+          "Flow is in a strong range for technical but productive fishing.",
+          "Weather supports afternoon activity without obvious storm risk.",
+          "Fresh local report improves confidence."
+        ],
+        map: { x: 57, y: 23 }
+      },
+      {
+        id: "henrys-fork-ranch",
+        name: "Henry's Fork - Harriman Ranch",
+        area: "Island Park",
+        status: "watch",
+        score: 74,
+        flow: "steady",
+        flowNote: "clear, technical",
+        water: "52F",
+        pressure: "steady",
+        weather: "bright midday",
+        hatch: "PMDs, caddis, spinners",
+        report: "TroutHunter",
+        reportAge: "1 day old",
+        why: "Worth it if you want technical dry-fly fishing, but bright light and selectivity make timing important.",
+        reasons: [
+          "Morning and evening windows look better than midday.",
+          "Hatch potential is good, but presentation demands are high.",
+          "Stable water keeps it on the list."
+        ],
+        map: { x: 59, y: 26 }
+      },
+      {
+        id: "snake-south-fork-canyon",
+        name: "Snake River - South Fork Canyon",
+        area: "Swan Valley",
+        status: "good",
+        score: 84,
+        flow: "10,900 cfs",
+        flowNote: "boat-friendly",
+        water: "51F",
+        pressure: "steady",
+        weather: "light wind until 1 PM",
+        hatch: "salmonflies, golden stones",
+        report: "The Lodge at Palisades Creek",
+        reportAge: "3 days old",
+        why: "A strong float option. The best window is before afternoon wind gets pushy.",
+        reasons: [
+          "Flow favors boat fishing more than wading.",
+          "Stonefly timing keeps upside high.",
+          "Weather gives a usable early-day float window."
+        ],
+        map: { x: 63, y: 35 }
+      },
+      {
+        id: "big-wood-ketchum",
+        name: "Big Wood - Ketchum",
+        area: "Wood River Valley",
+        status: "skip",
+        score: 42,
+        flow: "1,240 cfs",
+        flowNote: "high",
+        water: "45F",
+        pressure: "falling",
+        weather: "cool, showers",
+        hatch: "limited",
+        report: "Picabo Angler",
+        reportAge: "4 days old",
+        why: "Still too much water for most anglers. Watch the falling limb before moving it back into the rotation.",
+        reasons: [
+          "High water limits safe wading and holding-water access.",
+          "Cold water lowers hatch reliability.",
+          "Better nearby options exist today."
+        ],
+        map: { x: 48, y: 63 }
+      },
+      {
+        id: "silver-creek-preserve",
+        name: "Silver Creek - Preserve",
+        area: "Picabo",
+        status: "watch",
+        score: 72,
+        flow: "spring creek",
+        flowNote: "clear",
+        water: "55F",
+        pressure: "steady",
+        weather: "sunny, light wind early",
+        hatch: "PMDs, baetis, callibaetis",
+        report: "Picabo Angler",
+        reportAge: "4 days old",
+        why: "Good early if you can handle clear skies and selective fish. Afternoon wind risk makes it less automatic.",
+        reasons: [
+          "Water clarity and temp are promising.",
+          "Hatch mix is seasonally strong.",
+          "Bright conditions call for low-profile timing and careful approach."
+        ],
+        map: { x: 46, y: 67 }
+      },
+      {
+        id: "teton-drictor",
+        name: "Teton River - Driggs/Victor",
+        area: "Teton Valley",
+        status: "limited",
+        score: 58,
+        flow: "murky",
+        flowNote: "visibility unknown",
+        water: "47F",
+        pressure: "falling",
+        weather: "storms possible",
+        hatch: "stones if clarity allows",
+        report: "WorldCast Anglers",
+        reportAge: "6 days old",
+        why: "The data is not enough by itself. This needs a clarity check before committing.",
+        reasons: [
+          "Flow may be workable, but color is the deciding variable.",
+          "Thunderstorm risk adds volatility.",
+          "Recent report is aging out."
+        ],
+        map: { x: 61, y: 31 }
+      },
+      {
+        id: "salmon-upper-stanley",
+        name: "Salmon River - Upper Stanley",
+        area: "Sawtooths",
+        status: "skip",
+        score: 35,
+        flow: "runoff",
+        flowNote: "cold and pushy",
+        water: "41F",
+        pressure: "falling",
+        weather: "rain/snow mix high",
+        hatch: "minimal",
+        report: "No recent report",
+        reportAge: "stale",
+        why: "Runoff is still in charge. Great river, wrong day.",
+        reasons: [
+          "Cold, rising water reduces fishability.",
+          "Weather reinforces the runoff problem.",
+          "This should re-enter the watchlist as flows crest and fall."
+        ],
+        map: { x: 41, y: 51 }
+      },
+      {
+        id: "clearwater-middle-fork",
+        name: "Clearwater - Middle Fork",
+        area: "Kooskia",
+        status: "watch",
+        score: 66,
+        flow: "moderate",
+        flowNote: "slightly rising",
+        water: "50F",
+        pressure: "steady",
+        weather: "cloudy, chance showers",
+        hatch: "caddis, mayflies",
+        report: "Red's Fly Shop notes",
+        reportAge: "7 days old",
+        why: "Potentially worthwhile, but the report layer is thin. Treat as a scouting option.",
+        reasons: [
+          "Weather could help surface activity.",
+          "Slight rise keeps confidence below best-bet status.",
+          "Need better local reporting coverage."
+        ],
+        map: { x: 25, y: 30 }
+      },
+      {
+        id: "st-joe-upper",
+        name: "St. Joe - Upper",
+        area: "North Idaho",
+        status: "limited",
+        score: 55,
+        flow: "high",
+        flowNote: "dropping",
+        water: "48F",
+        pressure: "rising",
+        weather: "cool, overcast",
+        hatch: "blue-wings, caddis",
+        report: "North 40 Fly Shop",
+        reportAge: "8 days old",
+        why: "Interesting but not yet trustworthy enough. Dropping flows are encouraging, but it needs another day or a fresh report.",
+        reasons: [
+          "Falling trend is moving the right way.",
+          "High water still limits access to prime holding lies.",
+          "Report freshness is below the MVP confidence target."
+        ],
+        map: { x: 31, y: 14 }
+      }
+    ];
+
+    const labels = {
+      good: "Best",
+      watch: "Watch",
+      skip: "Skip",
+      limited: "Limited"
+    };
+
+    const state = {
+      filter: "all",
+      selected: reaches[0].id,
+      query: "",
+      view: "board"
+    };
+
+    const reachList = document.getElementById("reachList");
+    const reachTable = document.getElementById("reachTable");
+    const detail = document.getElementById("detail");
+    const todayGrid = document.getElementById("todayGrid");
+    const boardView = document.getElementById("boardView");
+    const profileView = document.getElementById("profileView");
+
+    function visibleReaches() {
+      return reaches.filter((reach) => {
+        const filterMatch = state.filter === "all" || reach.status === state.filter;
+        const haystack = `${reach.name} ${reach.area} ${reach.hatch} ${reach.report}`.toLowerCase();
+        return filterMatch && haystack.includes(state.query.toLowerCase());
+      });
+    }
+
+    function drawSpark(status) {
+      const colors = { good: "#27724f", watch: "#a66f16", skip: "#aa3d35", limited: "#2f6684" };
+      const paths = {
+        good: "M2 20 C 20 14, 30 16, 44 12 S 72 12, 96 9 S 104 10, 110 8",
+        watch: "M2 17 C 18 13, 28 22, 43 17 S 70 10, 87 15 S 101 21, 110 16",
+        skip: "M2 23 C 24 20, 38 14, 53 11 S 80 5, 110 4",
+        limited: "M2 17 C 22 16, 42 16, 62 15 S 92 14, 110 15"
+      };
+      return `<svg class="spark" viewBox="0 0 112 30" aria-hidden="true"><path d="${paths[status]}" fill="none" stroke="${colors[status]}" stroke-width="3" stroke-linecap="round"></path></svg>`;
+    }
+
+    function renderList() {
+      reachList.innerHTML = visibleReaches().map((reach) => `
+        <button class="reach-button ${reach.status} ${reach.id === state.selected ? "active" : ""}" data-id="${reach.id}">
+          <span class="reach-top">
+            <span>
+              <span class="reach-name">${reach.name}</span>
+              <span class="tiny">${reach.area}</span>
+            </span>
+            <span class="status ${reach.status}">${labels[reach.status]}</span>
+          </span>
+          <span class="tiny">${reach.flow} · ${reach.water} · ${reach.hatch}</span>
+        </button>
+      `).join("");
+    }
+
+    function renderTable() {
+      reachTable.innerHTML = visibleReaches().map((reach) => `
+        <tr data-id="${reach.id}">
+          <td><strong>${reach.name}</strong><br><span class="tiny">${reach.area}</span></td>
+          <td><span class="status ${reach.status}">${labels[reach.status]}</span><br><span class="tiny">Score ${reach.score}</span></td>
+          <td><strong>${reach.flow}</strong><br><span class="tiny">${reach.flowNote}</span></td>
+          <td><strong>${reach.water}</strong><br><span class="tiny">Pressure ${reach.pressure}</span></td>
+          <td>${reach.weather}</td>
+          <td>${reach.hatch}</td>
+          <td>${drawSpark(reach.status)}</td>
+        </tr>
+      `).join("");
+    }
+
+    function renderTodayGrid() {
+      const picks = [
+        reaches.filter((reach) => reach.status === "good").sort((a, b) => b.score - a.score)[0],
+        reaches.filter((reach) => reach.status === "watch").sort((a, b) => b.score - a.score)[0],
+        reaches.filter((reach) => reach.status === "skip").sort((a, b) => a.score - b.score)[0]
+      ].filter(Boolean);
+
+      todayGrid.innerHTML = picks.map((reach, index) => `
+        <button class="rank-card" data-id="${reach.id}">
+          <span class="status ${reach.status}">${index === 0 ? "Best Bet" : labels[reach.status]}</span>
+          <h3>${reach.name}</h3>
+          <div class="tiny">${reach.area}</div>
+          <p class="tiny">${reach.why}</p>
+        </button>
+      `).join("");
+    }
+
+    function profileFor(reach) {
+      const parent = reach.name.split(" - ")[0];
+      const section = reach.name.split(" - ")[1] || reach.area;
+      const style = {
+        good: "Prime candidate today. Use this page to confirm timing, flow trend, and whether the hatch window matches your plan.",
+        watch: "Worth considering if your style fits the conditions. The details matter more than the overall score.",
+        skip: "A useful page even when the answer is no. Track why it is out and what would need to change.",
+        limited: "Confidence is thin. Use this as a checklist for what data or local confirmation is missing."
+      };
+
+      return {
+        overview: `${section} fishes differently from the rest of ${parent}. This profile should hold the standing knowledge: how the reach behaves, which data matters, and what kind of day makes it worth the drive.`,
+        character: reach.status === "good" ? "Reliable daily option when flows and wind line up." : reach.status === "skip" ? "Condition-sensitive water that can swing quickly with flow, runoff, or weather." : "Situational fishery where timing, clarity, and angler style decide the day.",
+        bestUse: reach.flow.includes("cfs") && Number(reach.flow.replace(/[^0-9]/g, "")) > 1500 ? "Float-first or cautious bank plan." : "Walk-wade and short-session decision making.",
+        watchItems: style[reach.status],
+        photoLabels: [`${reach.name} hero photo`, `${reach.name} water/holding detail`],
+        access: reach.area.includes("Treasure") ? "Easy local access with pressure. Best as a quick-session reach." : reach.area.includes("Sawtooths") ? "Remote mountain access. Road, runoff, and weather confidence matter before committing." : "Access style varies by section. The MVP should store practical notes without exposing sensitive spots.",
+        season: reach.hatch.includes("salmon") || reach.hatch.includes("golden") ? "Strong late spring and early summer upside, then caddis and terrestrial patterns later." : "Most useful when water temperature, light, and wind line up with the hatch window.",
+        dataPlan: "USGS flow trend, NWS hourly wind/weather, pressure trend, water temperature where available, and latest attributed shop report."
+      };
+    }
+
+    function renderProfileView() {
+      const reach = reaches.find((item) => item.id === state.selected) || reaches[0];
+      const profile = profileFor(reach);
+      profileView.innerHTML = `
+        <article class="profile-hero">
+          <div class="profile-hero-copy">
+            <div>
+              <span class="status ${reach.status}">${labels[reach.status]}</span>
+              <h2>${reach.name}</h2>
+              <p>${profile.overview}</p>
+            </div>
+            <button class="board-toggle" id="backToBoard" type="button">Daily Board</button>
+          </div>
+          <div class="profile-photo-row">
+            ${profile.photoLabels.map((label) => `<div class="photo-slot">${label}<br><span class="tiny">river image slot</span></div>`).join("")}
+          </div>
+        </article>
+
+        <section class="data-grid" aria-label="Current condition data">
+          <div class="data-tile"><span class="tiny">Flow</span><strong>${reach.flow}</strong><span class="tiny">${reach.flowNote}</span></div>
+          <div class="data-tile"><span class="tiny">Water Temp</span><strong>${reach.water}</strong><span class="tiny">daily ethics and hatch check</span></div>
+          <div class="data-tile"><span class="tiny">Weather Window</span><strong>${reach.weather}</strong></div>
+          <div class="data-tile"><span class="tiny">Pressure</span><strong>${reach.pressure}</strong><span class="tiny">barometer trend</span></div>
+        </section>
+
+        <section class="profile-columns">
+          <div class="brief-panel">
+            <p class="section-title">Daily Read</p>
+            <p class="brief-copy">${reach.why}</p>
+            <ul class="reason-list">
+              ${reach.reasons.map((reason) => `<li>${reason}</li>`).join("")}
+            </ul>
+          </div>
+          <div class="brief-panel">
+            <p class="section-title">Fishery Profile</p>
+            <div class="profile-grid">
+              <div class="profile-block">
+                <h3>Water Character</h3>
+                <div>${profile.character}</div>
+              </div>
+              <div class="profile-block">
+                <h3>Best Use</h3>
+                <div>${profile.bestUse}</div>
+              </div>
+              <div class="profile-block">
+                <h3>Access Notes</h3>
+                <div>${profile.access}</div>
+              </div>
+              <div class="profile-block">
+                <h3>Seasonality</h3>
+                <div>${profile.season}</div>
+              </div>
+              <div class="profile-block full">
+                <h3>Data To Automate</h3>
+                <div>${profile.dataPlan}</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="brief-panel">
+          <p class="section-title">Hatches And Reports</p>
+          <div class="facts">
+            <div class="fact"><span class="tiny">Likely Hatch</span><strong>${reach.hatch}</strong></div>
+            <div class="fact"><span class="tiny">Report Source</span><strong>${reach.report}</strong><span class="tiny">${reach.reportAge}</span></div>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderViewMode() {
+      const showingProfile = state.view === "profile";
+      boardView.classList.toggle("view-hidden", showingProfile);
+      profileView.classList.toggle("view-hidden", !showingProfile);
+      if (showingProfile) renderProfileView();
+    }
+
+    function renderDetail() {
+      const reach = reaches.find((item) => item.id === state.selected) || visibleReaches()[0] || reaches[0];
+      state.selected = reach.id;
+      const profile = profileFor(reach);
+      detail.innerHTML = `
+        <div class="brief-panel">
+          <span class="status ${reach.status}">${labels[reach.status]}</span>
+          <h2>${reach.name}</h2>
+          <div class="tiny">${reach.area} · confidence score ${reach.score}</div>
+          <p class="brief-copy">${reach.why}</p>
+          <div class="facts">
+            <div class="fact"><span class="tiny">Flow</span><strong>${reach.flow}</strong><span class="tiny">${reach.flowNote}</span></div>
+            <div class="fact"><span class="tiny">Water Temp</span><strong>${reach.water}</strong><span class="tiny">trout comfort check</span></div>
+            <div class="fact"><span class="tiny">Weather</span><strong>${reach.weather}</strong></div>
+            <div class="fact"><span class="tiny">Hatch Read</span><strong>${reach.hatch}</strong></div>
+          </div>
+          <ul class="reason-list">
+            ${reach.reasons.map((reason) => `<li>${reason}</li>`).join("")}
+          </ul>
+        </div>
+
+        <p class="section-title">River Profile</p>
+        <div class="brief-panel">
+          <div class="photo-grid">
+            ${profile.photoLabels.map((label) => `<div class="photo-slot">${label}<br><span class="tiny">image slot</span></div>`).join("")}
+          </div>
+          <div class="profile-grid">
+            <div class="profile-block full">
+              <h3>Overview</h3>
+              <div>${profile.overview}</div>
+            </div>
+            <div class="profile-block">
+              <h3>Water Character</h3>
+              <div>${profile.character}</div>
+            </div>
+            <div class="profile-block">
+              <h3>Best Use</h3>
+              <div>${profile.bestUse}</div>
+            </div>
+            <div class="profile-block">
+              <h3>Primary Hatch Read</h3>
+              <div>${reach.hatch}</div>
+            </div>
+            <div class="profile-block">
+              <h3>Watch Items</h3>
+              <div>${profile.watchItems}</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="section-title">Report Signal</p>
+        <div class="reports">
+          <div class="report-card">
+            <a href="#">${reach.report}</a>
+            <div class="tiny">${reach.reportAge} · MVP should show source title, date, attribution, and outbound link.</div>
+          </div>
+          <div class="report-card">
+            <strong>Data Sources To Wire</strong>
+            <div class="tiny">USGS gage IDs, NWS point forecast, nearby observation station, known hatch calendar, local shop report URLs.</div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderCounts() {
+      document.getElementById("goodCount").textContent = reaches.filter((reach) => reach.status === "good").length;
+      document.getElementById("watchCount").textContent = reaches.filter((reach) => reach.status === "watch").length;
+      document.getElementById("skipCount").textContent = reaches.filter((reach) => reach.status === "skip").length;
+    }
+
+    function renderAll() {
+      renderCounts();
+      renderList();
+      renderTable();
+      renderTodayGrid();
+      renderDetail();
+      renderViewMode();
+    }
+
+    document.querySelectorAll(".filter").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".filter").forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+        state.filter = button.dataset.filter;
+        const first = visibleReaches()[0];
+        if (first) state.selected = first.id;
+        state.view = "board";
+        renderAll();
+      });
+    });
+
+    document.getElementById("search").addEventListener("input", (event) => {
+      state.query = event.target.value;
+      const first = visibleReaches()[0];
+      if (first) state.selected = first.id;
+      state.view = "board";
+      renderAll();
+    });
+
+    document.body.addEventListener("click", (event) => {
+      if (event.target.closest("#backToBoard")) {
+        state.view = "board";
+        renderAll();
+        return;
+      }
+      const button = event.target.closest("[data-id]");
+      if (!button) return;
+      state.selected = button.dataset.id;
+      state.view = "profile";
+      renderAll();
+    });
+
+    renderAll();
+  </script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+{
+  "product": "Fishable Today",
+  "region": "Idaho MVP",
+  "catalogVersion": "0.1",
+  "notes": [
+    "Track fishable reaches/sections, not broad river names.",
+    "Each reach should map to one or more USGS gages, one NWS forecast point, one nearest weather observation station, hatch calendar rules, and local report sources.",
+    "Good flow ranges below are placeholders until validated by local anglers, guide reports, and historical observations."
+  ],
+  "reaches": [
+    {
+      "id": "boise-main-town",
+      "displayName": "Boise River - In Town",
+      "parentRiver": "Boise River",
+      "section": "Main stem through Boise/Eagle",
+      "homeBase": "Boise",
+      "priority": "mvp",
+      "fishingStyle": ["walk-wade", "after-work"],
+      "dataNeeds": {
+        "usgsGages": ["TODO"],
+        "nwsForecastPoint": { "lat": 43.615, "lon": -116.202 },
+        "weatherStations": ["TODO"],
+        "shopReports": ["Idaho Angler", "Troutfitters"]
+      },
+      "interpretationRules": {
+        "flowSensitivity": "moderate",
+        "clarityRisk": "moderate after storms",
+        "primaryRisks": ["irrigation changes", "urban pressure", "summer heat"],
+        "seasonalHatches": ["baetis", "PMDs", "caddis", "yellow sallies", "midges"]
+      }
+    },
+    {
+      "id": "boise-south-fork",
+      "displayName": "Boise River - South Fork",
+      "parentRiver": "Boise River",
+      "section": "Anderson Ranch tailwater",
+      "homeBase": "Mountain Home / Pine",
+      "priority": "mvp",
+      "fishingStyle": ["float", "selective-wade"],
+      "dataNeeds": {
+        "usgsGages": ["TODO"],
+        "nwsForecastPoint": { "lat": 43.352, "lon": -115.463 },
+        "weatherStations": ["TODO"],
+        "shopReports": ["Idaho Angler", "Silver Creek Outfitters"]
+      },
+      "interpretationRules": {
+        "flowSensitivity": "high",
+        "clarityRisk": "low to moderate",
+        "primaryRisks": ["dam release changes", "high wade danger", "canyon wind"],
+        "seasonalHatches": ["baetis", "caddis", "golden stones", "PMDs", "midges"]
+      }
+    },
+    {
+      "id": "boise-middle-fork",
+      "displayName": "Boise River - Middle Fork",
+      "parentRiver": "Boise River",
+      "section": "Atlanta and upper drainage",
+      "homeBase": "Atlanta",
+      "priority": "mvp",
+      "fishingStyle": ["backcountry", "walk-wade"],
+      "dataNeeds": {
+        "usgsGages": ["TODO"],
+        "nwsForecastPoint": { "lat": 43.801, "lon": -115.132 },
+        "weatherStations": ["TODO"],
+        "shopReports": ["Idaho Angler", "local guide notes"]
+      },
+      "interpretationRules": {
+        "flowSensitivity": "very high",
+        "clarityRisk": "high during runoff",
+        "primaryRisks": ["snowmelt", "storms", "road access", "remote safety"],
+        "seasonalHatches": ["golden stones", "caddis", "attractors", "terrestrials"]
+      }
+    },
+    {
+      "id": "henrys-fork-box",
+      "displayName": "Henry's Fork - Box Canyon",
+      "parentRiver": "Henry's Fork",
+      "section": "Box Canyon",
+      "homeBase": "Island Park",
+      "priority": "mvp",
+      "fishingStyle": ["float", "technical-wade"],
+      "dataNeeds": {
+        "usgsGages": ["TODO"],
+        "nwsForecastPoint": { "lat": 44.499, "lon": -111.338 },
+        "weatherStations": ["TODO"],
+        "shopReports": ["Henry's Fork Anglers", "TroutHunter"]
+      },
+      "interpretationRules": {
+        "flowSensitivity": "high",
+        "clarityRisk": "low",
+        "primaryRisks": ["release changes", "crowding", "wind"],
+        "seasonalHatches": ["midges", "baetis", "caddis", "golden stones", "PMDs"]
+      }
+    },
+    {
+      "id": "henrys-fork-ranch",
+      "displayName": "Henry's Fork - Harriman Ranch",
+      "parentRiver": "Henry's Fork",
+      "section": "Ranch water",
+      "homeBase": "Island Park",
+      "priority": "mvp",
+      "fishingStyle": ["technical-dry-fly"],
+      "dataNeeds": {
+        "usgsGages": ["TODO"],
+        "nwsForecastPoint": { "lat": 44.340, "lon": -111.423 },
+        "weatherStations": ["TODO"],
+        "shopReports": ["TroutHunter", "Henry's Fork Anglers"]
+      },
+      "interpretationRules": {
+        "flowSensitivity": "moderate",
+        "clarityRisk": "low",
+        "primaryRisks": ["bright sun", "wind", "selective fish"],
+        "seasonalHatches": ["PMDs", "green drakes", "caddis", "spinners", "terrestrials"]
+      }
+    },
+    {
+      "id": "snake-south-fork-canyon",
+      "displayName": "Snake River - South Fork Canyon",
+      "parentRiver": "Snake River",
+      "section": "South Fork canyon reach",
+      "homeBase": "Swan Valley",
+      "priority": "mvp",
+      "fishingStyle": ["float"],
+      "dataNeeds": {
+        "usgsGages": ["TODO"],
+        "nwsForecastPoint": { "lat": 43.407, "lon": -111.291 },
+        "weatherStations": ["TODO"],
+        "shopReports": ["The Lodge at Palisades Creek", "WorldCast Anglers"]
+      },
+      "interpretationRules": {
+        "flowSensitivity": "high",
+        "clarityRisk": "moderate",
+        "primaryRisks": ["dam releases", "boat traffic", "wind", "thunderstorms"],
+        "seasonalHatches": ["salmonflies", "golden stones", "PMDs", "caddis", "mahogany duns"]
+      }
+    },
+    {
+      "id": "big-wood-ketchum",
+      "displayName": "Big Wood - Ketchum",
+      "parentRiver": "Big Wood River",
+      "section": "Ketchum / Sun Valley",
+      "homeBase": "Ketchum",
+      "priority": "mvp",
+      "fishingStyle": ["walk-wade"],
+      "dataNeeds": {
+        "usgsGages": ["TODO"],
+        "nwsForecastPoint": { "lat": 43.681, "lon": -114.363 },
+        "weatherStations": ["TODO"],
+        "shopReports": ["Silver Creek Outfitters", "Picabo Angler"]
+      },
+      "interpretationRules": {
+        "flowSensitivity": "very high",
+        "clarityRisk": "high during runoff",
+        "primaryRisks": ["snowmelt", "high wade danger", "summer heat"],
+        "seasonalHatches": ["green drakes", "PMDs", "caddis", "yellow sallies", "terrestrials"]
+      }
+    },
+    {
+      "id": "silver-creek-preserve",
+      "displayName": "Silver Creek - Preserve",
+      "parentRiver": "Silver Creek",
+      "section": "Preserve water",
+      "homeBase": "Picabo",
+      "priority": "mvp",
+      "fishingStyle": ["technical-dry-fly", "spring-creek"],
+      "dataNeeds": {
+        "usgsGages": ["TODO"],
+        "nwsForecastPoint": { "lat": 43.310, "lon": -114.067 },
+        "weatherStations": ["TODO"],
+        "shopReports": ["Picabo Angler", "Silver Creek Outfitters"]
+      },
+      "interpretationRules": {
+        "flowSensitivity": "low",
+        "clarityRisk": "low",
+        "primaryRisks": ["wind", "bright sun", "warm water", "selective fish"],
+        "seasonalHatches": ["PMDs", "baetis", "callibaetis", "tricos", "terrestrials"]
+      }
+    },
+    {
+      "id": "teton-driggs-victor",
+      "displayName": "Teton River - Driggs/Victor",
+      "parentRiver": "Teton River",
+      "section": "Teton Valley",
+      "homeBase": "Driggs",
+      "priority": "mvp",
+      "fishingStyle": ["walk-wade", "float"],
+      "dataNeeds": {
+        "usgsGages": ["TODO"],
+        "nwsForecastPoint": { "lat": 43.723, "lon": -111.111 },
+        "weatherStations": ["TODO"],
+        "shopReports": ["WorldCast Anglers", "Teton Valley Lodge"]
+      },
+      "interpretationRules": {
+        "flowSensitivity": "high",
+        "clarityRisk": "high during runoff and storms",
+        "primaryRisks": ["muddy water", "storms", "access conditions"],
+        "seasonalHatches": ["salmonflies", "golden stones", "PMDs", "caddis", "terrestrials"]
+      }
+    },
+    {
+      "id": "salmon-upper-stanley",
+      "displayName": "Salmon River - Upper Stanley",
+      "parentRiver": "Salmon River",
+      "section": "Upper river near Stanley",
+      "homeBase": "Stanley",
+      "priority": "mvp",
+      "fishingStyle": ["walk-wade", "roadside"],
+      "dataNeeds": {
+        "usgsGages": ["TODO"],
+        "nwsForecastPoint": { "lat": 44.220, "lon": -114.936 },
+        "weatherStations": ["TODO"],
+        "shopReports": ["local guide notes", "regional fly shops"]
+      },
+      "interpretationRules": {
+        "flowSensitivity": "very high",
+        "clarityRisk": "high during runoff",
+        "primaryRisks": ["snowmelt", "cold water", "storms", "remote driving"],
+        "seasonalHatches": ["golden stones", "caddis", "green drakes", "terrestrials"]
+      }
+    },
+    {
+      "id": "clearwater-middle-fork",
+      "displayName": "Clearwater - Middle Fork",
+      "parentRiver": "Clearwater River",
+      "section": "Middle Fork near Kooskia",
+      "homeBase": "Kooskia",
+      "priority": "phase-2",
+      "fishingStyle": ["walk-wade", "float"],
+      "dataNeeds": {
+        "usgsGages": ["TODO"],
+        "nwsForecastPoint": { "lat": 46.146, "lon": -115.978 },
+        "weatherStations": ["TODO"],
+        "shopReports": ["North Idaho shops", "guide reports"]
+      },
+      "interpretationRules": {
+        "flowSensitivity": "high",
+        "clarityRisk": "moderate to high",
+        "primaryRisks": ["storms", "spring runoff", "thin report coverage"],
+        "seasonalHatches": ["baetis", "caddis", "stoneflies", "terrestrials"]
+      }
+    },
+    {
+      "id": "st-joe-upper",
+      "displayName": "St. Joe - Upper",
+      "parentRiver": "St. Joe River",
+      "section": "Upper river",
+      "homeBase": "Avery",
+      "priority": "phase-2",
+      "fishingStyle": ["walk-wade", "roadside"],
+      "dataNeeds": {
+        "usgsGages": ["TODO"],
+        "nwsForecastPoint": { "lat": 47.250, "lon": -115.800 },
+        "weatherStations": ["TODO"],
+        "shopReports": ["North 40 Fly Shop", "regional guide notes"]
+      },
+      "interpretationRules": {
+        "flowSensitivity": "high",
+        "clarityRisk": "moderate",
+        "primaryRisks": ["runoff", "road access", "thin report coverage"],
+        "seasonalHatches": ["caddis", "green drakes", "golden stones", "terrestrials"]
+      }
+    }
+  ]
+}
