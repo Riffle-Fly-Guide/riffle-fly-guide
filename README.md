@@ -8,8 +8,28 @@ This first version is a static prototype deployed through GitHub Pages.
 
 ## Future Plan
 
-- Add USGS streamflow data
-- Add National Weather Service forecasts
-- Add daily generated condition snapshots
-- Add river profile pages
+- Use `data/reaches.json` as the reach catalog
+- Use `scripts/update_conditions.py` to fetch USGS/NWS data
+- Publish `data/daily_conditions.json` as the static data source for GitHub Pages
+- Use GitHub Actions to update conditions daily
 - Add local fly shop report attribution
+
+## Data Refresh
+
+The site is designed to work without a database. GitHub Actions runs the updater,
+writes `data/daily_conditions.json`, and commits the result back to the repo.
+
+Manual run:
+
+```powershell
+python scripts/update_conditions.py
+```
+
+On GitHub, use the **Update daily river conditions** workflow to run it manually,
+or let the scheduled daily run update the site.
+
+## Notes
+
+- NWS requires a unique `User-Agent`.
+- USGS Water Services are useful for the MVP, but USGS says those endpoints will be decommissioned in early 2027.
+- Reach gage IDs should be verified carefully before treating a score as production quality.

@@ -1,0 +1,102 @@
+{
+  "catalogVersion": "0.2",
+  "region": "Idaho",
+  "reaches": [
+    {
+      "id": "boise-main-town",
+      "name": "Boise River - In Town",
+      "lat": 43.615,
+      "lon": -116.202,
+      "usgsSites": ["13206000"],
+      "reportSources": ["Idaho Angler", "Troutfitters"]
+    },
+    {
+      "id": "boise-south-fork",
+      "name": "Boise River - South Fork",
+      "lat": 43.352,
+      "lon": -115.463,
+      "usgsSites": [],
+      "reportSources": ["Idaho Angler", "Silver Creek Outfitters"]
+    },
+    {
+      "id": "boise-middle-fork",
+      "name": "Boise River - Middle Fork",
+      "lat": 43.801,
+      "lon": -115.132,
+      "usgsSites": [],
+      "reportSources": ["Idaho Angler"]
+    },
+    {
+      "id": "henrys-fork-box",
+      "name": "Henry's Fork - Box Canyon",
+      "lat": 44.499,
+      "lon": -111.338,
+      "usgsSites": [],
+      "reportSources": ["Henry's Fork Anglers", "TroutHunter"]
+    },
+    {
+      "id": "henrys-fork-ranch",
+      "name": "Henry's Fork - Harriman Ranch",
+      "lat": 44.34,
+      "lon": -111.423,
+      "usgsSites": [],
+      "reportSources": ["TroutHunter", "Henry's Fork Anglers"]
+    },
+    {
+      "id": "snake-south-fork-canyon",
+      "name": "Snake River - South Fork Canyon",
+      "lat": 43.407,
+      "lon": -111.291,
+      "usgsSites": [],
+      "reportSources": ["The Lodge at Palisades Creek", "WorldCast Anglers"]
+    },
+    {
+      "id": "big-wood-ketchum",
+      "name": "Big Wood - Ketchum",
+      "lat": 43.681,
+      "lon": -114.363,
+      "usgsSites": [],
+      "reportSources": ["Silver Creek Outfitters", "Picabo Angler"]
+    },
+    {
+      "id": "silver-creek-preserve",
+      "name": "Silver Creek - Preserve",
+      "lat": 43.31,
+      "lon": -114.067,
+      "usgsSites": [],
+      "reportSources": ["Picabo Angler", "Silver Creek Outfitters"]
+    },
+    {
+      "id": "teton-drictor",
+      "name": "Teton River - Driggs/Victor",
+      "lat": 43.723,
+      "lon": -111.111,
+      "usgsSites": [],
+      "reportSources": ["WorldCast Anglers", "Teton Valley Lodge"]
+    },
+    {
+      "id": "salmon-upper-stanley",
+      "name": "Salmon River - Upper Stanley",
+      "lat": 44.22,
+      "lon": -114.936,
+      "usgsSites": [],
+      "reportSources": ["Regional guide notes"]
+    },
+    {
+      "id": "clearwater-middle-fork",
+      "name": "Clearwater - Middle Fork",
+      "lat": 46.146,
+      "lon": -115.978,
+      "usgsSites": [],
+      "reportSources": ["North Idaho shops"]
+    },
+    {
+      "id": "st-joe-upper",
+      "name": "St. Joe - Upper",
+      "lat": 47.25,
+      "lon": -115.8,
+      "usgsSites": [],
+      "reportSources": ["North 40 Fly Shop"]
+    }
+  ]
+}

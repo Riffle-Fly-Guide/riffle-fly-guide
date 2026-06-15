@@ -1,0 +1,432 @@
+{
+  "generatedAt": "2026-06-15T21:10:53.852847+00:00",
+  "sourceStatus": {
+    "usgs": "live where gage IDs are mapped",
+    "nws": "live point/hourly forecasts",
+    "reports": "manual placeholders"
+  },
+  "reaches": [
+    {
+      "id": "boise-main-town",
+      "forecast": [
+        {
+          "label": "Morning",
+          "temp": "63F",
+          "wind": "1 mph",
+          "note": "partly cloudy"
+        },
+        {
+          "label": "Midday",
+          "temp": "87F",
+          "wind": "7 mph",
+          "note": "sunny"
+        },
+        {
+          "label": "Afternoon",
+          "temp": "89F",
+          "wind": "7 mph",
+          "note": "sunny"
+        },
+        {
+          "label": "Evening",
+          "temp": "86F",
+          "wind": "7 mph",
+          "note": "partly cloudy"
+        }
+      ],
+      "sourceErrors": [],
+      "flow": "1,490 cfs",
+      "gageHeight": "5.45 ft",
+      "status": "watch",
+      "score": 79,
+      "pressure": "forecast-driven",
+      "weather": "partly cloudy",
+      "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available."
+    },
+    {
+      "id": "boise-south-fork",
+      "forecast": [
+        {
+          "label": "Morning",
+          "temp": "56F",
+          "wind": "2 mph",
+          "note": "mostly clear"
+        },
+        {
+          "label": "Midday",
+          "temp": "84F",
+          "wind": "9 mph",
+          "note": "sunny"
+        },
+        {
+          "label": "Afternoon",
+          "temp": "84F",
+          "wind": "9 mph",
+          "note": "sunny"
+        },
+        {
+          "label": "Evening",
+          "temp": "77F",
+          "wind": "10 mph",
+          "note": "partly cloudy"
+        }
+      ],
+      "sourceErrors": [],
+      "status": "watch",
+      "score": 65,
+      "pressure": "forecast-driven",
+      "weather": "mostly clear",
+      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
+    },
+    {
+      "id": "boise-middle-fork",
+      "forecast": [
+        {
+          "label": "Morning",
+          "temp": "46F",
+          "wind": "2 mph",
+          "note": "partly cloudy"
+        },
+        {
+          "label": "Midday",
+          "temp": "83F",
+          "wind": "9 mph",
+          "note": "sunny"
+        },
+        {
+          "label": "Afternoon",
+          "temp": "84F",
+          "wind": "9 mph",
+          "note": "sunny"
+        },
+        {
+          "label": "Evening",
+          "temp": "74F",
+          "wind": "9 mph",
+          "note": "partly cloudy"
+        }
+      ],
+      "sourceErrors": [],
+      "status": "watch",
+      "score": 65,
+      "pressure": "forecast-driven",
+      "weather": "partly cloudy",
+      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
+    },
+    {
+      "id": "henrys-fork-box",
+      "forecast": [
+        {
+          "label": "Morning",
+          "temp": "44F",
+          "wind": "1 mph",
+          "note": "partly cloudy"
+        },
+        {
+          "label": "Midday",
+          "temp": "74F",
+          "wind": "6 mph",
+          "note": "mostly sunny"
+        },
+        {
+          "label": "Afternoon",
+          "temp": "74F",
+          "wind": "6 mph",
+          "note": "mostly sunny"
+        },
+        {
+          "label": "Evening",
+          "temp": "66F",
+          "wind": "6 mph",
+          "note": "partly cloudy"
+        }
+      ],
+      "sourceErrors": [],
+      "status": "watch",
+      "score": 65,
+      "pressure": "forecast-driven",
+      "weather": "partly cloudy",
+      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
+    },
+    {
+      "id": "henrys-fork-ranch",
+      "forecast": [
+        {
+          "label": "Morning",
+          "temp": "40F",
+          "wind": "1 mph",
+          "note": "partly cloudy"
+        },
+        {
+          "label": "Midday",
+          "temp": "74F",
+          "wind": "7 mph",
+          "note": "mostly sunny"
+        },
+        {
+          "label": "Afternoon",
+          "temp": "74F",
+          "wind": "7 mph",
+          "note": "mostly sunny"
+        },
+        {
+          "label": "Evening",
+          "temp": "64F",
+          "wind": "6 mph",
+          "note": "partly cloudy"
+        }
+      ],
+      "sourceErrors": [],
+      "status": "watch",
+      "score": 65,
+      "pressure": "forecast-driven",
+      "weather": "partly cloudy",
+      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
+    },
+    {
+      "id": "snake-south-fork-canyon",
+      "forecast": [
+        {
+          "label": "Morning",
+          "temp": "47F",
+          "wind": "3 mph",
+          "note": "mostly clear"
+        },
+        {
+          "label": "Midday",
+          "temp": "75F",
+          "wind": "9 mph",
+          "note": "mostly sunny"
+        },
+        {
+          "label": "Afternoon",
+          "temp": "76F",
+          "wind": "9 mph",
+          "note": "mostly sunny"
+        },
+        {
+          "label": "Evening",
+          "temp": "70F",
+          "wind": "3 mph",
+          "note": "partly cloudy"
+        }
+      ],
+      "sourceErrors": [],
+      "status": "watch",
+      "score": 65,
+      "pressure": "forecast-driven",
+      "weather": "mostly clear",
+      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
+    },
+    {
+      "id": "big-wood-ketchum",
+      "forecast": [
+        {
+          "label": "Morning",
+          "temp": "48F",
+          "wind": "8 mph",
+          "note": "partly cloudy"
+        },
+        {
+          "label": "Midday",
+          "temp": "81F",
+          "wind": "7 mph",
+          "note": "mostly sunny"
+        },
+        {
+          "label": "Afternoon",
+          "temp": "82F",
+          "wind": "7 mph",
+          "note": "mostly sunny"
+        },
+        {
+          "label": "Evening",
+          "temp": "74F",
+          "wind": "8 mph",
+          "note": "partly cloudy"
+        }
+      ],
+      "sourceErrors": [],
+      "status": "watch",
+      "score": 65,
+      "pressure": "forecast-driven",
+      "weather": "partly cloudy",
+      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
+    },
+    {
+      "id": "silver-creek-preserve",
+      "forecast": [
+        {
+          "label": "Morning",
+          "temp": "54F",
+          "wind": "5 mph",
+          "note": "mostly clear"
+        },
+        {
+          "label": "Midday",
+          "temp": "80F",
+          "wind": "10 mph",
+          "note": "sunny"
+        },
+        {
+          "label": "Afternoon",
+          "temp": "82F",
+          "wind": "10 mph",
+          "note": "sunny"
+        },
+        {
+          "label": "Evening",
+          "temp": "76F",
+          "wind": "16 mph",
+          "note": "partly cloudy"
+        }
+      ],
+      "sourceErrors": [],
+      "status": "watch",
+      "score": 65,
+      "pressure": "forecast-driven",
+      "weather": "mostly clear",
+      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
+    },
+    {
+      "id": "teton-drictor",
+      "forecast": [
+        {
+          "label": "Morning",
+          "temp": "47F",
+          "wind": "2 mph",
+          "note": "partly cloudy"
+        },
+        {
+          "label": "Midday",
+          "temp": "73F",
+          "wind": "8 mph",
+          "note": "mostly sunny"
+        },
+        {
+          "label": "Afternoon",
+          "temp": "73F",
+          "wind": "8 mph",
+          "note": "mostly sunny"
+        },
+        {
+          "label": "Evening",
+          "temp": "65F",
+          "wind": "3 mph",
+          "note": "partly cloudy"
+        }
+      ],
+      "sourceErrors": [],
+      "status": "watch",
+      "score": 65,
+      "pressure": "forecast-driven",
+      "weather": "partly cloudy",
+      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
+    },
+    {
+      "id": "salmon-upper-stanley",
+      "forecast": [
+        {
+          "label": "Morning",
+          "temp": "40F",
+          "wind": "0 mph",
+          "note": "partly cloudy"
+        },
+        {
+          "label": "Midday",
+          "temp": "81F",
+          "wind": "8 mph",
+          "note": "sunny"
+        },
+        {
+          "label": "Afternoon",
+          "temp": "81F",
+          "wind": "8 mph",
+          "note": "sunny"
+        },
+        {
+          "label": "Evening",
+          "temp": "73F",
+          "wind": "9 mph",
+          "note": "partly cloudy"
+        }
+      ],
+      "sourceErrors": [],
+      "status": "watch",
+      "score": 65,
+      "pressure": "forecast-driven",
+      "weather": "partly cloudy",
+      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
+    },
+    {
+      "id": "clearwater-middle-fork",
+      "forecast": [
+        {
+          "label": "Morning",
+          "temp": "57F",
+          "wind": "2 mph",
+          "note": "mostly clear"
+        },
+        {
+          "label": "Midday",
+          "temp": "85F",
+          "wind": "2 mph",
+          "note": "partly sunny"
+        },
+        {
+          "label": "Afternoon",
+          "temp": "88F",
+          "wind": "2 mph",
+          "note": "mostly sunny"
+        },
+        {
+          "label": "Evening",
+          "temp": "79F",
+          "wind": "1 mph",
+          "note": "mostly cloudy"
+        }
+      ],
+      "sourceErrors": [],
+      "status": "watch",
+      "score": 65,
+      "pressure": "forecast-driven",
+      "weather": "mostly clear",
+      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
+    },
+    {
+      "id": "st-joe-upper",
+      "forecast": [
+        {
+          "label": "Morning",
+          "temp": "57F",
+          "wind": "3 mph",
+          "note": "mostly clear"
+        },
+        {
+          "label": "Midday",
+          "temp": "79F",
+          "wind": "5 mph",
+          "note": "partly sunny"
+        },
+        {
+          "label": "Afternoon",
+          "temp": "79F",
+          "wind": "5 mph",
+          "note": "partly sunny"
+        },
+        {
+          "label": "Evening",
+          "temp": "72F",
+          "wind": "2 mph",
+          "note": "mostly cloudy"
+        }
+      ],
+      "sourceErrors": [],
+      "status": "watch",
+      "score": 65,
+      "pressure": "forecast-driven",
+      "weather": "mostly clear",
+      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
+    }
+  ]
+}
