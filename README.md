@@ -28,6 +28,27 @@ python scripts/update_conditions.py
 On GitHub, use the **Update daily river conditions** workflow to run it manually,
 or let the scheduled daily run update the site.
 
+## Daily Automation Setup
+
+The workflow file is:
+
+```text
+.github/workflows/update-conditions.yml
+```
+
+It runs every day at `12:15 UTC`, which is roughly `6:15 AM Mountain Daylight Time`.
+
+To make the daily commit work on GitHub:
+
+1. Go to the repo on GitHub.
+2. Open **Settings > Actions > General**.
+3. Under **Workflow permissions**, select **Read and write permissions**.
+4. Save.
+5. Open **Actions > Update daily river conditions**.
+6. Run it manually once with **Run workflow**.
+
+If the manual run succeeds, the schedule will keep updating `data/daily_conditions.json`.
+
 ## Notes
 
 - NWS requires a unique `User-Agent`.

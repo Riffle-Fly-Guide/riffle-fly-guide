@@ -15,7 +15,6 @@ from __future__ import annotations
 import json
 import os
 import statistics
-import sys
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -145,12 +144,19 @@ def score_reach(reach: dict, usgs: dict, forecast: list[dict[str, str]]) -> tupl
 def build_conditions() -> dict:
     catalog = json.loads(REACHES_PATH.read_text(encoding="utf-8"))
     generated_at = datetime.now(timezone.utc).isoformat()
+    successful_forecasts = 0
+    successful_usgs = 0
     output = {
         "generatedAt": generated_at,
         "sourceStatus": {
             "usgs": "live where gage IDs are mapped",
             "nws": "live point/hourly forecasts",
             "reports": "manual placeholders",
+        },
+        "quality": {
+            "successfulForecasts": 0,
+            "successfulUsgs": 0,
+            "totalReaches": len(catalog["reaches"]),
         },
         "reaches": [],
     }
@@ -164,6 +170,8 @@ def build_conditions() -> dict:
         try:
             forecast = fetch_nws_forecast(reach["lat"], reach["lon"])
             condition["forecast"] = forecast
+            if forecast:
+                successful_forecasts += 1
         except (KeyError, urllib.error.URLError, TimeoutError, ValueError) as exc:
             forecast = []
             condition["sourceErrors"].append(f"NWS: {exc}")
@@ -171,6 +179,8 @@ def build_conditions() -> dict:
         try:
             usgs = fetch_usgs_values(reach.get("usgsSites", []))
             condition.update(usgs)
+            if usgs:
+                successful_usgs += 1
         except (KeyError, urllib.error.URLError, TimeoutError, ValueError) as exc:
             usgs = {}
             condition["sourceErrors"].append(f"USGS: {exc}")
@@ -187,11 +197,16 @@ def build_conditions() -> dict:
         )
         output["reaches"].append(condition)
 
+    output["quality"]["successfulForecasts"] = successful_forecasts
+    output["quality"]["successfulUsgs"] = successful_usgs
     return output
 
 
 def main() -> int:
     conditions = build_conditions()
+    if conditions["quality"]["successfulForecasts"] == 0:
+        print("No live NWS forecasts were retrieved; leaving existing daily_conditions.json unchanged.")
+        return 1
     OUTPUT_PATH.write_text(json.dumps(conditions, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {OUTPUT_PATH}")
     return 0

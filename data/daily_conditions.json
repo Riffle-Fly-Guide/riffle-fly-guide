@@ -1,9 +1,14 @@
 {
-  "generatedAt": "2026-06-15T21:10:53.852847+00:00",
+  "generatedAt": "2026-06-15T21:28:45.125198+00:00",
   "sourceStatus": {
     "usgs": "live where gage IDs are mapped",
     "nws": "live point/hourly forecasts",
     "reports": "manual placeholders"
+  },
+  "quality": {
+    "successfulForecasts": 12,
+    "successfulUsgs": 1,
+    "totalReaches": 12
   },
   "reaches": [
     {
