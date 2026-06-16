@@ -8,6 +8,8 @@
       "lat": 43.615,
       "lon": -116.202,
       "usgsSites": ["13206000"],
+      "primaryUsgsSite": "13206000",
+      "gageNotes": "Boise River at Glenwood Bridge is the best representative in-town Boise River gage. Ignore nearby IDWSC calibration pseudo-site.",
       "reportSources": ["Idaho Angler", "Troutfitters"]
     },
     {
@@ -15,7 +17,10 @@
       "name": "Boise River - South Fork",
       "lat": 43.352,
       "lon": -115.463,
-      "usgsSites": [],
+      "usgsSites": ["13190500", "13192200"],
+      "primaryUsgsSite": "13190500",
+      "secondaryUsgsSites": ["13192200"],
+      "gageNotes": "SF Boise River at Anderson Ranch Dam is closest to the tailwater release. Neal Bridge can provide downstream context closer to Arrowrock.",
       "reportSources": ["Idaho Angler", "Silver Creek Outfitters"]
     },
     {
@@ -24,6 +29,8 @@
       "lat": 43.801,
       "lon": -115.132,
       "usgsSites": [],
+      "primaryUsgsSite": null,
+      "gageNotes": "Needs manual review. Nearby candidates are South Fork Boise, upper Boise near Twin Springs, and unrelated basins; none clearly represent Middle Fork Boise near Atlanta.",
       "reportSources": ["Idaho Angler"]
     },
     {
@@ -31,7 +38,9 @@
       "name": "Henry's Fork - Box Canyon",
       "lat": 44.499,
       "lon": -111.338,
-      "usgsSites": [],
+      "usgsSites": ["13042500"],
+      "primaryUsgsSite": "13042500",
+      "gageNotes": "Henrys Fork near Island Park is the closest likely release/Box Canyon representative. Confirm relation to exact Box Canyon section.",
       "reportSources": ["Henry's Fork Anglers", "TroutHunter"]
     },
     {
@@ -39,7 +48,10 @@
       "name": "Henry's Fork - Harriman Ranch",
       "lat": 44.34,
       "lon": -111.423,
-      "usgsSites": [],
+      "usgsSites": ["13042500", "13046000"],
+      "primaryUsgsSite": "13042500",
+      "secondaryUsgsSites": ["13046000"],
+      "gageNotes": "Island Park gage is upstream context; Henrys Fork near Ashton provides downstream context. Ranch-specific interpretation may need both.",
       "reportSources": ["TroutHunter", "Henry's Fork Anglers"]
     },
     {
@@ -47,7 +59,10 @@
       "name": "Snake River - South Fork Canyon",
       "lat": 43.407,
       "lon": -111.291,
-      "usgsSites": [],
+      "usgsSites": ["13032500", "13037500"],
+      "primaryUsgsSite": "13032500",
+      "secondaryUsgsSites": ["13037500"],
+      "gageNotes": "Snake River near Irwin is the closest South Fork canyon candidate; Snake River near Heise provides downstream context.",
       "reportSources": ["The Lodge at Palisades Creek", "WorldCast Anglers"]
     },
     {
@@ -55,7 +70,10 @@
       "name": "Big Wood - Ketchum",
       "lat": 43.681,
       "lon": -114.363,
-      "usgsSites": [],
+      "usgsSites": ["13139510", "13140800"],
+      "primaryUsgsSite": "13139510",
+      "secondaryUsgsSites": ["13140800"],
+      "gageNotes": "Big Wood River at Ketchum is geographically ideal but did not return current IV flow. Big Wood River at Hailey total flow is the best live-flow context for now; Stanton Crossing provides lower-valley context. This reach still needs local validation.",
       "reportSources": ["Silver Creek Outfitters", "Picabo Angler"]
     },
     {
@@ -63,7 +81,10 @@
       "name": "Silver Creek - Preserve",
       "lat": 43.31,
       "lon": -114.067,
-      "usgsSites": [],
+      "usgsSites": ["13150430", "131504301"],
+      "primaryUsgsSite": "13150430",
+      "secondaryUsgsSites": ["131504301"],
+      "gageNotes": "Silver Creek at Sportsman Access near Picabo is the clearest named Silver Creek gage; West Campground may provide additional local context.",
       "reportSources": ["Picabo Angler", "Silver Creek Outfitters"]
     },
     {
@@ -71,7 +92,9 @@
       "name": "Teton River - Driggs/Victor",
       "lat": 43.723,
       "lon": -111.111,
-      "usgsSites": [],
+      "usgsSites": ["13052200"],
+      "primaryUsgsSite": "13052200",
+      "gageNotes": "Teton River above South Leigh Creek near Driggs is the nearest same-river candidate for the Driggs/Victor reach.",
       "reportSources": ["WorldCast Anglers", "Teton Valley Lodge"]
     },
     {
@@ -80,6 +103,8 @@
       "lat": 44.22,
       "lon": -114.936,
       "usgsSites": [],
+      "primaryUsgsSite": null,
+      "gageNotes": "Needs manual review. Nearest candidate is Valley Creek, which is not the Salmon River. Salmon River below Yankee Fork is downstream context, not necessarily representative of Upper Stanley.",
       "reportSources": ["Regional guide notes"]
     },
     {
@@ -88,6 +113,8 @@
       "lat": 46.146,
       "lon": -115.978,
       "usgsSites": [],
+      "primaryUsgsSite": null,
+      "gageNotes": "Needs manual review. Candidate list includes South Fork Clearwater, Lawyer Creek, Upper Clear Creek, Lolo Creek, and Lochsa River; none is a clean Middle Fork Clearwater at Kooskia match.",
       "reportSources": ["North Idaho shops"]
     },
     {
@@ -95,7 +122,9 @@
       "name": "St. Joe - Upper",
       "lat": 47.25,
       "lon": -115.8,
-      "usgsSites": [],
+      "usgsSites": ["12414500"],
+      "primaryUsgsSite": "12414500",
+      "gageNotes": "St. Joe River at Calder is the nearest same-river candidate, though it may be downstream of the upper reach. Treat as contextual until section is refined.",
       "reportSources": ["North 40 Fly Shop"]
     }
   ]

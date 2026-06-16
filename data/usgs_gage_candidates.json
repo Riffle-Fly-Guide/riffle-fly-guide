@@ -1,0 +1,1411 @@
+{
+  "generatedBy": "scripts/find_usgs_gage_candidates.py",
+  "source": "USGS Site Service, active stream sites with streamflow parameter 00060",
+  "reviewNotes": [
+    "Nearest is not always correct.",
+    "Prefer gages on the same fork/section and same side of major dams or tributaries.",
+    "For tailwaters, below-dam release gages are often more useful than nearby reservoir or upstream gages."
+  ],
+  "reaches": [
+    {
+      "id": "boise-main-town",
+      "name": "Boise River - In Town",
+      "lat": 43.615,
+      "lon": -116.202,
+      "currentUsgsSites": [
+        "13206000"
+      ],
+      "queryError": null,
+      "candidates": [
+        {
+          "siteNo": "88160001",
+          "stationName": "IDWSC Standalone Calibrations",
+          "siteType": "ST",
+          "lat": 43.61766716,
+          "lon": -116.1842832,
+          "distanceMiles": 0.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/88160001/"
+        },
+        {
+          "siteNo": "13206000",
+          "stationName": "BOISE RIVER AT GLENWOOD BRIDGE NR BOISE ID",
+          "siteType": "ST",
+          "lat": 43.66055556,
+          "lon": -116.2791667,
+          "distanceMiles": 5.0,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13206000/"
+        },
+        {
+          "siteNo": "13206305",
+          "stationName": "BOISE RIVER SOUTH CHANNEL AT EAGLE ID",
+          "siteType": "ST",
+          "lat": 43.675278,
+          "lon": -116.353611,
+          "distanceMiles": 8.6,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13206305/"
+        },
+        {
+          "siteNo": "13206400",
+          "stationName": "EAGLE DRAIN AT EAGLE, ID",
+          "siteType": "ST-CA",
+          "lat": 43.691667,
+          "lon": -116.356389,
+          "distanceMiles": 9.4,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13206400/"
+        },
+        {
+          "siteNo": "13200000",
+          "stationName": "MORES CREEK AB ROBIE CREEK NR ARROWROCK DAM ID",
+          "siteType": "ST",
+          "lat": 43.64805556,
+          "lon": -115.9897222,
+          "distanceMiles": 10.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13200000/"
+        },
+        {
+          "siteNo": "13210045",
+          "stationName": "Boise R near Middleton, ID",
+          "siteType": "ST",
+          "lat": 43.681756,
+          "lon": -116.558706,
+          "distanceMiles": 18.4,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13210045/"
+        },
+        {
+          "siteNo": "13210810",
+          "stationName": "FIFTEENMILE CREEK NR MIDLAND BLVD NR MIDDLETON, ID",
+          "siteType": "ST",
+          "lat": 43.67405,
+          "lon": -116.585411,
+          "distanceMiles": 19.6,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13210810/"
+        },
+        {
+          "siteNo": "13210815",
+          "stationName": "FIFTEENMILE CREEK AT MOUTH NR MIDDLETON ID",
+          "siteType": "ST",
+          "lat": 43.68738395,
+          "lon": -116.5904116,
+          "distanceMiles": 20.1,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13210815/"
+        },
+        {
+          "siteNo": "13210824",
+          "stationName": "N MIDDLETON DRAIN MILL SLOUGH AT MIDDLETON ID",
+          "siteType": "ST",
+          "lat": 43.70655,
+          "lon": -116.618192,
+          "distanceMiles": 21.7,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13210824/"
+        },
+        {
+          "siteNo": "13210831",
+          "stationName": "SOUTH MIDDLETON DRAIN AT MIDDLETON ID",
+          "siteType": "ST",
+          "lat": 43.702106,
+          "lon": -116.618192,
+          "distanceMiles": 21.7,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13210831/"
+        },
+        {
+          "siteNo": "13247500",
+          "stationName": "PAYETTE RIVER NR HORSESHOE BEND ID",
+          "siteType": "ST",
+          "lat": 43.943333,
+          "lon": -116.196667,
+          "distanceMiles": 22.7,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13247500/"
+        },
+        {
+          "siteNo": "13210980",
+          "stationName": "MASON CREEK AT CALDWELL ID",
+          "siteType": "ST",
+          "lat": 43.68321667,
+          "lon": -116.6631917,
+          "distanceMiles": 23.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13210980/"
+        }
+      ]
+    },
+    {
+      "id": "boise-south-fork",
+      "name": "Boise River - South Fork",
+      "lat": 43.352,
+      "lon": -115.463,
+      "currentUsgsSites": [],
+      "queryError": null,
+      "candidates": [
+        {
+          "siteNo": "13190500",
+          "stationName": "SF BOISE RIVER AT ANDERSON RANCH DAM ID",
+          "siteType": "ST",
+          "lat": 43.3436111,
+          "lon": -115.4775,
+          "distanceMiles": 0.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13190500/"
+        },
+        {
+          "siteNo": "13186000",
+          "stationName": "SF BOISE RIVER NR FEATHERVILLE ID",
+          "siteType": "ST",
+          "lat": 43.4958333,
+          "lon": -115.3080556,
+          "distanceMiles": 12.6,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13186000/"
+        },
+        {
+          "siteNo": "13159800",
+          "stationName": "CANYON CR AT OREGON TRAIL XING NR MOUNTAIN HOME ID",
+          "siteType": "ST",
+          "lat": 43.2611111,
+          "lon": -115.7025,
+          "distanceMiles": 13.6,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13159800/"
+        },
+        {
+          "siteNo": "13192200",
+          "stationName": "SF BOISE RIVER AT NEAL BRIDGE NR ARROWROCK DAM ID",
+          "siteType": "ST",
+          "lat": 43.55055556,
+          "lon": -115.7219444,
+          "distanceMiles": 18.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13192200/"
+        },
+        {
+          "siteNo": "13185000",
+          "stationName": "BOISE RIVER NR TWIN SPRINGS ID",
+          "siteType": "ST",
+          "lat": 43.66805556,
+          "lon": -115.7252778,
+          "distanceMiles": 25.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13185000/"
+        },
+        {
+          "siteNo": "13154500",
+          "stationName": "SNAKE RIVER AT KING HILL ID",
+          "siteType": "ST",
+          "lat": 43.0022222,
+          "lon": -115.2025,
+          "distanceMiles": 27.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13154500/"
+        },
+        {
+          "siteNo": "13200000",
+          "stationName": "MORES CREEK AB ROBIE CREEK NR ARROWROCK DAM ID",
+          "siteType": "ST",
+          "lat": 43.64805556,
+          "lon": -115.9897222,
+          "distanceMiles": 33.4,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13200000/"
+        },
+        {
+          "siteNo": "13153776",
+          "stationName": "SNAKE RIVER BL BLISS DAM NR BLISS ID",
+          "siteType": "ST",
+          "lat": 42.9143452,
+          "lon": -115.0933982,
+          "distanceMiles": 35.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13153776/"
+        },
+        {
+          "siteNo": "13171620",
+          "stationName": "SNAKE RIVER BL CJ STRIKE DAM NR GRAND VIEW ID",
+          "siteType": "ST",
+          "lat": 42.94711569,
+          "lon": -115.981204,
+          "distanceMiles": 38.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13171620/"
+        },
+        {
+          "siteNo": "13168500",
+          "stationName": "BRUNEAU RIVER NR HOT SPRING ID",
+          "siteType": "ST",
+          "lat": 42.7711111,
+          "lon": -115.7202778,
+          "distanceMiles": 42.2,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13168500/"
+        },
+        {
+          "siteNo": "13153500",
+          "stationName": "MALAD RIVER NR BLISS ID",
+          "siteType": "ST",
+          "lat": 42.86323537,
+          "lon": -114.902003,
+          "distanceMiles": 44.1,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13153500/"
+        },
+        {
+          "siteNo": "13135000",
+          "stationName": "SNAKE RIVER BL LOWER SALMON FALLS NR HAGERMAN ID",
+          "siteType": "ST",
+          "lat": 42.84851319,
+          "lon": -114.9014473,
+          "distanceMiles": 44.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13135000/"
+        }
+      ]
+    },
+    {
+      "id": "boise-middle-fork",
+      "name": "Boise River - Middle Fork",
+      "lat": 43.801,
+      "lon": -115.132,
+      "currentUsgsSites": [],
+      "queryError": null,
+      "candidates": [
+        {
+          "siteNo": "13186000",
+          "stationName": "SF BOISE RIVER NR FEATHERVILLE ID",
+          "siteType": "ST",
+          "lat": 43.4958333,
+          "lon": -115.3080556,
+          "distanceMiles": 22.8,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13186000/"
+        },
+        {
+          "siteNo": "13295000",
+          "stationName": "VALLEY CREEK AT STANLEY ID",
+          "siteType": "ST",
+          "lat": 44.2225,
+          "lon": -114.931111,
+          "distanceMiles": 30.8,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13295000/"
+        },
+        {
+          "siteNo": "13185000",
+          "stationName": "BOISE RIVER NR TWIN SPRINGS ID",
+          "siteType": "ST",
+          "lat": 43.66805556,
+          "lon": -115.7252778,
+          "distanceMiles": 31.0,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13185000/"
+        },
+        {
+          "siteNo": "13235000",
+          "stationName": "SOUTH FORK PAYETTE RIVER AT LOWMAN, ID",
+          "siteType": "ST",
+          "lat": 44.08527778,
+          "lon": -115.6222222,
+          "distanceMiles": 31.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13235000/"
+        },
+        {
+          "siteNo": "13192200",
+          "stationName": "SF BOISE RIVER AT NEAL BRIDGE NR ARROWROCK DAM ID",
+          "siteType": "ST",
+          "lat": 43.55055556,
+          "lon": -115.7219444,
+          "distanceMiles": 34.2,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13192200/"
+        },
+        {
+          "siteNo": "13190500",
+          "stationName": "SF BOISE RIVER AT ANDERSON RANCH DAM ID",
+          "siteType": "ST",
+          "lat": 43.3436111,
+          "lon": -115.4775,
+          "distanceMiles": 36.0,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13190500/"
+        },
+        {
+          "siteNo": "13296500",
+          "stationName": "SALMON RIVER BL YANKEE FORK NR CLAYTON ID",
+          "siteType": "ST",
+          "lat": 44.2683333,
+          "lon": -114.7327778,
+          "distanceMiles": 37.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13296500/"
+        },
+        {
+          "siteNo": "13296000",
+          "stationName": "YANKEE FORK SALMON RIVER NR CLAYTON ID",
+          "siteType": "ST",
+          "lat": 44.27888889,
+          "lon": -114.7338889,
+          "distanceMiles": 38.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13296000/"
+        },
+        {
+          "siteNo": "13236500",
+          "stationName": "DEADWOOD RIVER BL DEADWOOD RES NR LOWMAN ID",
+          "siteType": "ST",
+          "lat": 44.29194444,
+          "lon": -115.6419444,
+          "distanceMiles": 42.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13236500/"
+        },
+        {
+          "siteNo": "13295900",
+          "stationName": "YANKEE FORK SALMON RIVER BELOW WF NR BONANZA, ID",
+          "siteType": "ST",
+          "lat": 44.3485083,
+          "lon": -114.7252417,
+          "distanceMiles": 42.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13295900/"
+        },
+        {
+          "siteNo": "13141500",
+          "stationName": "CAMAS CREEK NR BLAINE ID",
+          "siteType": "ST",
+          "lat": 43.33277778,
+          "lon": -114.5419444,
+          "distanceMiles": 43.8,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13141500/"
+        },
+        {
+          "siteNo": "13159800",
+          "stationName": "CANYON CR AT OREGON TRAIL XING NR MOUNTAIN HOME ID",
+          "siteType": "ST",
+          "lat": 43.2611111,
+          "lon": -115.7025,
+          "distanceMiles": 47.0,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13159800/"
+        }
+      ]
+    },
+    {
+      "id": "henrys-fork-box",
+      "name": "Henry's Fork - Box Canyon",
+      "lat": 44.499,
+      "lon": -111.338,
+      "currentUsgsSites": [],
+      "queryError": null,
+      "candidates": [
+        {
+          "siteNo": "13042500",
+          "stationName": "HENRYS FORK NR ISLAND PARK ID",
+          "siteType": "ST",
+          "lat": 44.41666667,
+          "lon": -111.3947222,
+          "distanceMiles": 6.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13042500/"
+        },
+        {
+          "siteNo": "13039500",
+          "stationName": "HENRYS FORK NR LAKE ID",
+          "siteType": "ST",
+          "lat": 44.5944444,
+          "lon": -111.3497222,
+          "distanceMiles": 6.6,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13039500/"
+        },
+        {
+          "siteNo": "06006000",
+          "stationName": "Red Rock Cr ab Lakes, nr Lakeview, MT",
+          "siteType": "ST",
+          "lat": 44.615792,
+          "lon": -111.625669,
+          "distanceMiles": 16.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/06006000/"
+        },
+        {
+          "siteNo": "06037500",
+          "stationName": "Madison River near West Yellowstone, MT",
+          "siteType": "ST",
+          "lat": 44.6570722,
+          "lon": -111.0679639,
+          "distanceMiles": 17.2,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/06037500/"
+        },
+        {
+          "siteNo": "06036905",
+          "stationName": "Firehole River near West Yellowstone MT",
+          "siteType": "ST",
+          "lat": 44.6201833,
+          "lon": -110.8635028,
+          "distanceMiles": 24.8,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/06036905/"
+        },
+        {
+          "siteNo": "06037100",
+          "stationName": "Gibbon River at Madison Jct, YNP",
+          "siteType": "ST",
+          "lat": 44.6408,
+          "lon": -110.8610639,
+          "distanceMiles": 25.4,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/06037100/"
+        },
+        {
+          "siteNo": "06038500",
+          "stationName": "Madison River bl Hebgen Lake nr Grayling MT",
+          "siteType": "ST",
+          "lat": 44.86639167,
+          "lon": -111.3387806,
+          "distanceMiles": 25.4,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/06038500/"
+        },
+        {
+          "siteNo": "06036805",
+          "stationName": "Firehole River at Old Faithful, YNP",
+          "siteType": "ST",
+          "lat": 44.4593333,
+          "lon": -110.8222722,
+          "distanceMiles": 25.6,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/06036805/"
+        },
+        {
+          "siteNo": "06038800",
+          "stationName": "Madison River at Kirby Ranch nr Cameron MT",
+          "siteType": "ST",
+          "lat": 44.88865556,
+          "lon": -111.580886,
+          "distanceMiles": 29.4,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/06038800/"
+        },
+        {
+          "siteNo": "13047500",
+          "stationName": "FALL RIVER NR SQUIRREL ID",
+          "siteType": "ST",
+          "lat": 44.0686111,
+          "lon": -111.2413889,
+          "distanceMiles": 30.1,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13047500/"
+        },
+        {
+          "siteNo": "13047600",
+          "stationName": "FALL RIVER NR ASHTON ID",
+          "siteType": "ST",
+          "lat": 44.0561111,
+          "lon": -111.358611,
+          "distanceMiles": 30.6,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13047600/"
+        },
+        {
+          "siteNo": "13046000",
+          "stationName": "HENRYS FORK NR ASHTON ID",
+          "siteType": "ST",
+          "lat": 44.0697222,
+          "lon": -111.5105556,
+          "distanceMiles": 30.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13046000/"
+        }
+      ]
+    },
+    {
+      "id": "henrys-fork-ranch",
+      "name": "Henry's Fork - Harriman Ranch",
+      "lat": 44.34,
+      "lon": -111.423,
+      "currentUsgsSites": [],
+      "queryError": null,
+      "candidates": [
+        {
+          "siteNo": "13042500",
+          "stationName": "HENRYS FORK NR ISLAND PARK ID",
+          "siteType": "ST",
+          "lat": 44.41666667,
+          "lon": -111.3947222,
+          "distanceMiles": 5.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13042500/"
+        },
+        {
+          "siteNo": "13039500",
+          "stationName": "HENRYS FORK NR LAKE ID",
+          "siteType": "ST",
+          "lat": 44.5944444,
+          "lon": -111.3497222,
+          "distanceMiles": 17.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13039500/"
+        },
+        {
+          "siteNo": "13046000",
+          "stationName": "HENRYS FORK NR ASHTON ID",
+          "siteType": "ST",
+          "lat": 44.0697222,
+          "lon": -111.5105556,
+          "distanceMiles": 19.2,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13046000/"
+        },
+        {
+          "siteNo": "13047600",
+          "stationName": "FALL RIVER NR ASHTON ID",
+          "siteType": "ST",
+          "lat": 44.0561111,
+          "lon": -111.358611,
+          "distanceMiles": 19.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13047600/"
+        },
+        {
+          "siteNo": "13047500",
+          "stationName": "FALL RIVER NR SQUIRREL ID",
+          "siteType": "ST",
+          "lat": 44.0686111,
+          "lon": -111.2413889,
+          "distanceMiles": 20.8,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13047500/"
+        },
+        {
+          "siteNo": "06006000",
+          "stationName": "Red Rock Cr ab Lakes, nr Lakeview, MT",
+          "siteType": "ST",
+          "lat": 44.615792,
+          "lon": -111.625669,
+          "distanceMiles": 21.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/06006000/"
+        },
+        {
+          "siteNo": "13049500",
+          "stationName": "FALL RIVER NR CHESTER ID",
+          "siteType": "ST",
+          "lat": 44.0183333,
+          "lon": -111.5666667,
+          "distanceMiles": 23.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13049500/"
+        },
+        {
+          "siteNo": "13046995",
+          "stationName": "FALL RIVER AB YELLOWSTONE CANAL NR SQUIRREL ID",
+          "siteType": "ST",
+          "lat": 44.06194444,
+          "lon": -111.1519444,
+          "distanceMiles": 23.4,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13046995/"
+        },
+        {
+          "siteNo": "06037500",
+          "stationName": "Madison River near West Yellowstone, MT",
+          "siteType": "ST",
+          "lat": 44.6570722,
+          "lon": -111.0679639,
+          "distanceMiles": 28.0,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/06037500/"
+        },
+        {
+          "siteNo": "13050500",
+          "stationName": "HENRYS FORK AT ST ANTHONY ID",
+          "siteType": "ST",
+          "lat": 43.96694444,
+          "lon": -111.6725,
+          "distanceMiles": 28.6,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13050500/"
+        },
+        {
+          "siteNo": "13055000",
+          "stationName": "TETON RIVER NR ST ANTHONY ID",
+          "siteType": "ST",
+          "lat": 43.9272222,
+          "lon": -111.6138889,
+          "distanceMiles": 30.1,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13055000/"
+        },
+        {
+          "siteNo": "06036905",
+          "stationName": "Firehole River near West Yellowstone MT",
+          "siteType": "ST",
+          "lat": 44.6201833,
+          "lon": -110.8635028,
+          "distanceMiles": 33.7,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/06036905/"
+        }
+      ]
+    },
+    {
+      "id": "snake-south-fork-canyon",
+      "name": "Snake River - South Fork Canyon",
+      "lat": 43.407,
+      "lon": -111.291,
+      "currentUsgsSites": [],
+      "queryError": null,
+      "candidates": [
+        {
+          "siteNo": "13032500",
+          "stationName": "SNAKE RIVER NR IRWIN ID",
+          "siteType": "ST",
+          "lat": 43.3508333,
+          "lon": -111.2188889,
+          "distanceMiles": 5.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13032500/"
+        },
+        {
+          "siteNo": "13016450",
+          "stationName": "FISH CREEK AT WILSON, WY",
+          "siteType": "ST",
+          "lat": 43.50076005,
+          "lon": -110.8716,
+          "distanceMiles": 22.0,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13016450/"
+        },
+        {
+          "siteNo": "13057940",
+          "stationName": "WILLOW CREEK BL TEX CREEK NR RIRIE ID",
+          "siteType": "ST",
+          "lat": 43.44194444,
+          "lon": -111.7283333,
+          "distanceMiles": 22.1,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13057940/"
+        },
+        {
+          "siteNo": "13037500",
+          "stationName": "SNAKE RIVER NR HEISE ID",
+          "siteType": "ST",
+          "lat": 43.6125,
+          "lon": -111.66,
+          "distanceMiles": 23.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13037500/"
+        },
+        {
+          "siteNo": "13023000",
+          "stationName": "GREYS RIVER ABOVE RESERVOIR, NEAR ALPINE, WY",
+          "siteType": "ST",
+          "lat": 43.14305556,
+          "lon": -110.9769444,
+          "distanceMiles": 24.1,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13023000/"
+        },
+        {
+          "siteNo": "13022500",
+          "stationName": "SNAKE RIVER ABOVE RESERVOIR, NEAR ALPINE, WY",
+          "siteType": "ST",
+          "lat": 43.1961111,
+          "lon": -110.8894444,
+          "distanceMiles": 24.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13022500/"
+        },
+        {
+          "siteNo": "13018350",
+          "stationName": "FLAT CREEK BELOW CACHE CREEK, NEAR JACKSON, WY",
+          "siteType": "ST",
+          "lat": 43.4583611,
+          "lon": -110.7970278,
+          "distanceMiles": 25.0,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13018350/"
+        },
+        {
+          "siteNo": "13058000",
+          "stationName": "WILLOW CREEK NR RIRIE ID",
+          "siteType": "ST",
+          "lat": 43.5833333,
+          "lon": -111.746111,
+          "distanceMiles": 25.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13058000/"
+        },
+        {
+          "siteNo": "13027500",
+          "stationName": "SALT RIVER ABOVE RESERVOIR, NEAR ETNA, WY",
+          "siteType": "ST",
+          "lat": 43.0797222,
+          "lon": -111.0372222,
+          "distanceMiles": 26.0,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13027500/"
+        },
+        {
+          "siteNo": "13052200",
+          "stationName": "TETON RIVER AB SOUTH LEIGH CREEK NR DRIGGS ID",
+          "siteType": "ST",
+          "lat": 43.78194444,
+          "lon": -111.2091667,
+          "distanceMiles": 26.2,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13052200/"
+        },
+        {
+          "siteNo": "13038000",
+          "stationName": "DRY BED NR RIRIE ID",
+          "siteType": "ST",
+          "lat": 43.63888889,
+          "lon": -111.716111,
+          "distanceMiles": 26.7,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13038000/"
+        },
+        {
+          "siteNo": "13016305",
+          "stationName": "GRANITE C AB GRANITE C SUPPLEMENTAL, NR MOOSE, WY",
+          "siteType": "ST",
+          "lat": 43.60316667,
+          "lon": -110.8058333,
+          "distanceMiles": 27.8,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13016305/"
+        }
+      ]
+    },
+    {
+      "id": "big-wood-ketchum",
+      "name": "Big Wood - Ketchum",
+      "lat": 43.681,
+      "lon": -114.363,
+      "currentUsgsSites": [],
+      "queryError": null,
+      "candidates": [
+        {
+          "siteNo": "13137500",
+          "stationName": "TRAIL CREEK AT KETCHUM ID",
+          "siteType": "ST",
+          "lat": 43.67421667,
+          "lon": -114.362261,
+          "distanceMiles": 0.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13137500/"
+        },
+        {
+          "siteNo": "13136000",
+          "stationName": "BIG WOOD RIVER AT KETCHUM, ID",
+          "siteType": "ST",
+          "lat": 43.6886111,
+          "lon": -114.3733333,
+          "distanceMiles": 0.7,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13136000/"
+        },
+        {
+          "siteNo": "13136550",
+          "stationName": "WARM SPRINGS CR AT GATES RD NR KETCHUM, ID",
+          "siteType": "ST",
+          "lat": 43.6830972,
+          "lon": -114.4055167,
+          "distanceMiles": 2.1,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13136550/"
+        },
+        {
+          "siteNo": "13137300",
+          "stationName": "TRAIL CREEK NR SUN VALLEY, ID",
+          "siteType": "ST",
+          "lat": 43.72319444,
+          "lon": -114.3243806,
+          "distanceMiles": 3.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13137300/"
+        },
+        {
+          "siteNo": "13138500",
+          "stationName": "BIG WOOD RIVER AT GIMLET, ID",
+          "siteType": "ST",
+          "lat": 43.605,
+          "lon": -114.3463889,
+          "distanceMiles": 5.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13138500/"
+        },
+        {
+          "siteNo": "13138000",
+          "stationName": "EAST FORK BIG WOOD RIVER AT GIMLET ID",
+          "siteType": "ST",
+          "lat": 43.60305556,
+          "lon": -114.3302778,
+          "distanceMiles": 5.6,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13138000/"
+        },
+        {
+          "siteNo": "13135520",
+          "stationName": "NF BIG WOOD RIVER NR SAWTOOTH NRA HQ NR KETCHUM ID",
+          "siteType": "ST",
+          "lat": 43.7861111,
+          "lon": -114.4191667,
+          "distanceMiles": 7.8,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13135520/"
+        },
+        {
+          "siteNo": "13135500",
+          "stationName": "BIG WOOD RIVER NR KETCHUM ID",
+          "siteType": "ST",
+          "lat": 43.78626389,
+          "lon": -114.4250556,
+          "distanceMiles": 7.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13135500/"
+        },
+        {
+          "siteNo": "13139510",
+          "stationName": "BIG WOOD RIVER AT HAILEY ID TOTAL FLOW",
+          "siteType": "ST",
+          "lat": 43.5172222,
+          "lon": -114.3216667,
+          "distanceMiles": 11.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13139510/"
+        },
+        {
+          "siteNo": "13140335",
+          "stationName": "BIG WOOD R AT S BROADFORD BRIDGE NR BELLEVUE, ID",
+          "siteType": "ST",
+          "lat": 43.4679833,
+          "lon": -114.2677389,
+          "distanceMiles": 15.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13140335/"
+        },
+        {
+          "siteNo": "13140500",
+          "stationName": "BIG WOOD RIVER AT GLENDALE BRIDGE NR BELLEVUE ID",
+          "siteType": "ST",
+          "lat": 43.4261111,
+          "lon": -114.2608333,
+          "distanceMiles": 18.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13140500/"
+        },
+        {
+          "siteNo": "13147900",
+          "stationName": "LITTLE WOOD RIVER AB HIGH FIVE CREEK NR CAREY ID",
+          "siteType": "ST",
+          "lat": 43.49305556,
+          "lon": -114.0572222,
+          "distanceMiles": 20.1,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13147900/"
+        }
+      ]
+    },
+    {
+      "id": "silver-creek-preserve",
+      "name": "Silver Creek - Preserve",
+      "lat": 43.31,
+      "lon": -114.067,
+      "currentUsgsSites": [],
+      "queryError": null,
+      "candidates": [
+        {
+          "siteNo": "131504301",
+          "stationName": "Silver Ck near West Campground",
+          "siteType": "ST",
+          "lat": 43.3251111,
+          "lon": -114.106436,
+          "distanceMiles": 2.2,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/131504301/"
+        },
+        {
+          "siteNo": "13150430",
+          "stationName": "SILVER CREEK AT SPORTSMAN ACCESS NR PICABO ID",
+          "siteType": "ST",
+          "lat": 43.3233611,
+          "lon": -114.10835,
+          "distanceMiles": 2.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13150430/"
+        },
+        {
+          "siteNo": "13148500",
+          "stationName": "LITTLE WOOD RIVER NR CAREY ID",
+          "siteType": "ST",
+          "lat": 43.39,
+          "lon": -113.9997222,
+          "distanceMiles": 6.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13148500/"
+        },
+        {
+          "siteNo": "13140500",
+          "stationName": "BIG WOOD RIVER AT GLENDALE BRIDGE NR BELLEVUE ID",
+          "siteType": "ST",
+          "lat": 43.4261111,
+          "lon": -114.2608333,
+          "distanceMiles": 12.6,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13140500/"
+        },
+        {
+          "siteNo": "13140800",
+          "stationName": "BIG WOOD RIVER AT STANTON CROSSING NR BELLEVUE ID",
+          "siteType": "ST",
+          "lat": 43.329167,
+          "lon": -114.319167,
+          "distanceMiles": 12.7,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13140800/"
+        },
+        {
+          "siteNo": "13147900",
+          "stationName": "LITTLE WOOD RIVER AB HIGH FIVE CREEK NR CAREY ID",
+          "siteType": "ST",
+          "lat": 43.49305556,
+          "lon": -114.0572222,
+          "distanceMiles": 12.7,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13147900/"
+        },
+        {
+          "siteNo": "13140335",
+          "stationName": "BIG WOOD R AT S BROADFORD BRIDGE NR BELLEVUE, ID",
+          "siteType": "ST",
+          "lat": 43.4679833,
+          "lon": -114.2677389,
+          "distanceMiles": 14.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13140335/"
+        },
+        {
+          "siteNo": "13142500",
+          "stationName": "BIG WOOD RIVER BL MAGIC DAM NR RICHFIELD ID",
+          "siteType": "ST",
+          "lat": 43.24805556,
+          "lon": -114.3566667,
+          "distanceMiles": 15.2,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13142500/"
+        },
+        {
+          "siteNo": "13139510",
+          "stationName": "BIG WOOD RIVER AT HAILEY ID TOTAL FLOW",
+          "siteType": "ST",
+          "lat": 43.5172222,
+          "lon": -114.3216667,
+          "distanceMiles": 19.2,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13139510/"
+        },
+        {
+          "siteNo": "13141500",
+          "stationName": "CAMAS CREEK NR BLAINE ID",
+          "siteType": "ST",
+          "lat": 43.33277778,
+          "lon": -114.5419444,
+          "distanceMiles": 23.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13141500/"
+        },
+        {
+          "siteNo": "13138000",
+          "stationName": "EAST FORK BIG WOOD RIVER AT GIMLET ID",
+          "siteType": "ST",
+          "lat": 43.60305556,
+          "lon": -114.3302778,
+          "distanceMiles": 24.2,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13138000/"
+        },
+        {
+          "siteNo": "13138500",
+          "stationName": "BIG WOOD RIVER AT GIMLET, ID",
+          "siteType": "ST",
+          "lat": 43.605,
+          "lon": -114.3463889,
+          "distanceMiles": 24.7,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13138500/"
+        }
+      ]
+    },
+    {
+      "id": "teton-drictor",
+      "name": "Teton River - Driggs/Victor",
+      "lat": 43.723,
+      "lon": -111.111,
+      "currentUsgsSites": [],
+      "queryError": null,
+      "candidates": [
+        {
+          "siteNo": "13052200",
+          "stationName": "TETON RIVER AB SOUTH LEIGH CREEK NR DRIGGS ID",
+          "siteType": "ST",
+          "lat": 43.78194444,
+          "lon": -111.2091667,
+          "distanceMiles": 6.4,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13052200/"
+        },
+        {
+          "siteNo": "13016305",
+          "stationName": "GRANITE C AB GRANITE C SUPPLEMENTAL, NR MOOSE, WY",
+          "siteType": "ST",
+          "lat": 43.60316667,
+          "lon": -110.8058333,
+          "distanceMiles": 17.4,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13016305/"
+        },
+        {
+          "siteNo": "13016450",
+          "stationName": "FISH CREEK AT WILSON, WY",
+          "siteType": "ST",
+          "lat": 43.50076005,
+          "lon": -110.8716,
+          "distanceMiles": 19.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13016450/"
+        },
+        {
+          "siteNo": "13013650",
+          "stationName": "SNAKE RIVER AT MOOSE, WY",
+          "siteType": "ST",
+          "lat": 43.65405556,
+          "lon": -110.7154722,
+          "distanceMiles": 20.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13013650/"
+        },
+        {
+          "siteNo": "13015000",
+          "stationName": "GROS VENTRE RIVER AT ZENITH, WY",
+          "siteType": "ST",
+          "lat": 43.5572222,
+          "lon": -110.7627778,
+          "distanceMiles": 20.8,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13015000/"
+        },
+        {
+          "siteNo": "13046995",
+          "stationName": "FALL RIVER AB YELLOWSTONE CANAL NR SQUIRREL ID",
+          "siteType": "ST",
+          "lat": 44.06194444,
+          "lon": -111.1519444,
+          "distanceMiles": 23.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13046995/"
+        },
+        {
+          "siteNo": "13018350",
+          "stationName": "FLAT CREEK BELOW CACHE CREEK, NEAR JACKSON, WY",
+          "siteType": "ST",
+          "lat": 43.4583611,
+          "lon": -110.7970278,
+          "distanceMiles": 24.1,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13018350/"
+        },
+        {
+          "siteNo": "13047500",
+          "stationName": "FALL RIVER NR SQUIRREL ID",
+          "siteType": "ST",
+          "lat": 44.0686111,
+          "lon": -111.2413889,
+          "distanceMiles": 24.7,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13047500/"
+        },
+        {
+          "siteNo": "13014500",
+          "stationName": "GROS VENTRE RIVER AT KELLY, WY",
+          "siteType": "ST",
+          "lat": 43.62088889,
+          "lon": -110.6230556,
+          "distanceMiles": 25.4,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13014500/"
+        },
+        {
+          "siteNo": "13047600",
+          "stationName": "FALL RIVER NR ASHTON ID",
+          "siteType": "ST",
+          "lat": 44.0561111,
+          "lon": -111.358611,
+          "distanceMiles": 26.1,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13047600/"
+        },
+        {
+          "siteNo": "13032500",
+          "stationName": "SNAKE RIVER NR IRWIN ID",
+          "siteType": "ST",
+          "lat": 43.3508333,
+          "lon": -111.2188889,
+          "distanceMiles": 26.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13032500/"
+        },
+        {
+          "siteNo": "13018300",
+          "stationName": "CACHE CREEK NEAR JACKSON, WY",
+          "siteType": "ST",
+          "lat": 43.45213098,
+          "lon": -110.7041203,
+          "distanceMiles": 27.7,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13018300/"
+        }
+      ]
+    },
+    {
+      "id": "salmon-upper-stanley",
+      "name": "Salmon River - Upper Stanley",
+      "lat": 44.22,
+      "lon": -114.936,
+      "currentUsgsSites": [],
+      "queryError": null,
+      "candidates": [
+        {
+          "siteNo": "13295000",
+          "stationName": "VALLEY CREEK AT STANLEY ID",
+          "siteType": "ST",
+          "lat": 44.2225,
+          "lon": -114.931111,
+          "distanceMiles": 0.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13295000/"
+        },
+        {
+          "siteNo": "13296500",
+          "stationName": "SALMON RIVER BL YANKEE FORK NR CLAYTON ID",
+          "siteType": "ST",
+          "lat": 44.2683333,
+          "lon": -114.7327778,
+          "distanceMiles": 10.6,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13296500/"
+        },
+        {
+          "siteNo": "13296000",
+          "stationName": "YANKEE FORK SALMON RIVER NR CLAYTON ID",
+          "siteType": "ST",
+          "lat": 44.27888889,
+          "lon": -114.7338889,
+          "distanceMiles": 10.8,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13296000/"
+        },
+        {
+          "siteNo": "13295900",
+          "stationName": "YANKEE FORK SALMON RIVER BELOW WF NR BONANZA, ID",
+          "siteType": "ST",
+          "lat": 44.3485083,
+          "lon": -114.7252417,
+          "distanceMiles": 13.7,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13295900/"
+        },
+        {
+          "siteNo": "13297330",
+          "stationName": "THOMPSON CREEK NR CLAYTON ID",
+          "siteType": "ST",
+          "lat": 44.27027778,
+          "lon": -114.5166667,
+          "distanceMiles": 21.0,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13297330/"
+        },
+        {
+          "siteNo": "13297350",
+          "stationName": "BRUNO CREEK NR CLAYTON ID",
+          "siteType": "ST",
+          "lat": 44.2975,
+          "lon": -114.4813889,
+          "distanceMiles": 23.1,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13297350/"
+        },
+        {
+          "siteNo": "13297355",
+          "stationName": "Paasasikwana Naokwaide bl Bruno Ck",
+          "siteType": "ST",
+          "lat": 44.2908333,
+          "lon": -114.4716667,
+          "distanceMiles": 23.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13297355/"
+        },
+        {
+          "siteNo": "13309220",
+          "stationName": "MF SALMON RIVER AT MF LODGE NR YELLOW PINE ID",
+          "siteType": "ST",
+          "lat": 44.7215194,
+          "lon": -115.0143472,
+          "distanceMiles": 34.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13309220/"
+        },
+        {
+          "siteNo": "13135500",
+          "stationName": "BIG WOOD RIVER NR KETCHUM ID",
+          "siteType": "ST",
+          "lat": 43.78626389,
+          "lon": -114.4250556,
+          "distanceMiles": 39.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13135500/"
+        },
+        {
+          "siteNo": "13135520",
+          "stationName": "NF BIG WOOD RIVER NR SAWTOOTH NRA HQ NR KETCHUM ID",
+          "siteType": "ST",
+          "lat": 43.7861111,
+          "lon": -114.4191667,
+          "distanceMiles": 39.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13135520/"
+        },
+        {
+          "siteNo": "13136550",
+          "stationName": "WARM SPRINGS CR AT GATES RD NR KETCHUM, ID",
+          "siteType": "ST",
+          "lat": 43.6830972,
+          "lon": -114.4055167,
+          "distanceMiles": 45.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13136550/"
+        },
+        {
+          "siteNo": "13136000",
+          "stationName": "BIG WOOD RIVER AT KETCHUM, ID",
+          "siteType": "ST",
+          "lat": 43.6886111,
+          "lon": -114.3733333,
+          "distanceMiles": 46.2,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13136000/"
+        }
+      ]
+    },
+    {
+      "id": "clearwater-middle-fork",
+      "name": "Clearwater - Middle Fork",
+      "lat": 46.146,
+      "lon": -115.978,
+      "currentUsgsSites": [],
+      "queryError": null,
+      "candidates": [
+        {
+          "siteNo": "13338500",
+          "stationName": "SF CLEARWATER RIVER AT STITES ID",
+          "siteType": "ST",
+          "lat": 46.08638889,
+          "lon": -115.9766667,
+          "distanceMiles": 4.1,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13338500/"
+        },
+        {
+          "siteNo": "13338950",
+          "stationName": "LAWYER CREEK AT KAMIAH ID",
+          "siteType": "ST",
+          "lat": 46.2114194,
+          "lon": -116.0697972,
+          "distanceMiles": 6.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13338950/"
+        },
+        {
+          "siteNo": "13337095",
+          "stationName": "UPPER CLEAR CREEK NEAR KOOSKIA, ID",
+          "siteType": "ST",
+          "lat": 46.0470361,
+          "lon": -115.866161,
+          "distanceMiles": 8.7,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13337095/"
+        },
+        {
+          "siteNo": "13339500",
+          "stationName": "LOLO CREEK NR GREER ID",
+          "siteType": "ST",
+          "lat": 46.37166667,
+          "lon": -116.1625,
+          "distanceMiles": 17.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13339500/"
+        },
+        {
+          "siteNo": "13337000",
+          "stationName": "LOCHSA RIVER NR LOWELL ID",
+          "siteType": "ST",
+          "lat": 46.1508333,
+          "lon": -115.5872222,
+          "distanceMiles": 18.7,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13337000/"
+        },
+        {
+          "siteNo": "13336500",
+          "stationName": "SELWAY RIVER NR LOWELL ID",
+          "siteType": "ST",
+          "lat": 46.08666667,
+          "lon": -115.5138889,
+          "distanceMiles": 22.6,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13336500/"
+        },
+        {
+          "siteNo": "13340000",
+          "stationName": "CLEARWATER RIVER AT OROFINO ID",
+          "siteType": "ST",
+          "lat": 46.4783333,
+          "lon": -116.2575,
+          "distanceMiles": 26.6,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13340000/"
+        },
+        {
+          "siteNo": "13341140",
+          "stationName": "BIG CANYON CREEK NR PECK ID",
+          "siteType": "ST",
+          "lat": 46.4679333,
+          "lon": -116.4183028,
+          "distanceMiles": 30.6,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13341140/"
+        },
+        {
+          "siteNo": "13341050",
+          "stationName": "CLEARWATER RIVER NR PECK ID",
+          "siteType": "ST",
+          "lat": 46.50027778,
+          "lon": -116.3925,
+          "distanceMiles": 31.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13341050/"
+        },
+        {
+          "siteNo": "13317000",
+          "stationName": "SALMON RIVER AT WHITE BIRD ID",
+          "siteType": "ST",
+          "lat": 45.75027778,
+          "lon": -116.3238889,
+          "distanceMiles": 32.0,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13317000/"
+        }
+      ]
+    },
+    {
+      "id": "st-joe-upper",
+      "name": "St. Joe - Upper",
+      "lat": 47.25,
+      "lon": -115.8,
+      "currentUsgsSites": [],
+      "queryError": null,
+      "candidates": [
+        {
+          "siteNo": "12413040",
+          "stationName": "SF COEUR D ALENE R ABV DEADMAN GULCH NR MULLAN ID",
+          "siteType": "ST",
+          "lat": 47.4732641,
+          "lon": -115.766547,
+          "distanceMiles": 15.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/12413040/"
+        },
+        {
+          "siteNo": "12413125",
+          "stationName": "CANYON CREEK AB MOUTH AT WALLACE, ID",
+          "siteType": "ST",
+          "lat": 47.4725,
+          "lon": -115.9147222,
+          "distanceMiles": 16.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/12413125/"
+        },
+        {
+          "siteNo": "12413130",
+          "stationName": "NINEMILE CREEK AB MOUTH AT WALLACE, ID",
+          "siteType": "ST",
+          "lat": 47.4749,
+          "lon": -115.9227,
+          "distanceMiles": 16.6,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/12413130/"
+        },
+        {
+          "siteNo": "12413131",
+          "stationName": "SF COEUR D ALENE R ABV PLACER CR AT WALLACE ID",
+          "siteType": "ST",
+          "lat": 47.47518056,
+          "lon": -115.9284444,
+          "distanceMiles": 16.7,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/12413131/"
+        },
+        {
+          "siteNo": "12414500",
+          "stationName": "ST JOE RIVER AT CALDER, ID",
+          "siteType": "ST",
+          "lat": 47.2744444,
+          "lon": -116.1888889,
+          "distanceMiles": 18.3,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/12414500/"
+        },
+        {
+          "siteNo": "12413210",
+          "stationName": "SF COEUR D ALENE AT ELIZABETH PARK NR KELLOGG ID",
+          "siteType": "ST",
+          "lat": 47.53138889,
+          "lon": -116.0925,
+          "distanceMiles": 23.8,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/12413210/"
+        },
+        {
+          "siteNo": "12413875",
+          "stationName": "St Joe River at Red Ives Ranger Station, ID",
+          "siteType": "ST",
+          "lat": 47.05602858,
+          "lon": -115.3532001,
+          "distanceMiles": 24.9,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/12413875/"
+        },
+        {
+          "siteNo": "12413250",
+          "stationName": "SF COEUR D ALENE R at Bunker Ave AT KELLOGG ID",
+          "siteType": "ST",
+          "lat": 47.54527778,
+          "lon": -116.1341667,
+          "distanceMiles": 25.7,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/12413250/"
+        },
+        {
+          "siteNo": "12413300",
+          "stationName": "SF COEUR D ALENE RIVER AT SMELTERVILLE ID",
+          "siteType": "ST",
+          "lat": 47.5483333,
+          "lon": -116.1752778,
+          "distanceMiles": 27.1,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/12413300/"
+        },
+        {
+          "siteNo": "12413355",
+          "stationName": "SF COEUR D ALENE RIVER ABV PINE CR NR PINEHURST ID",
+          "siteType": "ST",
+          "lat": 47.5483333,
+          "lon": -116.2197222,
+          "distanceMiles": 28.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/12413355/"
+        },
+        {
+          "siteNo": "12413470",
+          "stationName": "SF Coeur D Alene River nr Pinehurst, ID",
+          "siteType": "ST",
+          "lat": 47.5513111,
+          "lon": -116.2362917,
+          "distanceMiles": 29.2,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/12413470/"
+        },
+        {
+          "siteNo": "13340600",
+          "stationName": "NF CLEARWATER RIVER NR CANYON RANGER STATION ID",
+          "siteType": "ST",
+          "lat": 46.84055556,
+          "lon": -115.621111,
+          "distanceMiles": 29.5,
+          "usgsUrl": "https://waterdata.usgs.gov/monitoring-location/13340600/"
+        }
+      ]
+    }
+  ]
+}

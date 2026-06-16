@@ -85,9 +85,12 @@ def fetch_usgs_values(site_ids: list[str]) -> dict[str, str]:
         }
     )
     data = fetch_json(f"https://waterservices.usgs.gov/nwis/iv/?{params}")
-    values: dict[str, str] = {}
+    values_by_site: dict[str, dict[str, str]] = {site_id: {} for site_id in site_ids}
 
     for series in data.get("value", {}).get("timeSeries", []):
+        site_no = series.get("sourceInfo", {}).get("siteCode", [{}])[0].get("value")
+        if site_no not in values_by_site:
+            continue
         variable = series.get("variable", {})
         code = variable.get("variableCode", [{}])[0].get("value")
         latest = None
@@ -98,11 +101,19 @@ def fetch_usgs_values(site_ids: list[str]) -> dict[str, str]:
         if latest is None:
             continue
         if code == "00060":
-            values["flow"] = f"{round(float(latest)):,} cfs"
+            values_by_site[site_no]["flow"] = f"{round(float(latest)):,} cfs"
         elif code == "00065":
-            values["gageHeight"] = f"{float(latest):.2f} ft"
+            values_by_site[site_no]["gageHeight"] = f"{float(latest):.2f} ft"
         elif code == "00010":
-            values["water"] = f"{float(latest):.0f}F"
+            fahrenheit = float(latest) * 9 / 5 + 32
+            values_by_site[site_no]["water"] = f"{fahrenheit:.0f}F"
+
+    values: dict[str, str] = {}
+    for site_id in site_ids:
+        site_values = values_by_site.get(site_id, {})
+        for key in ("flow", "gageHeight", "water"):
+            if key not in values and key in site_values:
+                values[key] = site_values[key]
     return values
 
 
