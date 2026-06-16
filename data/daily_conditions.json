@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T17:17:11.423879+00:00",
+  "generatedAt": "2026-06-16T17:20:38.034860+00:00",
   "sourceStatus": {
     "usgs": "live where gage IDs are mapped",
     "nws": "live point/hourly forecasts",
@@ -336,7 +336,7 @@
         }
       ],
       "sourceErrors": [],
-      "flow": "619 cfs",
+      "flow": "631 cfs",
       "gageHeight": "2.48 ft",
       "status": "limited",
       "score": 64,
