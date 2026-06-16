@@ -7,16 +7,20 @@
   <style>
     :root {
       color-scheme: light;
-      --ink: #17211d;
-      --muted: #62706a;
-      --line: #d7ded9;
-      --bg: #f6f7f4;
+      --ink: #17201d;
+      --muted: #65736d;
+      --line: #d8d5c9;
+      --bg: #f3f1ea;
       --panel: #ffffff;
-      --green: #27724f;
-      --yellow: #a66f16;
-      --red: #aa3d35;
-      --blue: #2f6684;
-      --shadow: 0 18px 48px rgba(32, 43, 38, 0.11);
+      --green: #2f7a55;
+      --yellow: #b87924;
+      --red: #aa4238;
+      --blue: #244f68;
+      --river: #244f68;
+      --river-dark: #102f3d;
+      --spruce: #254b3c;
+      --willow: #b78a3b;
+      --shadow: 0 18px 42px rgba(22, 34, 31, 0.12);
     }
 
     * {
@@ -25,7 +29,9 @@
 
     body {
       margin: 0;
-      background: var(--bg);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.24), transparent 260px),
+        var(--bg);
       color: var(--ink);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.45;
@@ -51,11 +57,13 @@
       align-items: center;
       gap: 18px;
       padding: 18px 22px;
-      background: #fbfcfa;
-      border-bottom: 1px solid var(--line);
+      background: rgba(16, 47, 61, 0.96);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
       position: sticky;
       top: 0;
       z-index: 10;
+      color: #f7f2e6;
+      backdrop-filter: blur(14px);
     }
 
     .brand {
@@ -88,12 +96,17 @@
       font-size: 12px;
     }
 
+    header .sub,
+    header .day-meta {
+      color: rgba(247, 242, 230, 0.72);
+    }
+
     .search {
       width: 100%;
       border: 1px solid var(--line);
       border-radius: 7px;
       padding: 10px 12px;
-      background: white;
+      background: rgba(255, 255, 255, 0.95);
       color: var(--ink);
     }
 
@@ -123,7 +136,7 @@
 
     aside {
       border-right: 1px solid var(--line);
-      background: #fbfcfa;
+      background: rgba(252, 250, 243, 0.94);
       padding: 16px;
       overflow: auto;
     }
@@ -169,7 +182,7 @@
       border: 1px solid var(--line);
       border-left: 5px solid var(--green);
       border-radius: 8px;
-      background: white;
+      background: rgba(255, 255, 255, 0.92);
       padding: 10px;
       text-align: left;
       cursor: pointer;
@@ -238,6 +251,66 @@
       overflow: auto;
     }
 
+    .home-hero {
+      min-height: 360px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      display: grid;
+      align-items: end;
+      background:
+        linear-gradient(180deg, rgba(16, 47, 61, 0.16), rgba(16, 47, 61, 0.84)),
+        url("Assets/site/hero-big-lost.jpg") center 58% / cover;
+      box-shadow: var(--shadow);
+    }
+
+    .home-hero-content {
+      max-width: 760px;
+      padding: 34px;
+      color: #fffaf0;
+    }
+
+    .home-hero-kicker {
+      margin: 0 0 10px;
+      color: #f0c96f;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .home-hero h2 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 68px);
+      line-height: 0.98;
+      max-width: 690px;
+    }
+
+    .home-hero p {
+      margin: 14px 0 0;
+      max-width: 580px;
+      color: rgba(255, 250, 240, 0.86);
+      font-size: 16px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .hero-action {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      padding: 9px 13px;
+      color: #fffaf0;
+      background: rgba(255, 255, 255, 0.14);
+      font-weight: 850;
+    }
+
     .scoreboard {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -258,12 +331,14 @@
 
     .metric-card {
       padding: 14px;
+      background: rgba(255, 255, 255, 0.95);
     }
 
     .metric {
       font-size: 28px;
       font-weight: 850;
       line-height: 1;
+      color: var(--river-dark);
     }
 
     .metric-label {
@@ -274,6 +349,7 @@
 
     .today-panel {
       padding: 16px;
+      background: rgba(255, 255, 255, 0.96);
     }
 
     .today-head {
@@ -306,9 +382,15 @@
       border: 1px solid var(--line);
       border-radius: 8px;
       padding: 12px;
-      background: #fbfcfa;
+      background: linear-gradient(180deg, #ffffff, #f8f6ef);
       min-height: 132px;
       cursor: pointer;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .rank-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(22, 34, 31, 0.12);
     }
 
     .rank-card h3 {
@@ -355,7 +437,7 @@
 
     .detail {
       border-left: 1px solid var(--line);
-      background: #fbfcfa;
+      background: rgba(252, 250, 243, 0.94);
       padding: 16px;
       overflow: auto;
     }
@@ -387,7 +469,7 @@
       border: 1px solid var(--line);
       border-radius: 7px;
       padding: 10px;
-      background: #fbfcfa;
+      background: #fbfaf4;
       min-height: 70px;
     }
 
@@ -416,7 +498,7 @@
     }
 
     .report-card a {
-      color: #1f4d46;
+      color: var(--river);
       font-weight: 800;
       text-decoration: none;
     }
@@ -486,6 +568,23 @@
       border-radius: 0;
     }
 
+    .photo-slot.has-image {
+      display: block;
+      padding: 0;
+      border: 0;
+      background: #d8d5c9;
+      overflow: hidden;
+    }
+
+    .photo-slot.has-image img {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+      display: block;
+      image-orientation: from-image;
+    }
+
     .data-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -521,7 +620,7 @@
     .fly-card {
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: #fbfcfa;
+      background: #fbfaf4;
       overflow: hidden;
     }
 
@@ -568,7 +667,7 @@
       border: 1px solid var(--line);
       border-radius: 7px;
       padding: 10px;
-      background: #fbfcfa;
+      background: #fbfaf4;
     }
 
     .profile-block.full {
@@ -599,8 +698,8 @@
       text-align: center;
       padding: 12px;
       background:
-        linear-gradient(135deg, rgba(39, 114, 79, 0.12), transparent 38%),
-        #eef2ec;
+        linear-gradient(135deg, rgba(36, 79, 104, 0.14), transparent 38%),
+        #eceee8;
       color: var(--muted);
       font-size: 13px;
       font-weight: 700;
@@ -647,6 +746,15 @@
 
       .scoreboard {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .home-hero {
+        min-height: 430px;
+        background-position: center;
+      }
+
+      .home-hero-content {
+        padding: 24px;
       }
 
       table {
@@ -710,6 +818,19 @@
 
     <main>
       <div id="boardView">
+        <section class="home-hero" aria-label="Fishable Today overview">
+          <div class="home-hero-content">
+            <p class="home-hero-kicker">Idaho fly fishing conditions</p>
+            <h2>Know your best water before you drive.</h2>
+            <p>Daily reach-by-reach calls built from flows, weather, water temperature, hatch signals, and local report context.</p>
+            <div class="hero-actions" aria-label="Hero highlights">
+              <span class="hero-action">Today's Call</span>
+              <span class="hero-action">12 Idaho reaches</span>
+              <span class="hero-action">USGS + NWS</span>
+            </div>
+          </div>
+        </section>
+
         <section class="scoreboard" aria-label="Daily summary">
           <div class="metric-card">
             <div class="metric" id="goodCount">0</div>
@@ -1039,6 +1160,15 @@
       limited: "Limited"
     };
 
+    const reachImages = {
+      "boise-middle-fork": [
+        {
+          src: "Assets/site/middle-fork-profile.jpg",
+          alt: "Middle Fork Boise River with mountain water and pine-lined banks"
+        }
+      ]
+    };
+
     function flyRecommendations(reach) {
       const hatchText = reach.hatch.toLowerCase();
       if (hatchText.includes("salmon") || hatchText.includes("golden") || hatchText.includes("stones")) {
@@ -1169,8 +1299,21 @@
         photoLabels: [`${reach.name} hero photo`, `${reach.name} water/holding detail`],
         access: reach.area.includes("Treasure") ? "Easy local access with pressure. Best as a quick-session reach." : reach.area.includes("Sawtooths") ? "Remote mountain access. Road, runoff, and weather confidence matter before committing." : "Access style varies by section. The MVP should store practical notes without exposing sensitive spots.",
         season: reach.hatch.includes("salmon") || reach.hatch.includes("golden") ? "Strong late spring and early summer upside, then caddis and terrestrial patterns later." : "Most useful when water temperature, light, and wind line up with the hatch window.",
-        dataPlan: "USGS flow trend, NWS hourly wind/weather, pressure trend, water temperature where available, and latest attributed shop report."
+        dataPlan: "USGS flow trend, NWS hourly wind/weather, pressure trend, water temperature where available, and latest attributed shop report.",
+        images: reachImages[reach.id] || []
       };
+    }
+
+    function renderPhotoSlots(profile, reach, labelText) {
+      const imageSlots = profile.images.map((image) => `
+        <div class="photo-slot has-image">
+          <img src="${image.src}" alt="${image.alt}">
+        </div>
+      `);
+      const placeholders = profile.photoLabels.slice(imageSlots.length).map((label) => `
+        <div class="photo-slot">${label}<br><span class="tiny">${labelText}</span></div>
+      `);
+      return [...imageSlots, ...placeholders].join("");
     }
 
     function renderProfileView() {
@@ -1194,7 +1337,7 @@
             <button class="board-toggle" id="backToBoard" type="button">Daily Board</button>
           </div>
           <div class="profile-photo-row">
-            ${profile.photoLabels.map((label) => `<div class="photo-slot">${label}<br><span class="tiny">river image slot</span></div>`).join("")}
+            ${renderPhotoSlots(profile, reach, "river image slot")}
           </div>
         </article>
 
@@ -1333,7 +1476,7 @@
         <p class="section-title">River Profile</p>
         <div class="brief-panel">
           <div class="photo-grid">
-            ${profile.photoLabels.map((label) => `<div class="photo-slot">${label}<br><span class="tiny">image slot</span></div>`).join("")}
+            ${renderPhotoSlots(profile, reach, "image slot")}
           </div>
           <div class="profile-grid">
             <div class="profile-block full">
