@@ -71,6 +71,12 @@
       align-items: center;
       gap: 10px;
       min-width: 0;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: inherit;
+      text-align: left;
+      cursor: pointer;
     }
 
     .mark {
@@ -507,6 +513,16 @@
       text-decoration: underline;
     }
 
+    .source-link {
+      color: var(--river);
+      text-decoration: none;
+      font-weight: 850;
+    }
+
+    .source-link:hover {
+      text-decoration: underline;
+    }
+
     .board-toggle {
       border: 1px solid var(--line);
       border-radius: 7px;
@@ -626,14 +642,12 @@
     }
 
     .fly-image-slot {
-      height: 150px;
+      height: 176px;
       display: grid;
       place-items: center;
       text-align: center;
-      padding: 10px;
-      background:
-        linear-gradient(135deg, rgba(47, 102, 132, 0.12), transparent 42%),
-        #eef2ec;
+      padding: 0;
+      background: #f5f1e8;
       color: var(--muted);
       font-size: 12px;
       font-weight: 800;
@@ -644,9 +658,8 @@
     .fly-image-slot img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       display: block;
-      padding: 8px;
     }
 
     .fly-card-body {
@@ -799,16 +812,15 @@
 <body>
   <div class="app">
     <header>
-      <div class="brand">
+      <button class="brand" id="brandHome" type="button" aria-label="Go to Fishable Today home">
         <div class="mark">FT</div>
         <div>
           <h1>Fishable Today</h1>
           <p class="sub">Idaho river decisions for Tuesday, June 9</p>
         </div>
-      </div>
+      </button>
       <input class="search" id="search" type="search" placeholder="Search rivers, forks, towns, hatches">
       <div class="day-meta">
-        <button class="board-toggle" id="homeButton" type="button">Home</button>
         <span class="pill" id="updatedAt">Updated 6:15 AM MT</span>
         <span class="pill">USGS + NWS + shop reports</span>
       </div>
@@ -1197,6 +1209,24 @@
       "Foam Ant": "Assets/flies/foam-ant.png"
     };
 
+    const reportSourceUrls = {
+      "Idaho Angler": "https://idahoangler.com/blogs/fishing-reports",
+      "Silver Creek Outfitters": "https://silver-creek.com/blogs/report",
+      "Henry's Fork Anglers": "https://henrysforkanglers.com/fishing-info/fishing-reports/",
+      "TroutHunter": "https://www.trouthunt.com/fishing-reports",
+      "The Lodge at Palisades Creek": "https://tlapc.com/fishing-report/",
+      "Picabo Angler": "https://picaboangler.com/blogs/fishing-reports",
+      "WorldCast Anglers": "https://www.worldcastanglers.com/fishing-reports",
+      "Red's Fly Shop notes": "https://redsflyfishing.com/blogs/fishing-reports",
+      "North 40 Fly Shop": "https://north40.com/blog/category/fly-fishing-reports"
+    };
+
+    function renderReportSource(source) {
+      const url = reportSourceUrls[source];
+      if (!url) return `<strong>${source}</strong>`;
+      return `<a class="source-link" href="${url}" target="_blank" rel="noopener noreferrer">${source}</a>`;
+    }
+
     function flyRecommendations(reach) {
       const hatchText = reach.hatch.toLowerCase();
       if (hatchText.includes("salmon") || hatchText.includes("golden") || hatchText.includes("stones")) {
@@ -1426,7 +1456,6 @@
 
         <section class="brief-panel">
           <p class="section-title">Fly Recommendations</p>
-          <p class="tiny">Image slots are ready for real fly photos. These are recommendation cards, not generated images.</p>
           <div class="fly-grid">
             ${flies.map((fly) => `
               <article class="fly-card">
@@ -1447,7 +1476,7 @@
           <p class="section-title">Hatches And Reports</p>
           <div class="facts">
             <div class="fact"><span class="tiny">Likely Hatch</span><strong>${reach.hatch}</strong></div>
-            <div class="fact"><span class="tiny">Report Source</span><strong>${reach.report}</strong><span class="tiny">${reach.reportAge}</span></div>
+            <div class="fact"><span class="tiny">Report Source</span>${renderReportSource(reach.report)}<span class="tiny">${reach.reportAge}</span></div>
           </div>
         </section>
       `;
@@ -1535,7 +1564,7 @@
         <p class="section-title">Report Signal</p>
         <div class="reports">
           <div class="report-card">
-            <a href="#">${reach.report}</a>
+            ${renderReportSource(reach.report)}
             <div class="tiny">${reach.reportAge} · MVP should show source title, date, attribution, and outbound link.</div>
           </div>
           <div class="report-card">
@@ -1582,7 +1611,7 @@
     });
 
     document.body.addEventListener("click", (event) => {
-      if (event.target.closest("#backToBoard") || event.target.closest("#homeButton")) {
+      if (event.target.closest("#backToBoard") || event.target.closest("#brandHome")) {
         state.view = "board";
         renderAll();
         return;
