@@ -620,12 +620,13 @@
     .fly-card {
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: #fbfaf4;
+      background: #fffdf8;
       overflow: hidden;
+      box-shadow: 0 10px 24px rgba(22, 34, 31, 0.08);
     }
 
     .fly-image-slot {
-      min-height: 96px;
+      height: 150px;
       display: grid;
       place-items: center;
       text-align: center;
@@ -637,6 +638,15 @@
       font-size: 12px;
       font-weight: 800;
       border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .fly-image-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      padding: 8px;
     }
 
     .fly-card-body {
@@ -1169,6 +1179,24 @@
       ]
     };
 
+    const flyImages = {
+      "Chubby Chernobyl": "Assets/flies/chubby-chernobyl.png",
+      "Pat's Rubber Legs": "Assets/flies/pats-rubber-legs.png",
+      "Golden Stone Nymph": "Assets/flies/golden-stone-nymph.png",
+      "PMD Comparadun": "Assets/flies/pmd-comparadun.png",
+      "Baetis Sparkle Dun": "Assets/flies/baetis-sparkle-dun.png",
+      "Pheasant Tail": "Assets/flies/pheasant-tail.png",
+      "Elk Hair Caddis": "Assets/flies/elk-hair-caddis.png",
+      "X-Caddis": "Assets/flies/x-caddis.png",
+      "Soft Hackle": "Assets/flies/soft-hackle.png",
+      "Woolly Bugger": "Assets/flies/woolly-bugger.png",
+      "Zebra Midge": "Assets/flies/zebra-midge.png",
+      "San Juan Worm": "Assets/flies/san-juan-worm.png",
+      "Parachute Adams": "Assets/flies/parachute-adams.png",
+      "Hare's Ear": "Assets/flies/hares-ear.png",
+      "Foam Ant": "Assets/flies/foam-ant.png"
+    };
+
     function flyRecommendations(reach) {
       const hatchText = reach.hatch.toLowerCase();
       if (hatchText.includes("salmon") || hatchText.includes("golden") || hatchText.includes("stones")) {
@@ -1402,7 +1430,9 @@
           <div class="fly-grid">
             ${flies.map((fly) => `
               <article class="fly-card">
-                <div class="fly-image-slot">${fly.name}<br><span class="tiny">fly image slot</span></div>
+                <div class="fly-image-slot">
+                  ${flyImages[fly.name] ? `<img src="${flyImages[fly.name]}" alt="Artificial ${fly.name} fly tied on a hook">` : `${fly.name}<br><span class="tiny">fly image pending</span>`}
+                </div>
                 <div class="fly-card-body">
                   <h3>${fly.name}</h3>
                   <div class="tiny">${fly.type} · size ${fly.size}</div>
