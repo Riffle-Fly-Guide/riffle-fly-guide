@@ -644,7 +644,8 @@
     }
 
     .fly-image-slot {
-      height: 230px;
+      height: auto;
+      aspect-ratio: 16 / 9;
       display: grid;
       place-items: center;
       text-align: center;
@@ -660,9 +661,8 @@
     .fly-image-slot img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       display: block;
-      padding: 12px;
     }
 
     .fly-card-body {
