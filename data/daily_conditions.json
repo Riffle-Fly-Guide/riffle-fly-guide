@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T14:45:53.257537+00:00",
+  "generatedAt": "2026-06-27T14:05:06.587051+00:00",
   "sourceStatus": {
     "usgs": "live where gage IDs are mapped",
     "nws": "live point/hourly forecasts",
@@ -7,7 +7,7 @@
   },
   "quality": {
     "successfulForecasts": 12,
-    "successfulUsgs": 9,
+    "successfulUsgs": 5,
     "totalReaches": 12
   },
   "reaches": [
@@ -16,109 +16,109 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "64F",
-          "wind": "14 mph",
-          "note": "scattered rain showers"
+          "temp": "55F",
+          "wind": "3 mph",
+          "note": "patchy fog"
         },
         {
           "label": "Midday",
-          "temp": "68F",
-          "wind": "10 mph",
-          "note": "scattered rain showers"
+          "temp": "62F",
+          "wind": "8 mph",
+          "note": "showers and thunderstorms likely"
         },
         {
           "label": "Afternoon",
-          "temp": "71F",
-          "wind": "6 mph",
-          "note": "widespread showers and thunderstorms"
+          "temp": "65F",
+          "wind": "12 mph",
+          "note": "chance showers and thunderstorms"
         },
         {
           "label": "Evening",
-          "temp": "70F",
-          "wind": "5 mph",
-          "note": "widespread showers and thunderstorms"
+          "temp": "63F",
+          "wind": "10 mph",
+          "note": "mostly cloudy"
         }
       ],
-      "sourceErrors": [],
-      "flow": "689 cfs",
-      "gageHeight": "4.25 ft",
+      "sourceErrors": [
+        "USGS: HTTP Error 503: "
+      ],
       "status": "watch",
-      "score": 79,
+      "score": 65,
       "pressure": "forecast-driven",
-      "weather": "scattered rain showers",
-      "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available."
+      "weather": "patchy fog",
+      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
     },
     {
       "id": "boise-south-fork",
       "forecast": [
         {
           "label": "Morning",
-          "temp": "64F",
-          "wind": "17 mph",
-          "note": "cloudy"
+          "temp": "52F",
+          "wind": "8 mph",
+          "note": "scattered showers and thunderstorms"
         },
         {
           "label": "Midday",
-          "temp": "68F",
-          "wind": "20 mph",
-          "note": "cloudy"
+          "temp": "58F",
+          "wind": "13 mph",
+          "note": "widespread showers and thunderstorms"
         },
         {
           "label": "Afternoon",
-          "temp": "66F",
-          "wind": "14 mph",
+          "temp": "59F",
+          "wind": "17 mph",
           "note": "chance showers and thunderstorms"
         },
         {
           "label": "Evening",
-          "temp": "63F",
-          "wind": "12 mph",
-          "note": "chance showers and thunderstorms"
+          "temp": "55F",
+          "wind": "16 mph",
+          "note": "mostly cloudy"
         }
       ],
       "sourceErrors": [],
-      "flow": "1,580 cfs",
-      "gageHeight": "4.90 ft",
+      "flow": "1,590 cfs",
+      "gageHeight": "4.91 ft",
       "water": "45F",
-      "status": "watch",
-      "score": 72,
+      "status": "good",
+      "score": 87,
       "pressure": "forecast-driven",
-      "weather": "cloudy",
-      "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available, water temperature is available, wind could affect the fishing window."
+      "weather": "scattered showers and thunderstorms",
+      "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available, water temperature is available."
     },
     {
       "id": "boise-middle-fork",
       "forecast": [
         {
           "label": "Morning",
-          "temp": "57F",
-          "wind": "5 mph",
-          "note": "scattered rain showers"
+          "temp": "47F",
+          "wind": "2 mph",
+          "note": "patchy fog"
         },
         {
           "label": "Midday",
-          "temp": "66F",
-          "wind": "9 mph",
-          "note": "scattered rain showers"
+          "temp": "56F",
+          "wind": "7 mph",
+          "note": "chance showers and thunderstorms"
         },
         {
           "label": "Afternoon",
-          "temp": "65F",
-          "wind": "9 mph",
+          "temp": "57F",
+          "wind": "10 mph",
           "note": "widespread showers and thunderstorms"
         },
         {
           "label": "Evening",
-          "temp": "58F",
-          "wind": "5 mph",
-          "note": "chance showers and thunderstorms"
+          "temp": "52F",
+          "wind": "10 mph",
+          "note": "scattered showers and thunderstorms"
         }
       ],
       "sourceErrors": [],
       "status": "watch",
       "score": 65,
       "pressure": "forecast-driven",
-      "weather": "scattered rain showers",
+      "weather": "patchy fog",
       "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
     },
     {
@@ -126,110 +126,110 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "59F",
-          "wind": "7 mph",
-          "note": "slight chance light rain"
+          "temp": "47F",
+          "wind": "10 mph",
+          "note": "showers and thunderstorms"
         },
         {
           "label": "Midday",
-          "temp": "72F",
-          "wind": "12 mph",
-          "note": "slight chance light rain"
+          "temp": "50F",
+          "wind": "9 mph",
+          "note": "showers and thunderstorms likely"
         },
         {
           "label": "Afternoon",
-          "temp": "72F",
-          "wind": "22 mph",
-          "note": "mostly sunny"
+          "temp": "51F",
+          "wind": "9 mph",
+          "note": "showers and thunderstorms likely"
         },
         {
           "label": "Evening",
-          "temp": "62F",
-          "wind": "23 mph",
-          "note": "chance showers and thunderstorms"
+          "temp": "47F",
+          "wind": "9 mph",
+          "note": "showers and thunderstorms"
         }
       ],
-      "sourceErrors": [],
-      "flow": "1,260 cfs",
-      "gageHeight": "4.15 ft",
+      "sourceErrors": [
+        "USGS: HTTP Error 503: "
+      ],
       "status": "watch",
-      "score": 79,
+      "score": 65,
       "pressure": "forecast-driven",
-      "weather": "slight chance light rain",
-      "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available."
+      "weather": "showers and thunderstorms",
+      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
     },
     {
       "id": "henrys-fork-ranch",
       "forecast": [
         {
           "label": "Morning",
-          "temp": "59F",
+          "temp": "47F",
           "wind": "7 mph",
-          "note": "slight chance light rain"
+          "note": "showers and thunderstorms"
         },
         {
           "label": "Midday",
-          "temp": "73F",
-          "wind": "12 mph",
-          "note": "slight chance light rain"
+          "temp": "51F",
+          "wind": "9 mph",
+          "note": "showers and thunderstorms likely"
         },
         {
           "label": "Afternoon",
-          "temp": "72F",
-          "wind": "24 mph",
-          "note": "mostly sunny"
+          "temp": "52F",
+          "wind": "10 mph",
+          "note": "showers and thunderstorms likely"
         },
         {
           "label": "Evening",
-          "temp": "61F",
-          "wind": "24 mph",
-          "note": "chance showers and thunderstorms"
+          "temp": "46F",
+          "wind": "12 mph",
+          "note": "showers and thunderstorms"
         }
       ],
-      "sourceErrors": [],
-      "flow": "1,260 cfs",
-      "gageHeight": "4.15 ft",
+      "sourceErrors": [
+        "USGS: HTTP Error 503: "
+      ],
       "status": "watch",
-      "score": 79,
+      "score": 65,
       "pressure": "forecast-driven",
-      "weather": "slight chance light rain",
-      "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available."
+      "weather": "showers and thunderstorms",
+      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
     },
     {
       "id": "snake-south-fork-canyon",
       "forecast": [
         {
           "label": "Morning",
-          "temp": "62F",
-          "wind": "15 mph",
-          "note": "slight chance light rain"
+          "temp": "51F",
+          "wind": "9 mph",
+          "note": "showers and thunderstorms likely"
         },
         {
           "label": "Midday",
-          "temp": "78F",
-          "wind": "14 mph",
-          "note": "slight chance light rain"
+          "temp": "56F",
+          "wind": "9 mph",
+          "note": "showers and thunderstorms likely"
         },
         {
           "label": "Afternoon",
-          "temp": "79F",
-          "wind": "22 mph",
-          "note": "chance showers and thunderstorms"
+          "temp": "56F",
+          "wind": "9 mph",
+          "note": "showers and thunderstorms"
         },
         {
           "label": "Evening",
-          "temp": "67F",
-          "wind": "16 mph",
-          "note": "slight chance showers and thunderstorms"
+          "temp": "52F",
+          "wind": "8 mph",
+          "note": "showers and thunderstorms likely"
         }
       ],
       "sourceErrors": [],
-      "flow": "13,100 cfs",
-      "gageHeight": "9.05 ft",
+      "flow": "13,200 cfs",
+      "gageHeight": "9.07 ft",
       "status": "watch",
       "score": 79,
       "pressure": "forecast-driven",
-      "weather": "slight chance light rain",
+      "weather": "showers and thunderstorms likely",
       "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available."
     },
     {
@@ -237,74 +237,74 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "62F",
-          "wind": "5 mph",
-          "note": "chance light rain"
+          "temp": "49F",
+          "wind": "3 mph",
+          "note": "chance showers and thunderstorms"
         },
         {
           "label": "Midday",
-          "temp": "69F",
-          "wind": "8 mph",
-          "note": "chance light rain"
+          "temp": "58F",
+          "wind": "6 mph",
+          "note": "chance showers and thunderstorms"
         },
         {
           "label": "Afternoon",
-          "temp": "66F",
-          "wind": "12 mph",
-          "note": "showers and thunderstorms likely"
+          "temp": "58F",
+          "wind": "7 mph",
+          "note": "showers and thunderstorms"
         },
         {
           "label": "Evening",
-          "temp": "60F",
-          "wind": "7 mph",
+          "temp": "52F",
+          "wind": "8 mph",
           "note": "chance showers and thunderstorms"
         }
       ],
-      "sourceErrors": [],
-      "flow": "507 cfs",
-      "gageHeight": "2.56 ft",
+      "sourceErrors": [
+        "USGS: HTTP Error 503: "
+      ],
       "status": "watch",
-      "score": 79,
+      "score": 65,
       "pressure": "forecast-driven",
-      "weather": "chance light rain",
-      "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available."
+      "weather": "chance showers and thunderstorms",
+      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
     },
     {
       "id": "silver-creek-preserve",
       "forecast": [
         {
           "label": "Morning",
-          "temp": "64F",
-          "wind": "5 mph",
-          "note": "slight chance light rain"
+          "temp": "52F",
+          "wind": "10 mph",
+          "note": "chance showers and thunderstorms"
         },
         {
           "label": "Midday",
-          "temp": "72F",
-          "wind": "13 mph",
-          "note": "slight chance light rain"
+          "temp": "58F",
+          "wind": "15 mph",
+          "note": "chance showers and thunderstorms"
         },
         {
           "label": "Afternoon",
-          "temp": "69F",
-          "wind": "26 mph",
-          "note": "slight chance light rain"
+          "temp": "60F",
+          "wind": "21 mph",
+          "note": "chance showers and thunderstorms"
         },
         {
           "label": "Evening",
-          "temp": "62F",
-          "wind": "17 mph",
-          "note": "chance light rain"
+          "temp": "54F",
+          "wind": "22 mph",
+          "note": "mostly cloudy"
         }
       ],
       "sourceErrors": [],
-      "flow": "102 cfs",
-      "gageHeight": "6.70 ft",
-      "water": "61F",
+      "flow": "103 cfs",
+      "gageHeight": "6.71 ft",
+      "water": "56F",
       "status": "good",
       "score": 87,
       "pressure": "forecast-driven",
-      "weather": "slight chance light rain",
+      "weather": "chance showers and thunderstorms",
       "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available, water temperature is available."
     },
     {
@@ -312,36 +312,36 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "66F",
-          "wind": "12 mph",
-          "note": "slight chance light rain"
+          "temp": "52F",
+          "wind": "7 mph",
+          "note": "showers and thunderstorms likely"
         },
         {
           "label": "Midday",
-          "temp": "77F",
-          "wind": "14 mph",
-          "note": "slight chance light rain"
+          "temp": "56F",
+          "wind": "8 mph",
+          "note": "showers and thunderstorms"
         },
         {
           "label": "Afternoon",
-          "temp": "76F",
-          "wind": "23 mph",
-          "note": "chance showers and thunderstorms"
+          "temp": "54F",
+          "wind": "9 mph",
+          "note": "showers and thunderstorms likely"
         },
         {
           "label": "Evening",
-          "temp": "64F",
-          "wind": "16 mph",
-          "note": "chance showers and thunderstorms"
+          "temp": "49F",
+          "wind": "10 mph",
+          "note": "showers and thunderstorms likely"
         }
       ],
       "sourceErrors": [],
-      "flow": "614 cfs",
-      "gageHeight": "2.45 ft",
+      "flow": "575 cfs",
+      "gageHeight": "2.38 ft",
       "status": "watch",
       "score": 79,
       "pressure": "forecast-driven",
-      "weather": "slight chance light rain",
+      "weather": "showers and thunderstorms likely",
       "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available."
     },
     {
@@ -349,34 +349,34 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "48F",
-          "wind": "7 mph",
-          "note": "chance light rain"
+          "temp": "41F",
+          "wind": "1 mph",
+          "note": "showers and thunderstorms"
         },
         {
           "label": "Midday",
-          "temp": "60F",
-          "wind": "12 mph",
-          "note": "light rain likely"
+          "temp": "52F",
+          "wind": "5 mph",
+          "note": "showers and thunderstorms likely"
         },
         {
           "label": "Afternoon",
-          "temp": "61F",
-          "wind": "10 mph",
+          "temp": "52F",
+          "wind": "7 mph",
           "note": "showers and thunderstorms"
         },
         {
           "label": "Evening",
-          "temp": "55F",
-          "wind": "6 mph",
-          "note": "showers and thunderstorms likely"
+          "temp": "47F",
+          "wind": "7 mph",
+          "note": "showers and thunderstorms"
         }
       ],
       "sourceErrors": [],
       "status": "watch",
       "score": 65,
       "pressure": "forecast-driven",
-      "weather": "chance light rain",
+      "weather": "showers and thunderstorms",
       "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
     },
     {
@@ -384,27 +384,27 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "58F",
-          "wind": "2 mph",
+          "temp": "53F",
+          "wind": "0 mph",
           "note": "light rain likely"
         },
         {
           "label": "Midday",
-          "temp": "64F",
-          "wind": "1 mph",
-          "note": "light rain"
+          "temp": "60F",
+          "wind": "2 mph",
+          "note": "showers and thunderstorms likely"
         },
         {
           "label": "Afternoon",
-          "temp": "66F",
-          "wind": "2 mph",
-          "note": "showers and thunderstorms"
+          "temp": "62F",
+          "wind": "3 mph",
+          "note": "chance showers and thunderstorms"
         },
         {
           "label": "Evening",
-          "temp": "64F",
-          "wind": "1 mph",
-          "note": "chance showers and thunderstorms"
+          "temp": "58F",
+          "wind": "5 mph",
+          "note": "slight chance light rain"
         }
       ],
       "sourceErrors": [],
@@ -419,36 +419,36 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "56F",
-          "wind": "1 mph",
-          "note": "rain showers"
+          "temp": "51F",
+          "wind": "2 mph",
+          "note": "chance rain showers"
         },
         {
           "label": "Midday",
-          "temp": "58F",
-          "wind": "1 mph",
-          "note": "rain showers"
+          "temp": "57F",
+          "wind": "3 mph",
+          "note": "slight chance rain showers"
         },
         {
           "label": "Afternoon",
           "temp": "60F",
-          "wind": "2 mph",
-          "note": "rain showers"
+          "wind": "6 mph",
+          "note": "slight chance rain showers"
         },
         {
           "label": "Evening",
-          "temp": "58F",
-          "wind": "2 mph",
-          "note": "chance rain showers"
+          "temp": "56F",
+          "wind": "5 mph",
+          "note": "slight chance rain showers"
         }
       ],
       "sourceErrors": [],
-      "flow": "1,260 cfs",
-      "gageHeight": "6.68 ft",
+      "flow": "1,350 cfs",
+      "gageHeight": "6.77 ft",
       "status": "watch",
       "score": 79,
       "pressure": "forecast-driven",
-      "weather": "rain showers",
+      "weather": "chance rain showers",
       "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available."
     }
   ]
