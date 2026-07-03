@@ -508,13 +508,22 @@
     }
 
     .source-link {
+      display: block;
       color: var(--river);
       text-decoration: none;
       font-weight: 850;
+      font-size: 18px;
+      line-height: 1.25;
+      margin: 4px 0 3px;
+      overflow-wrap: anywhere;
     }
 
     .source-link:hover {
       text-decoration: underline;
+    }
+
+    .report-age {
+      display: block;
     }
 
     .board-toggle {
@@ -1218,15 +1227,15 @@
     };
 
     const reportSourceUrls = {
-      "Idaho Angler": "https://idahoangler.com/blogs/fishing-reports",
-      "Silver Creek Outfitters": "https://silver-creek.com/blogs/report",
-      "Henry's Fork Anglers": "https://henrysforkanglers.com/fishing-info/fishing-reports/",
-      "TroutHunter": "https://www.trouthunt.com/fishing-reports",
-      "The Lodge at Palisades Creek": "https://tlapc.com/fishing-report/",
-      "Picabo Angler": "https://picaboangler.com/blogs/fishing-reports",
-      "WorldCast Anglers": "https://www.worldcastanglers.com/fishing-reports",
-      "Red's Fly Shop notes": "https://redsflyfishing.com/blogs/fishing-reports",
-      "North 40 Fly Shop": "https://north40.com/blog/category/fly-fishing-reports"
+      "Idaho Angler": "https://idahoangler.com/blogs/fishing-report",
+      "Silver Creek Outfitters": "https://silver-creek.com/",
+      "Henry's Fork Anglers": "https://henrysforkanglers.com/blogs/fishing-reports",
+      "TroutHunter": "https://www.trouthunt.com/",
+      "The Lodge at Palisades Creek": "https://tlapc.com/category/south-fork-of-the-snake-river-fishing-report/",
+      "Picabo Angler": "https://picaboangler.com/",
+      "WorldCast Anglers": "https://www.worldcastanglers.com/",
+      "Red's Fly Shop notes": "https://redsflyfishing.com/",
+      "North 40 Fly Shop": "https://north40.com/"
     };
 
     function renderReportSource(source) {
@@ -1504,7 +1513,7 @@
           <p class="section-title">Likely Bugs & Local Report</p>
           <div class="facts">
             <div class="fact"><span class="tiny">Likely Bugs</span><strong>${reach.hatch}</strong></div>
-            <div class="fact"><span class="tiny">Report Source</span>${renderReportSource(reach.report)}<span class="tiny">${reach.reportAge}</span></div>
+            <div class="fact"><span class="tiny">Report Source</span>${renderReportSource(reach.report)}<span class="tiny report-age">${reach.reportAge}</span></div>
           </div>
         </section>
       `;
