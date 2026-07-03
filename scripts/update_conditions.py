@@ -28,7 +28,7 @@ OUTPUT_PATH = ROOT / "data" / "daily_conditions.json"
 
 NWS_USER_AGENT = os.environ.get(
     "NWS_USER_AGENT",
-    "FishableToday/0.1 (https://github.com/your-account/fishable-today)",
+    "RiffleFlyGuide/0.1 (https://github.com/torsten-mikkola/riffle-fly-guide)",
 )
 
 

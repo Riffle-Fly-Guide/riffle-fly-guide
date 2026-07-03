@@ -26,7 +26,7 @@ jobs:
 
       - name: Generate daily conditions
         env:
-          NWS_USER_AGENT: "FishableToday/0.1 (GitHub Pages MVP)"
+          NWS_USER_AGENT: "RiffleFlyGuide/0.1 (https://github.com/torsten-mikkola/riffle-fly-guide)"
         run: python scripts/update_conditions.py
 
       - name: Commit updated conditions

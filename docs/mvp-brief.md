@@ -1,8 +1,8 @@
-# Fishable Today MVP Brief
+# Riffle: The Fly Guide MVP Brief
 
 ## Product Wedge
 
-Fishable Today helps experienced fly anglers decide where to fish today among rivers and sections they already know.
+Riffle helps experienced fly anglers decide where to fish today among rivers and sections they already know.
 
 The MVP should not try to be a full fishing map, access platform, social network, or catch log. Its first job is to answer:
 

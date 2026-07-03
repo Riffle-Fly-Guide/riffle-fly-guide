@@ -1,6 +1,6 @@
-# Fishing Report
+# Riffle: The Fly Guide
 
-Fishing report is an all around website that helps fly fishermen decide where to fish given daily conditions
+Riffle is an Idaho-first fly fishing conditions guide that helps anglers decide where to fish based on daily river and weather conditions.
 
 ## Current MVP
 
