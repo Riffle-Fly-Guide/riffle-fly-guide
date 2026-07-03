@@ -32,6 +32,7 @@
 
     body {
       margin: 0;
+      overflow: hidden;
       background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.24), transparent 260px),
         var(--bg);
@@ -47,10 +48,11 @@
     }
 
     .app {
-      min-height: 100vh;
+      height: 100vh;
+      overflow: hidden;
       display: grid;
-      grid-template-columns: 310px minmax(0, 1fr) 390px;
-      grid-template-rows: auto 1fr;
+      grid-template-columns: 310px minmax(0, 1fr);
+      grid-template-rows: auto minmax(0, 1fr);
     }
 
     header {
@@ -127,16 +129,16 @@
     }
 
     aside,
-    main,
-    .detail {
-      min-height: calc(100vh - 93px);
+    main {
+      min-height: 0;
     }
 
     aside {
       border-right: 1px solid var(--line);
       background: rgba(252, 250, 243, 0.94);
       padding: 16px;
-      overflow: auto;
+      overflow-y: auto;
+      overscroll-behavior: contain;
     }
 
     aside .search {
@@ -250,7 +252,8 @@
 
     main {
       padding: 20px;
-      overflow: auto;
+      overflow-y: auto;
+      overscroll-behavior: contain;
     }
 
     .home-hero {
@@ -437,13 +440,6 @@
     .spark {
       width: 112px;
       height: 30px;
-    }
-
-    .detail {
-      border-left: 1px solid var(--line);
-      background: rgba(252, 250, 243, 0.94);
-      padding: 16px;
-      overflow: auto;
     }
 
     .brief-panel {
@@ -736,22 +732,24 @@
         grid-template-columns: 280px minmax(0, 1fr);
       }
 
-      .detail {
-        grid-column: 1 / -1;
-        min-height: auto;
-        border-left: 0;
-        border-top: 1px solid var(--line);
-      }
-
       .day-meta {
         display: none;
       }
     }
 
     @media (max-width: 760px) {
+      body {
+        overflow: auto;
+      }
+
       .app,
       header {
         display: block;
+      }
+
+      .app {
+        height: auto;
+        overflow: visible;
       }
 
       header {
@@ -768,10 +766,10 @@
       }
 
       aside,
-      main,
-      .detail {
+      main {
         min-height: auto;
         border: 0;
+        overflow: visible;
       }
 
       .scoreboard {
@@ -915,8 +913,6 @@
 
       <section class="main-profile view-hidden" id="profileView" aria-label="River profile"></section>
     </main>
-
-    <section class="detail" id="detail"></section>
   </div>
 
   <script>
@@ -1285,7 +1281,6 @@
 
     const reachList = document.getElementById("reachList");
     const reachTable = document.getElementById("reachTable");
-    const detail = document.getElementById("detail");
     const todayGrid = document.getElementById("todayGrid");
     const boardView = document.getElementById("boardView");
     const profileView = document.getElementById("profileView");
@@ -1351,25 +1346,46 @@
       `).join("");
     }
 
+    const anglerProfiles = {
+      "boise-main-town": { waterType: "Urban tailwater with riffles, runs, and easy roadside access.", bestFor: "Short walk-and-wade sessions, dry-dropper rigs, and evening caddis fishing.", access: "Generally approachable on foot, but flows can change wading depth quickly.", season: "Most consistent outside peak runoff and the hottest part of summer." },
+      "boise-south-fork": { waterType: "Cold tailwater below Anderson Ranch with larger runs and canyon water.", bestFor: "Float fishing, nymphing, and targeted dry-fly windows.", access: "Often better from a boat; wading becomes limited when releases are elevated.", season: "Strong when dam releases are steady and summer hatches are established." },
+      "boise-middle-fork": { waterType: "Remote freestone water with pocket water, pools, and mountain access.", bestFor: "Backcountry walk-and-wade fishing with attractors, stones, and caddis.", access: "Road and trail conditions matter. Avoid committing during rising runoff.", season: "Best after runoff drops and before late-season cold settles in." },
+      "henrys-fork-box": { waterType: "Fast, structured tailwater with deep slots and pocket water.", bestFor: "Floating, heavy nymph rigs, streamers, and stonefly dries when active.", access: "Powerful water; most anglers treat this as boat-first fishing.", season: "Productive across a long season when releases remain stable." },
+      "henrys-fork-ranch": { waterType: "Slow, clear, technical water known for selective trout.", bestFor: "Precise dry-fly fishing during mayfly, caddis, and spinner activity.", access: "Walk-and-wade friendly in places, but stealth and careful positioning matter.", season: "Best during reliable hatch periods and lower-wind mornings or evenings." },
+      "snake-south-fork-canyon": { waterType: "Large tailwater with long banks, riffles, and deep canyon runs.", bestFor: "Full-day floats, stonefly bank fishing, and riffle dry-fly sessions.", access: "Primarily boat water. Wind and release changes can reshape the day.", season: "Excellent during stonefly season and stable summer release periods." },
+      "big-wood-ketchum": { waterType: "Classic freestone river with riffles, pocket water, and accessible runs.", bestFor: "Walk-and-wade fishing with mayfly dries, caddis, and dry-dropper rigs.", access: "Good foot access, but high runoff can make wading unsafe.", season: "Best after runoff recedes through early fall, with morning summer windows." },
+      "silver-creek-preserve": { waterType: "Clear spring creek with slow currents and highly selective trout.", bestFor: "Technical dry flies, long leaders, light tippet, and careful presentations.", access: "Wade carefully and move slowly; clear water makes fish easy to spook.", season: "Shines during PMD, baetis, callibaetis, trico, and terrestrial periods." },
+      "teton-drictor": { waterType: "Meandering valley river with riffles, banks, and changing clarity.", bestFor: "Floating or selective wading when visibility and flows cooperate.", access: "Clarity is often more important than the raw flow number.", season: "Best after runoff clears and during stonefly, caddis, and terrestrial seasons." },
+      "salmon-upper-stanley": { waterType: "Cold mountain freestone water with riffles, boulders, and roadside sections.", bestFor: "Walk-and-wade fishing with attractors, stones, and caddis after runoff.", access: "Remote conditions, cold water, and spring runoff deserve extra caution.", season: "Usually strongest after the snowmelt peak through late summer." },
+      "clearwater-middle-fork": { waterType: "Broad freestone water influenced by several large tributaries.", bestFor: "Covering water with nymphs, streamers, caddis, and mayfly patterns.", access: "Check clarity and current local reports before making a long drive.", season: "Most dependable once spring flows settle and water clarity improves." },
+      "st-joe-upper": { waterType: "Scenic freestone river with pools, riffles, and classic cutthroat water.", bestFor: "Walk-and-wade dry-fly fishing with caddis, drakes, stones, and terrestrials.", access: "Roadside access is useful, but high flows can remove safe wading options.", season: "Best from the falling side of runoff through early fall." }
+    };
+
     function profileFor(reach) {
       const parent = reach.name.split(" - ")[0];
       const section = reach.name.split(" - ")[1] || reach.area;
-      const style = {
-        good: "Prime candidate today. Use this page to confirm timing, flow trend, and whether the hatch window matches your plan.",
-        watch: "Worth considering if your style fits the conditions. The details matter more than the overall score.",
-        skip: "A useful page even when the answer is no. Track why it is out and what would need to change.",
-        limited: "Confidence is thin. Use this as a checklist for what data or local confirmation is missing."
+      const standing = anglerProfiles[reach.id] || {
+        waterType: `${section} is a distinct section of ${parent} with its own flow and weather considerations.`,
+        bestFor: "Match your fishing style to current flow, wind, and hatch conditions.",
+        access: "Check local access and wading conditions before leaving.",
+        season: "Seasonal timing varies with runoff, water temperature, and local hatches."
+      };
+      const dailyPlans = {
+        good: `This is one of today's better options. Focus on ${reach.hatch}; ${reach.weather}.`,
+        watch: `Fishable with a plan. Time your trip around ${reach.weather}, and be ready to adjust if flow or wind changes.`,
+        skip: `A better day to choose another reach. Current flow or weather makes this a lower-confidence fishing option.`,
+        limited: `Conditions may be workable, but confirm clarity, access, or a recent local report before making the drive.`
       };
 
       return {
-        overview: `${section} fishes differently from the rest of ${parent}. This profile should hold the standing knowledge: how the reach behaves, which data matters, and what kind of day makes it worth the drive.`,
-        character: reach.status === "good" ? "Reliable daily option when flows and wind line up." : reach.status === "skip" ? "Condition-sensitive water that can swing quickly with flow, runoff, or weather." : "Situational fishery where timing, clarity, and angler style decide the day.",
-        bestUse: reach.flow.includes("cfs") && Number(reach.flow.replace(/[^0-9]/g, "")) > 1500 ? "Float-first or cautious bank plan." : "Walk-wade and short-session decision making.",
-        watchItems: style[reach.status],
+        overview: `${section} is a distinct reach of ${parent}. Use the current conditions below to decide when to go and how to fish it.`,
+        dailyPlan: dailyPlans[reach.status],
+        waterType: standing.waterType,
+        bestFor: standing.bestFor,
+        access: standing.access,
+        season: standing.season,
+        watchItems: reach.reasons.join(" "),
         photoLabels: [`${reach.name} hero photo`, `${reach.name} water/holding detail`],
-        access: reach.area.includes("Treasure") ? "Easy local access with pressure. Best as a quick-session reach." : reach.area.includes("Sawtooths") ? "Remote mountain access. Road, runoff, and weather confidence matter before committing." : "Access style varies by section. The MVP should store practical notes without exposing sensitive spots.",
-        season: reach.hatch.includes("salmon") || reach.hatch.includes("golden") ? "Strong late spring and early summer upside, then caddis and terrestrial patterns later." : "Most useful when water temperature, light, and wind line up with the hatch window.",
-        dataPlan: "USGS flow trend, NWS hourly wind/weather, pressure trend, water temperature where available, and latest attributed shop report.",
         images: reachImages[reach.id] || []
       };
     }
@@ -1404,22 +1420,22 @@
               <h2>${reach.name}</h2>
               <p>${profile.overview}</p>
             </div>
-            <button class="board-toggle" id="backToBoard" type="button">Daily Board</button>
+            <button class="board-toggle" id="backToBoard" type="button">Back to Today's Rivers</button>
           </div>
           <div class="profile-photo-row">
             ${renderPhotoSlots(profile, reach, "river image slot")}
           </div>
         </article>
 
-        <section class="data-grid" aria-label="Current condition data">
-          <div class="data-tile"><span class="tiny">Flow</span><strong>${reach.flow}</strong><span class="tiny">${reach.flowNote}</span></div>
-          <div class="data-tile"><span class="tiny">Water Temp</span><strong>${reach.water}</strong><span class="tiny">daily ethics and hatch check</span></div>
-          <div class="data-tile"><span class="tiny">Weather Window</span><strong>${reach.weather}</strong></div>
-          <div class="data-tile"><span class="tiny">Pressure</span><strong>${reach.pressure}</strong><span class="tiny">barometer trend</span></div>
+        <section class="data-grid" aria-label="Current fishing conditions">
+          <div class="data-tile"><span class="tiny">Current Flow</span><strong>${reach.flow}</strong><span class="tiny">${reach.flowNote}</span></div>
+          <div class="data-tile"><span class="tiny">Water Temperature</span><strong>${reach.water}</strong><span class="tiny">Use extra care as trout water approaches 68F</span></div>
+          <div class="data-tile"><span class="tiny">Today's Weather</span><strong>${reach.weather}</strong></div>
+          <div class="data-tile"><span class="tiny">Today's Call</span><strong>${labels[reach.status]}</strong><span class="tiny">Likely bugs: ${reach.hatch}</span></div>
         </section>
 
         <section class="brief-panel">
-          <p class="section-title">Forecast Window</p>
+          <p class="section-title">When to Fish Today</p>
           <div class="forecast-strip">
             ${forecast.map((period) => `
               <div class="data-tile">
@@ -1433,34 +1449,34 @@
 
         <section class="profile-columns">
           <div class="brief-panel">
-            <p class="section-title">Daily Read</p>
-            <p class="brief-copy">${reach.why}</p>
+            <p class="section-title">Today's Game Plan</p>
+            <p class="brief-copy">${profile.dailyPlan}</p>
             <ul class="reason-list">
               ${reach.reasons.map((reason) => `<li>${reason}</li>`).join("")}
             </ul>
           </div>
           <div class="brief-panel">
-            <p class="section-title">Fishery Profile</p>
+            <p class="section-title">How This Water Fishes</p>
             <div class="profile-grid">
               <div class="profile-block">
-                <h3>Water Character</h3>
-                <div>${profile.character}</div>
+                <h3>Water Type</h3>
+                <div>${profile.waterType}</div>
               </div>
               <div class="profile-block">
-                <h3>Best Use</h3>
-                <div>${profile.bestUse}</div>
+                <h3>Best For</h3>
+                <div>${profile.bestFor}</div>
               </div>
               <div class="profile-block">
-                <h3>Access Notes</h3>
+                <h3>Wading & Access</h3>
                 <div>${profile.access}</div>
               </div>
               <div class="profile-block">
-                <h3>Seasonality</h3>
+                <h3>When It Shines</h3>
                 <div>${profile.season}</div>
               </div>
               <div class="profile-block full">
-                <h3>Data To Automate</h3>
-                <div>${profile.dataPlan}</div>
+                <h3>What Can Change the Day</h3>
+                <div>${profile.watchItems}</div>
               </div>
             </div>
           </div>
@@ -1485,9 +1501,9 @@
         </section>
 
         <section class="brief-panel">
-          <p class="section-title">Hatches And Reports</p>
+          <p class="section-title">Likely Bugs & Local Report</p>
           <div class="facts">
-            <div class="fact"><span class="tiny">Likely Hatch</span><strong>${reach.hatch}</strong></div>
+            <div class="fact"><span class="tiny">Likely Bugs</span><strong>${reach.hatch}</strong></div>
             <div class="fact"><span class="tiny">Report Source</span>${renderReportSource(reach.report)}<span class="tiny">${reach.reportAge}</span></div>
           </div>
         </section>
@@ -1523,70 +1539,6 @@
       }
     }
 
-    function renderDetail() {
-      const reach = reaches.find((item) => item.id === state.selected) || visibleReaches()[0] || reaches[0];
-      state.selected = reach.id;
-      const profile = profileFor(reach);
-      detail.innerHTML = `
-        <div class="brief-panel">
-          <span class="status ${reach.status}">${labels[reach.status]}</span>
-          <h2>${reach.name}</h2>
-          <div class="tiny">${reach.area} · confidence score ${reach.score}</div>
-          <p class="brief-copy">${reach.why}</p>
-          <div class="facts">
-            <div class="fact"><span class="tiny">Flow</span><strong>${reach.flow}</strong><span class="tiny">${reach.flowNote}</span></div>
-            <div class="fact"><span class="tiny">Water Temp</span><strong>${reach.water}</strong><span class="tiny">trout comfort check</span></div>
-            <div class="fact"><span class="tiny">Weather</span><strong>${reach.weather}</strong></div>
-            <div class="fact"><span class="tiny">Hatch Read</span><strong>${reach.hatch}</strong></div>
-          </div>
-          <ul class="reason-list">
-            ${reach.reasons.map((reason) => `<li>${reason}</li>`).join("")}
-          </ul>
-        </div>
-
-        <p class="section-title">River Profile</p>
-        <div class="brief-panel">
-          <div class="photo-grid">
-            ${renderPhotoSlots(profile, reach, "image slot")}
-          </div>
-          <div class="profile-grid">
-            <div class="profile-block full">
-              <h3>Overview</h3>
-              <div>${profile.overview}</div>
-            </div>
-            <div class="profile-block">
-              <h3>Water Character</h3>
-              <div>${profile.character}</div>
-            </div>
-            <div class="profile-block">
-              <h3>Best Use</h3>
-              <div>${profile.bestUse}</div>
-            </div>
-            <div class="profile-block">
-              <h3>Primary Hatch Read</h3>
-              <div>${reach.hatch}</div>
-            </div>
-            <div class="profile-block">
-              <h3>Watch Items</h3>
-              <div>${profile.watchItems}</div>
-            </div>
-          </div>
-        </div>
-
-        <p class="section-title">Report Signal</p>
-        <div class="reports">
-          <div class="report-card">
-            ${renderReportSource(reach.report)}
-            <div class="tiny">${reach.reportAge} · MVP should show source title, date, attribution, and outbound link.</div>
-          </div>
-          <div class="report-card">
-            <strong>Data Sources To Wire</strong>
-            <div class="tiny">USGS gage IDs, NWS point forecast, nearby observation station, known hatch calendar, local shop report URLs.</div>
-          </div>
-        </div>
-      `;
-    }
-
     function renderCounts() {
       document.getElementById("goodCount").textContent = reaches.filter((reach) => reach.status === "good").length;
       document.getElementById("watchCount").textContent = reaches.filter((reach) => reach.status === "watch").length;
@@ -1598,7 +1550,6 @@
       renderList();
       renderTable();
       renderTodayGrid();
-      renderDetail();
       renderViewMode();
     }
 
