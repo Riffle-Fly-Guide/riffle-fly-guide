@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Riffle: The Fly Guide | Idaho River Conditions</title>
+  <link rel="icon" type="image/jpeg" href="Assets/Logos/riffle-logo-square.jpg">
   <style>
     :root {
       color-scheme: light;
@@ -16,9 +17,11 @@
       --yellow: #b87924;
       --red: #aa4238;
       --blue: #244f68;
-      --river: #244f68;
-      --river-dark: #102f3d;
-      --spruce: #254b3c;
+      --brand: #2c4830;
+      --brand-dark: #203625;
+      --river: #2c4830;
+      --river-dark: #203625;
+      --spruce: #2c4830;
       --willow: #b78a3b;
       --shadow: 0 18px 42px rgba(22, 34, 31, 0.12);
     }
@@ -53,11 +56,11 @@
     header {
       grid-column: 1 / -1;
       display: grid;
-      grid-template-columns: 310px minmax(0, 1fr) 390px;
+      grid-template-columns: minmax(280px, 1fr) auto;
       align-items: center;
       gap: 18px;
-      padding: 18px 22px;
-      background: rgba(16, 47, 61, 0.96);
+      padding: 8px 22px;
+      background: var(--brand);
       border-bottom: 1px solid rgba(255, 255, 255, 0.14);
       position: sticky;
       top: 0;
@@ -79,30 +82,14 @@
       cursor: pointer;
     }
 
-    .mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 7px;
-      display: grid;
-      place-items: center;
-      background: #1f4d46;
-      color: #fff;
-      font-weight: 800;
+    .brand-logo {
+      display: block;
+      width: min(290px, 100%);
+      height: 76px;
+      object-fit: contain;
+      object-position: left center;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 18px;
-      line-height: 1.1;
-    }
-
-    .sub {
-      margin: 2px 0 0;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    header .sub,
     header .day-meta {
       color: rgba(247, 242, 230, 0.72);
     }
@@ -114,6 +101,11 @@
       padding: 10px 12px;
       background: rgba(255, 255, 255, 0.95);
       color: var(--ink);
+    }
+
+    .search:focus {
+      outline: 2px solid rgba(44, 72, 48, 0.24);
+      border-color: var(--brand);
     }
 
     .day-meta {
@@ -137,7 +129,7 @@
     aside,
     main,
     .detail {
-      min-height: calc(100vh - 73px);
+      min-height: calc(100vh - 93px);
     }
 
     aside {
@@ -145,6 +137,10 @@
       background: rgba(252, 250, 243, 0.94);
       padding: 16px;
       overflow: auto;
+    }
+
+    aside .search {
+      margin-bottom: 18px;
     }
 
     .section-title {
@@ -174,8 +170,8 @@
 
     .filter.active {
       color: white;
-      background: #1f4d46;
-      border-color: #1f4d46;
+      background: var(--brand);
+      border-color: var(--brand);
     }
 
     .reach-list {
@@ -197,8 +193,8 @@
     }
 
     .reach-button.active {
-      border-color: #1f4d46;
-      box-shadow: 0 0 0 2px rgba(31, 77, 70, 0.18);
+      border-color: var(--brand);
+      box-shadow: 0 0 0 2px rgba(44, 72, 48, 0.2);
     }
 
     .reach-button.watch {
@@ -763,7 +759,12 @@
       }
 
       .search {
-        margin-top: 12px;
+        margin-top: 0;
+      }
+
+      .brand-logo {
+        width: 250px;
+        height: 68px;
       }
 
       aside,
@@ -824,13 +825,8 @@
   <div class="app">
     <header>
       <button class="brand" id="brandHome" type="button" aria-label="Go to Riffle home">
-        <div class="mark">R</div>
-        <div>
-          <h1>Riffle</h1>
-          <p class="sub">The Fly Guide | Idaho river conditions</p>
-        </div>
+        <img class="brand-logo" src="Assets/Logos/riffle-logo-rect.jpg" alt="Riffle: The Fly Guide">
       </button>
-      <input class="search" id="search" type="search" placeholder="Search rivers, forks, towns, hatches">
       <div class="day-meta">
         <span class="pill" id="updatedAt">Updated 6:15 AM MT</span>
         <span class="pill">USGS + NWS + shop reports</span>
@@ -838,6 +834,8 @@
     </header>
 
     <aside>
+      <p class="section-title">Search Rivers</p>
+      <input class="search" id="search" type="search" placeholder="River, fork, town, or hatch">
       <p class="section-title">Condition Filters</p>
       <div class="filters">
         <button class="filter active" data-filter="all">All</button>
