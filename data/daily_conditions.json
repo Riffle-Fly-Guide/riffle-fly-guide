@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T14:27:20.096200+00:00",
+  "generatedAt": "2026-07-03T14:30:21.176043+00:00",
   "sourceStatus": {
     "usgs": "live where gage IDs are mapped",
     "nws": "live point/hourly forecasts",
@@ -16,27 +16,27 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "62F",
-          "wind": "1 mph",
-          "note": "sunny"
+          "temp": "67F",
+          "wind": "2 mph",
+          "note": "mostly sunny"
         },
         {
           "label": "Midday",
-          "temp": "76F",
-          "wind": "5 mph",
-          "note": "sunny"
+          "temp": "82F",
+          "wind": "3 mph",
+          "note": "mostly sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "84F",
-          "wind": "6 mph",
+          "temp": "89F",
+          "wind": "7 mph",
           "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "82F",
-          "wind": "6 mph",
-          "note": "clear"
+          "temp": "86F",
+          "wind": "8 mph",
+          "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
@@ -45,7 +45,7 @@
       "status": "watch",
       "score": 79,
       "pressure": "forecast-driven",
-      "weather": "sunny",
+      "weather": "mostly sunny",
       "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available."
     },
     {
@@ -53,37 +53,37 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "61F",
-          "wind": "2 mph",
-          "note": "sunny"
+          "temp": "67F",
+          "wind": "5 mph",
+          "note": "partly sunny"
         },
         {
           "label": "Midday",
-          "temp": "76F",
-          "wind": "5 mph",
+          "temp": "81F",
+          "wind": "6 mph",
           "note": "mostly sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "80F",
-          "wind": "8 mph",
+          "temp": "85F",
+          "wind": "10 mph",
           "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "74F",
-          "wind": "7 mph",
+          "temp": "78F",
+          "wind": "10 mph",
           "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
-      "flow": "1,590 cfs",
-      "gageHeight": "4.91 ft",
+      "flow": "1,580 cfs",
+      "gageHeight": "4.90 ft",
       "water": "45F",
       "status": "good",
       "score": 87,
       "pressure": "forecast-driven",
-      "weather": "sunny",
+      "weather": "partly sunny",
       "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available, water temperature is available."
     },
     {
@@ -91,34 +91,34 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "56F",
+          "temp": "60F",
           "wind": "2 mph",
-          "note": "sunny"
+          "note": "mostly sunny"
         },
         {
           "label": "Midday",
-          "temp": "73F",
+          "temp": "76F",
           "wind": "5 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "77F",
-          "wind": "10 mph",
+          "temp": "80F",
+          "wind": "13 mph",
           "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "68F",
-          "wind": "7 mph",
-          "note": "clear"
+          "temp": "71F",
+          "wind": "9 mph",
+          "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
       "status": "watch",
       "score": 65,
       "pressure": "forecast-driven",
-      "weather": "sunny",
+      "weather": "mostly sunny",
       "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
     },
     {
@@ -126,32 +126,32 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "57F",
-          "wind": "2 mph",
+          "temp": "52F",
+          "wind": "1 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "68F",
-          "wind": "8 mph",
-          "note": "sunny"
-        },
-        {
-          "label": "Afternoon",
-          "temp": "70F",
-          "wind": "12 mph",
+          "temp": "67F",
+          "wind": "7 mph",
           "note": "mostly sunny"
         },
         {
+          "label": "Afternoon",
+          "temp": "72F",
+          "wind": "9 mph",
+          "note": "partly sunny"
+        },
+        {
           "label": "Evening",
-          "temp": "64F",
-          "wind": "7 mph",
-          "note": "mostly cloudy"
+          "temp": "67F",
+          "wind": "5 mph",
+          "note": "partly cloudy"
         }
       ],
       "sourceErrors": [],
-      "flow": "1,060 cfs",
-      "gageHeight": "3.86 ft",
+      "flow": "1,070 cfs",
+      "gageHeight": "3.88 ft",
       "status": "watch",
       "score": 79,
       "pressure": "forecast-driven",
@@ -163,36 +163,36 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "55F",
+          "temp": "49F",
           "wind": "1 mph",
-          "note": "mostly sunny"
+          "note": "patchy fog"
         },
         {
           "label": "Midday",
-          "temp": "67F",
+          "temp": "66F",
           "wind": "7 mph",
-          "note": "sunny"
-        },
-        {
-          "label": "Afternoon",
-          "temp": "72F",
-          "wind": "12 mph",
           "note": "mostly sunny"
         },
         {
+          "label": "Afternoon",
+          "temp": "74F",
+          "wind": "10 mph",
+          "note": "partly sunny"
+        },
+        {
           "label": "Evening",
-          "temp": "66F",
-          "wind": "8 mph",
-          "note": "mostly cloudy"
+          "temp": "68F",
+          "wind": "5 mph",
+          "note": "partly cloudy"
         }
       ],
       "sourceErrors": [],
-      "flow": "1,060 cfs",
-      "gageHeight": "3.86 ft",
+      "flow": "1,070 cfs",
+      "gageHeight": "3.88 ft",
       "status": "watch",
       "score": 79,
       "pressure": "forecast-driven",
-      "weather": "mostly sunny",
+      "weather": "patchy fog",
       "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available."
     },
     {
@@ -200,69 +200,32 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "61F",
-          "wind": "5 mph",
-          "note": "mostly sunny"
-        },
-        {
-          "label": "Midday",
-          "temp": "72F",
-          "wind": "5 mph",
-          "note": "mostly sunny"
-        },
-        {
-          "label": "Afternoon",
-          "temp": "76F",
-          "wind": "9 mph",
-          "note": "chance showers and thunderstorms"
-        },
-        {
-          "label": "Evening",
-          "temp": "65F",
+          "temp": "63F",
           "wind": "6 mph",
-          "note": "slight chance light rain"
-        }
-      ],
-      "sourceErrors": [],
-      "flow": "13,100 cfs",
-      "gageHeight": "9.03 ft",
-      "status": "watch",
-      "score": 79,
-      "pressure": "forecast-driven",
-      "weather": "mostly sunny",
-      "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available."
-    },
-    {
-      "id": "big-wood-ketchum",
-      "forecast": [
-        {
-          "label": "Morning",
-          "temp": "60F",
-          "wind": "3 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "72F",
-          "wind": "5 mph",
-          "note": "mostly sunny"
+          "temp": "76F",
+          "wind": "7 mph",
+          "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "76F",
-          "wind": "8 mph",
-          "note": "mostly sunny"
+          "temp": "79F",
+          "wind": "9 mph",
+          "note": "slight chance showers and thunderstorms"
         },
         {
           "label": "Evening",
-          "temp": "69F",
-          "wind": "7 mph",
+          "temp": "64F",
+          "wind": "5 mph",
           "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
-      "flow": "452 cfs",
-      "gageHeight": "2.44 ft",
+      "flow": "14,100 cfs",
+      "gageHeight": "9.31 ft",
       "status": "watch",
       "score": 79,
       "pressure": "forecast-driven",
@@ -270,36 +233,73 @@
       "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available."
     },
     {
-      "id": "silver-creek-preserve",
+      "id": "big-wood-ketchum",
       "forecast": [
         {
           "label": "Morning",
-          "temp": "63F",
+          "temp": "62F",
           "wind": "3 mph",
           "note": "mostly sunny"
         },
         {
           "label": "Midday",
           "temp": "74F",
-          "wind": "7 mph",
+          "wind": "3 mph",
           "note": "mostly sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "78F",
-          "wind": "14 mph",
-          "note": "mostly sunny"
+          "temp": "80F",
+          "wind": "8 mph",
+          "note": "partly sunny"
         },
         {
           "label": "Evening",
-          "temp": "71F",
+          "temp": "72F",
+          "wind": "6 mph",
+          "note": "mostly clear"
+        }
+      ],
+      "sourceErrors": [],
+      "flow": "434 cfs",
+      "gageHeight": "2.40 ft",
+      "status": "watch",
+      "score": 79,
+      "pressure": "forecast-driven",
+      "weather": "mostly sunny",
+      "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available."
+    },
+    {
+      "id": "silver-creek-preserve",
+      "forecast": [
+        {
+          "label": "Morning",
+          "temp": "68F",
+          "wind": "3 mph",
+          "note": "mostly sunny"
+        },
+        {
+          "label": "Midday",
+          "temp": "79F",
+          "wind": "5 mph",
+          "note": "mostly sunny"
+        },
+        {
+          "label": "Afternoon",
+          "temp": "84F",
+          "wind": "13 mph",
+          "note": "sunny"
+        },
+        {
+          "label": "Evening",
+          "temp": "77F",
           "wind": "14 mph",
           "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
-      "flow": "114 cfs",
-      "gageHeight": "6.77 ft",
+      "flow": "115 cfs",
+      "gageHeight": "6.78 ft",
       "water": "58F",
       "status": "good",
       "score": 87,
@@ -312,32 +312,32 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "63F",
-          "wind": "3 mph",
+          "temp": "66F",
+          "wind": "5 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "72F",
-          "wind": "5 mph",
-          "note": "mostly sunny"
+          "temp": "76F",
+          "wind": "8 mph",
+          "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "74F",
-          "wind": "9 mph",
-          "note": "slight chance showers and thunderstorms"
+          "temp": "78F",
+          "wind": "10 mph",
+          "note": "mostly cloudy"
         },
         {
           "label": "Evening",
-          "temp": "64F",
-          "wind": "8 mph",
-          "note": "mostly cloudy"
+          "temp": "68F",
+          "wind": "6 mph",
+          "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
-      "flow": "478 cfs",
-      "gageHeight": "2.20 ft",
+      "flow": "467 cfs",
+      "gageHeight": "2.18 ft",
       "status": "watch",
       "score": 79,
       "pressure": "forecast-driven",
@@ -350,26 +350,61 @@
         {
           "label": "Morning",
           "temp": "52F",
-          "wind": "1 mph",
+          "wind": "0 mph",
+          "note": "patchy fog"
+        },
+        {
+          "label": "Midday",
+          "temp": "70F",
+          "wind": "6 mph",
+          "note": "mostly sunny"
+        },
+        {
+          "label": "Afternoon",
+          "temp": "76F",
+          "wind": "10 mph",
+          "note": "mostly sunny"
+        },
+        {
+          "label": "Evening",
+          "temp": "66F",
+          "wind": "9 mph",
+          "note": "clear"
+        }
+      ],
+      "sourceErrors": [],
+      "status": "watch",
+      "score": 65,
+      "pressure": "forecast-driven",
+      "weather": "patchy fog",
+      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
+    },
+    {
+      "id": "clearwater-middle-fork",
+      "forecast": [
+        {
+          "label": "Morning",
+          "temp": "62F",
+          "wind": "0 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "68F",
-          "wind": "7 mph",
+          "temp": "80F",
+          "wind": "1 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "72F",
-          "wind": "10 mph",
+          "temp": "85F",
+          "wind": "3 mph",
           "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "63F",
-          "wind": "8 mph",
-          "note": "clear"
+          "temp": "76F",
+          "wind": "2 mph",
+          "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
@@ -380,75 +415,40 @@
       "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
     },
     {
-      "id": "clearwater-middle-fork",
-      "forecast": [
-        {
-          "label": "Morning",
-          "temp": "58F",
-          "wind": "0 mph",
-          "note": "mostly sunny"
-        },
-        {
-          "label": "Midday",
-          "temp": "74F",
-          "wind": "1 mph",
-          "note": "sunny"
-        },
-        {
-          "label": "Afternoon",
-          "temp": "80F",
-          "wind": "3 mph",
-          "note": "sunny"
-        },
-        {
-          "label": "Evening",
-          "temp": "72F",
-          "wind": "2 mph",
-          "note": "partly cloudy"
-        }
-      ],
-      "sourceErrors": [],
-      "status": "watch",
-      "score": 65,
-      "pressure": "forecast-driven",
-      "weather": "mostly sunny",
-      "why": "Condition score generated from mapped USGS/NWS sources; flow gage is not yet mapped."
-    },
-    {
       "id": "st-joe-upper",
       "forecast": [
         {
           "label": "Morning",
-          "temp": "58F",
-          "wind": "2 mph",
-          "note": "mostly sunny"
+          "temp": "62F",
+          "wind": "0 mph",
+          "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "70F",
-          "wind": "5 mph",
+          "temp": "72F",
+          "wind": "3 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "72F",
-          "wind": "5 mph",
+          "temp": "76F",
+          "wind": "6 mph",
           "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "64F",
-          "wind": "5 mph",
-          "note": "partly cloudy"
+          "temp": "68F",
+          "wind": "2 mph",
+          "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
-      "flow": "1,250 cfs",
-      "gageHeight": "6.67 ft",
+      "flow": "1,170 cfs",
+      "gageHeight": "6.59 ft",
       "status": "watch",
       "score": 79,
       "pressure": "forecast-driven",
-      "weather": "mostly sunny",
+      "weather": "sunny",
       "why": "Condition score generated from mapped USGS/NWS sources; live USGS flow is available."
     }
   ]
