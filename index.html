@@ -194,6 +194,11 @@
       gap: 6px;
     }
 
+    .reach-button.favorite {
+      background: linear-gradient(180deg, #fffaf0, #ffffff);
+      box-shadow: 0 10px 24px rgba(112, 78, 28, 0.1);
+    }
+
     .reach-button.active {
       border-color: var(--brand);
       box-shadow: 0 0 0 2px rgba(44, 72, 48, 0.2);
@@ -218,9 +223,47 @@
       align-items: start;
     }
 
+    .reach-label {
+      min-width: 0;
+    }
+
+    .reach-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
     .reach-name {
       font-weight: 800;
       line-height: 1.18;
+    }
+
+    .favorite-toggle {
+      width: 30px;
+      height: 30px;
+      display: inline-grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.96);
+      color: #8b816f;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, color 160ms ease;
+    }
+
+    .favorite-toggle:hover {
+      transform: translateY(-1px);
+      border-color: var(--willow);
+      color: var(--willow);
+    }
+
+    .favorite-toggle.active {
+      border-color: #d9a53e;
+      background: #fff3ca;
+      color: #9b6712;
     }
 
     .status {
@@ -359,6 +402,17 @@
       background: rgba(255, 255, 255, 0.96);
     }
 
+    .favorites-panel {
+      padding: 16px;
+      margin-bottom: 18px;
+      background:
+        linear-gradient(135deg, rgba(183, 138, 59, 0.16), transparent 42%),
+        linear-gradient(180deg, #fffdf8, #ffffff);
+      border: 1px solid #d9c79d;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
     .today-head {
       display: flex;
       justify-content: space-between;
@@ -377,6 +431,71 @@
       margin: 4px 0 0;
       color: var(--muted);
       font-size: 13px;
+    }
+
+    .favorites-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .favorite-card {
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--green);
+      border-radius: 8px;
+      padding: 12px;
+      min-height: 154px;
+      background: rgba(255, 255, 255, 0.92);
+      cursor: pointer;
+      display: grid;
+      gap: 9px;
+      align-content: start;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .favorite-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(22, 34, 31, 0.12);
+    }
+
+    .favorite-card.watch {
+      border-left-color: var(--yellow);
+    }
+
+    .favorite-card.skip {
+      border-left-color: var(--red);
+    }
+
+    .favorite-card.limited {
+      border-left-color: var(--blue);
+    }
+
+    .favorite-card-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .favorite-card h3 {
+      margin: 6px 0 2px;
+      font-size: 17px;
+      line-height: 1.12;
+    }
+
+    .favorite-empty {
+      border: 1px dashed #bea866;
+      border-radius: 8px;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--muted);
+    }
+
+    .favorite-empty strong {
+      display: block;
+      color: var(--ink);
+      font-size: 17px;
+      margin-bottom: 3px;
     }
 
     .rank-grid {
@@ -404,6 +523,13 @@
       margin: 8px 0 4px;
       font-size: 16px;
       line-height: 1.15;
+    }
+
+    .card-tools {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: start;
     }
 
     .table-panel {
@@ -792,6 +918,7 @@
       }
 
       .rank-grid,
+      .favorites-grid,
       .profile-grid,
       .photo-grid,
       .data-grid,
@@ -829,6 +956,7 @@
       <p class="section-title">Condition Filters</p>
       <div class="filters">
         <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="favorites">Favorites</button>
         <button class="filter" data-filter="good">Best</button>
         <button class="filter" data-filter="watch">Watch</button>
         <button class="filter" data-filter="skip">Skip</button>
@@ -869,9 +997,20 @@
             <div class="metric-label">Skip or wait</div>
           </div>
           <div class="metric-card">
-            <div class="metric">12</div>
-            <div class="metric-label">Tracked forks and sections</div>
+            <div class="metric" id="favoriteCount">0</div>
+            <div class="metric-label">Saved rivers</div>
           </div>
+        </section>
+
+        <section class="favorites-panel" aria-label="Favorite river conditions">
+          <div class="today-head">
+            <div>
+              <h2>Your Saved Water</h2>
+              <p class="today-copy">Star the rivers you actually watch, then start every morning with their status, flow, bugs, and confidence.</p>
+            </div>
+            <span class="pill" id="favoritesSummary">Local to this browser</span>
+          </div>
+          <div class="favorites-grid" id="favoritesGrid"></div>
         </section>
 
         <section class="today-panel" aria-label="Today's river recommendations">
@@ -1259,18 +1398,57 @@
       filter: "all",
       selected: reaches[0].id,
       query: "",
-      view: "board"
+      view: "board",
+      favoriteIds: new Set()
     };
 
     const reachList = document.getElementById("reachList");
     const reachTable = document.getElementById("reachTable");
     const todayGrid = document.getElementById("todayGrid");
+    const favoritesGrid = document.getElementById("favoritesGrid");
     const boardView = document.getElementById("boardView");
     const profileView = document.getElementById("profileView");
+    const favoriteStorageKey = "riffle.favoriteReachIds";
+
+    function loadFavoriteIds() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(favoriteStorageKey) || "[]");
+        state.favoriteIds = new Set(saved.filter((id) => reaches.some((reach) => reach.id === id)));
+      } catch (error) {
+        state.favoriteIds = new Set();
+      }
+    }
+
+    function saveFavoriteIds() {
+      localStorage.setItem(favoriteStorageKey, JSON.stringify([...state.favoriteIds]));
+    }
+
+    function isFavorited(id) {
+      return state.favoriteIds.has(id);
+    }
+
+    function favoriteButton(reach) {
+      const active = isFavorited(reach.id);
+      const action = active ? "Remove from favorites" : "Save to favorites";
+      return `<button class="favorite-toggle ${active ? "active" : ""}" type="button" data-favorite-id="${reach.id}" aria-label="${action}: ${reach.name}" title="${action}">${active ? "&#9733;" : "&#9734;"}</button>`;
+    }
+
+    function toggleFavorite(id) {
+      if (state.favoriteIds.has(id)) {
+        state.favoriteIds.delete(id);
+      } else {
+        state.favoriteIds.add(id);
+      }
+      saveFavoriteIds();
+      if (state.filter === "favorites" && visibleReaches().length === 0) {
+        state.filter = "all";
+        document.querySelectorAll(".filter").forEach((item) => item.classList.toggle("active", item.dataset.filter === "all"));
+      }
+    }
 
     function visibleReaches() {
       return reaches.filter((reach) => {
-        const filterMatch = state.filter === "all" || reach.status === state.filter;
+        const filterMatch = state.filter === "all" || (state.filter === "favorites" ? isFavorited(reach.id) : reach.status === state.filter);
         const haystack = `${reach.name} ${reach.area} ${reach.hatch} ${reach.report}`.toLowerCase();
         return filterMatch && haystack.includes(state.query.toLowerCase());
       });
@@ -1289,23 +1467,26 @@
 
     function renderList() {
       reachList.innerHTML = visibleReaches().map((reach) => `
-        <button class="reach-button ${reach.status} ${reach.id === state.selected ? "active" : ""}" data-id="${reach.id}">
+        <article class="reach-button ${reach.status} ${isFavorited(reach.id) ? "favorite" : ""} ${reach.id === state.selected ? "active" : ""}" data-id="${reach.id}" role="button" tabindex="0">
           <span class="reach-top">
-            <span>
+            <span class="reach-label">
               <span class="reach-name">${reach.name}</span>
               <span class="tiny">${reach.area}</span>
             </span>
-            <span class="status ${reach.status}">${labels[reach.status]}</span>
+            <span class="reach-actions">
+              ${favoriteButton(reach)}
+              <span class="status ${reach.status}">${labels[reach.status]}</span>
+            </span>
           </span>
           <span class="tiny">${reach.flow} · ${reach.water} · ${reach.hatch}</span>
-        </button>
+        </article>
       `).join("");
     }
 
     function renderTable() {
       reachTable.innerHTML = visibleReaches().map((reach) => `
         <tr data-id="${reach.id}">
-          <td><strong>${reach.name}</strong><br><span class="tiny">${reach.area}</span></td>
+          <td>${favoriteButton(reach)} <strong>${reach.name}</strong><br><span class="tiny">${reach.area}</span></td>
           <td><span class="status ${reach.status}">${labels[reach.status]}</span><br><span class="tiny">Score ${reach.score}</span></td>
           <td><strong>${reach.flow}</strong><br><span class="tiny">${reach.flowNote}</span></td>
           <td><strong>${reach.water}</strong><br><span class="tiny">Pressure ${reach.pressure}</span></td>
@@ -1316,16 +1497,52 @@
       `).join("");
     }
 
+    function renderFavoritesGrid() {
+      const favorites = reaches
+        .filter((reach) => isFavorited(reach.id))
+        .sort((a, b) => b.score - a.score);
+      document.getElementById("favoritesSummary").textContent = favorites.length ? `${favorites.length} saved in this browser` : "Local to this browser";
+      if (!favorites.length) {
+        favoritesGrid.innerHTML = `
+          <div class="favorite-empty">
+            <strong>No saved rivers yet.</strong>
+            Star the reaches you fish most, and they will show up here before the all-Idaho board.
+          </div>
+        `;
+        return;
+      }
+      favoritesGrid.innerHTML = favorites.map((reach) => `
+        <article class="favorite-card ${reach.status}" data-id="${reach.id}" role="button" tabindex="0">
+          <div class="favorite-card-head">
+            <span class="status ${reach.status}">${labels[reach.status]}</span>
+            ${favoriteButton(reach)}
+          </div>
+          <div>
+            <h3>${reach.name}</h3>
+            <div class="tiny">${reach.area}</div>
+          </div>
+          <div class="facts">
+            <div class="fact"><span class="tiny">Flow</span><strong>${reach.flow}</strong><span class="tiny">${reach.flowNote}</span></div>
+            <div class="fact"><span class="tiny">Bugs</span><strong>${reach.hatch}</strong></div>
+          </div>
+          <p class="tiny">${reach.why}</p>
+        </article>
+      `).join("");
+    }
+
     function renderTodayGrid() {
       const picks = [...reaches].sort((a, b) => b.score - a.score).slice(0, 3);
 
       todayGrid.innerHTML = picks.map((reach, index) => `
-        <button class="rank-card" data-id="${reach.id}">
-          <span class="status ${reach.status}">#${index + 1} Best Bet</span>
+        <article class="rank-card" data-id="${reach.id}" role="button" tabindex="0">
+          <div class="card-tools">
+            <span class="status ${reach.status}">#${index + 1} Best Bet</span>
+            ${favoriteButton(reach)}
+          </div>
           <h3>${reach.name}</h3>
           <div class="tiny">${reach.area}</div>
           <p class="tiny">${reach.why}</p>
-        </button>
+        </article>
       `).join("");
     }
 
@@ -1385,7 +1602,10 @@
         <article class="profile-hero">
           <div class="profile-hero-copy">
             <div>
-              <span class="status ${reach.status}">${labels[reach.status]}</span>
+              <span class="reach-actions">
+                <span class="status ${reach.status}">${labels[reach.status]}</span>
+                ${favoriteButton(reach)}
+              </span>
               <h2>${reach.name}</h2>
               <p>${profile.overview}</p>
             </div>
@@ -1512,12 +1732,14 @@
       document.getElementById("goodCount").textContent = reaches.filter((reach) => reach.status === "good").length;
       document.getElementById("watchCount").textContent = reaches.filter((reach) => reach.status === "watch").length;
       document.getElementById("skipCount").textContent = reaches.filter((reach) => reach.status === "skip").length;
+      document.getElementById("favoriteCount").textContent = state.favoriteIds.size;
     }
 
     function renderAll() {
       renderCounts();
       renderList();
       renderTable();
+      renderFavoritesGrid();
       renderTodayGrid();
       renderViewMode();
     }
@@ -1543,6 +1765,12 @@
     });
 
     document.body.addEventListener("click", (event) => {
+      const favorite = event.target.closest("[data-favorite-id]");
+      if (favorite) {
+        toggleFavorite(favorite.dataset.favoriteId);
+        renderAll();
+        return;
+      }
       if (event.target.closest("#backToBoard") || event.target.closest("#brandHome")) {
         state.view = "board";
         renderAll();
@@ -1555,6 +1783,17 @@
       renderAll();
     });
 
+    document.body.addEventListener("keydown", (event) => {
+      if (!["Enter", " "].includes(event.key)) return;
+      const target = event.target.closest('[role="button"][data-id]');
+      if (!target || event.target.closest("[data-favorite-id]")) return;
+      event.preventDefault();
+      state.selected = target.dataset.id;
+      state.view = "profile";
+      renderAll();
+    });
+
+    loadFavoriteIds();
     renderAll();
     loadDailyConditions();
   </script>
