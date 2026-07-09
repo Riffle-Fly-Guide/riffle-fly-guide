@@ -71,7 +71,7 @@ def fetch_nws_forecast(lat: float, lon: float) -> list[dict[str, str]]:
     return result
 
 
-def fetch_usgs_values(site_ids: list[str]) -> dict[str, str]:
+def fetch_usgs_values(site_ids: list[str]) -> dict[str, object]:
     if not site_ids:
         return {}
 
@@ -101,54 +101,150 @@ def fetch_usgs_values(site_ids: list[str]) -> dict[str, str]:
         if latest is None:
             continue
         if code == "00060":
-            values_by_site[site_no]["flow"] = f"{round(float(latest)):,} cfs"
+            flow_cfs = round(float(latest))
+            values_by_site[site_no]["flowCfs"] = flow_cfs
+            values_by_site[site_no]["flow"] = f"{flow_cfs:,} cfs"
         elif code == "00065":
-            values_by_site[site_no]["gageHeight"] = f"{float(latest):.2f} ft"
+            gage_height_ft = float(latest)
+            values_by_site[site_no]["gageHeightFt"] = round(gage_height_ft, 2)
+            values_by_site[site_no]["gageHeight"] = f"{gage_height_ft:.2f} ft"
         elif code == "00010":
             fahrenheit = float(latest) * 9 / 5 + 32
+            values_by_site[site_no]["waterTempF"] = round(fahrenheit, 1)
             values_by_site[site_no]["water"] = f"{fahrenheit:.0f}F"
 
-    values: dict[str, str] = {}
+    values: dict[str, object] = {}
     for site_id in site_ids:
         site_values = values_by_site.get(site_id, {})
-        for key in ("flow", "gageHeight", "water"):
+        for key in ("flow", "flowCfs", "gageHeight", "gageHeightFt", "water", "waterTempF"):
             if key not in values and key in site_values:
                 values[key] = site_values[key]
+                if key in ("flow", "flowCfs") and "flowSourceSite" not in values:
+                    values["flowSourceSite"] = site_id
+                elif key in ("gageHeight", "gageHeightFt") and "gageHeightSourceSite" not in values:
+                    values["gageHeightSourceSite"] = site_id
+                elif key in ("water", "waterTempF") and "waterTempSourceSite" not in values:
+                    values["waterTempSourceSite"] = site_id
     return values
 
 
+def score_flow(flow_cfs: float | int | None, rules: dict) -> tuple[int, str, bool]:
+    if flow_cfs is None:
+        return 4, "flow gage is not yet mapped or did not return live CFS", False
+
+    flow_rules = rules.get("flowCfs")
+    if not flow_rules:
+        return 12, "live USGS flow is available, but no reach-specific range is configured", False
+
+    ideal_min = flow_rules["idealMin"]
+    ideal_max = flow_rules["idealMax"]
+    usable_min = flow_rules["usableMin"]
+    usable_max = flow_rules["usableMax"]
+
+    if ideal_min <= flow_cfs <= ideal_max:
+        return 25, f"flow is in this reach's ideal range ({ideal_min:,}-{ideal_max:,} cfs)", False
+    if usable_min <= flow_cfs < ideal_min:
+        return 18, f"flow is usable but below the ideal range ({ideal_min:,}-{ideal_max:,} cfs)", False
+    if ideal_max < flow_cfs <= usable_max:
+        return 16, f"flow is usable but above the ideal range ({ideal_min:,}-{ideal_max:,} cfs)", False
+
+    too_low = flow_cfs < usable_min
+    extreme = flow_cfs < usable_min * 0.55 or flow_cfs > usable_max * 1.25
+    if too_low:
+        return 5, f"flow is below this reach's usable range ({usable_min:,}-{usable_max:,} cfs)", extreme
+    return 3, f"flow is above this reach's usable range ({usable_min:,}-{usable_max:,} cfs)", extreme
+
+
+def score_temperature(temp_f: float | int | None) -> tuple[int, str, bool]:
+    if temp_f is None:
+        return 8, "water temperature is missing, so temperature confidence is limited", False
+    if 50 <= temp_f <= 60:
+        return 22, "water temperature is in the prime trout feeding window", False
+    if 45 <= temp_f < 50 or 60 < temp_f <= 64:
+        return 18, "water temperature is productive for trout", False
+    if 40 <= temp_f < 45:
+        return 10, "water is cold; expect slower metabolism and deeper/subsurface feeding", False
+    if temp_f >= 67.5:
+        return 0, "water is too warm for an ethical trout recommendation", True
+    if 64 < temp_f < 67.5:
+        return 6, "water is warm; fish early and monitor stress", False
+    return 3, "water is very cold; trout may feed selectively or briefly", False
+
+
+def score_weather(forecast: list[dict[str, str]]) -> tuple[int, list[str]]:
+    if not forecast:
+        return 4, ["weather forecast is missing"]
+
+    text = " ".join(
+        f"{window.get('wind', '')} {window.get('note', '')}" for window in forecast
+    ).lower()
+    score = 13
+    notes = ["forecast window is available"]
+
+    if any(speed in text for speed in ["20 mph", "25 mph", "30 mph", "35 mph"]):
+        score -= 10
+        notes.append("wind could make presentation or boat control difficult")
+    elif "mph" in text:
+        score += 2
+        notes.append("wind data is available")
+
+    if any(word in text for word in ["thunder", "storm", "showers", "rain"]):
+        score -= 5
+        notes.append("storm or precipitation risk lowers confidence")
+
+    return max(0, min(15, score)), notes
+
+
 def score_reach(reach: dict, usgs: dict, forecast: list[dict[str, str]]) -> tuple[str, int, str]:
-    score = 65
+    score = 25
     why_parts = []
+    hard_stop = False
 
-    if usgs.get("flow"):
-        score += 8
-        why_parts.append("live USGS flow is available")
+    rules = reach.get("conditionRules", {})
+    flow_score, flow_note, flow_extreme = score_flow(usgs.get("flowCfs"), rules)
+    score += flow_score
+    why_parts.append(flow_note)
+    hard_stop = hard_stop or flow_extreme
+
+    temp_score, temp_note, temp_stop = score_temperature(usgs.get("waterTempF"))
+    score += temp_score
+    why_parts.append(temp_note)
+    hard_stop = hard_stop or temp_stop
+
+    weather_score, weather_notes = score_weather(forecast)
+    score += weather_score
+    why_parts.extend(weather_notes)
+
+    confidence = rules.get("confidence", "low" if not reach.get("primaryUsgsSite") else "medium")
+    if confidence == "high":
+        score += 5
+        why_parts.append("gage confidence is high")
+    elif confidence == "medium":
+        score += 2
+        why_parts.append("gage confidence is moderate")
     else:
-        score -= 6
-        why_parts.append("flow gage is not yet mapped")
+        score -= 8
+        why_parts.append("gage or flow-range confidence still needs local validation")
 
-    if usgs.get("water"):
-        score += 8
-        why_parts.append("water temperature is available")
+    if temp_stop:
+        score = min(score, 49)
+    elif flow_extreme:
+        score = min(score, 58)
 
-    wind_text = " ".join(window.get("wind", "") for window in forecast).lower()
-    if "mph" in wind_text:
-        score += 6
-    if any(word in wind_text for word in ["20", "25", "30"]):
-        score -= 15
-        why_parts.append("wind could affect the fishing window")
-
-    if score >= 82:
+    if hard_stop and usgs.get("waterTempF", 0) >= 67.5:
+        status = "skip"
+    elif hard_stop and usgs.get("flowCfs") is not None:
+        status = "skip" if score < 60 else "watch"
+    elif score >= 82:
         status = "good"
-    elif score >= 65:
+    elif score >= 68:
         status = "watch"
     elif score >= 50:
         status = "limited"
     else:
         status = "skip"
 
-    why = "Condition score generated from mapped USGS/NWS sources; " + ", ".join(why_parts) + "."
+    why = "Condition score uses reach-specific flow range, trout temperature, weather, and gage confidence; " + ", ".join(why_parts) + "."
     return status, max(0, min(100, score)), why
 
 

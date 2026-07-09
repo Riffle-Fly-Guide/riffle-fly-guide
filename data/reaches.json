@@ -10,6 +10,11 @@
       "usgsSites": ["13206000"],
       "primaryUsgsSite": "13206000",
       "gageNotes": "Boise River at Glenwood Bridge is the best representative in-town Boise River gage. Ignore nearby IDWSC calibration pseudo-site.",
+      "conditionRules": {
+        "flowCfs": { "idealMin": 300, "idealMax": 900, "usableMin": 150, "usableMax": 1500 },
+        "flowProfile": "Urban walk-wade reach. Moderate flows are best; high irrigation releases reduce wade access and low flows can warm quickly.",
+        "confidence": "medium"
+      },
       "reportSources": ["Idaho Angler", "Troutfitters"]
     },
     {
@@ -21,6 +26,11 @@
       "primaryUsgsSite": "13190500",
       "secondaryUsgsSites": ["13192200"],
       "gageNotes": "SF Boise River at Anderson Ranch Dam is closest to the tailwater release. Neal Bridge can provide downstream context closer to Arrowrock.",
+      "conditionRules": {
+        "flowCfs": { "idealMin": 600, "idealMax": 1600, "usableMin": 300, "usableMax": 2200 },
+        "flowProfile": "Cold tailwater. It can fish well at higher flows than small freestones, especially from a boat, but wading becomes limited as releases rise.",
+        "confidence": "medium"
+      },
       "reportSources": ["Idaho Angler", "Silver Creek Outfitters"]
     },
     {
@@ -28,9 +38,14 @@
       "name": "Boise River - Middle Fork",
       "lat": 43.801,
       "lon": -115.132,
-      "usgsSites": [],
-      "primaryUsgsSite": null,
-      "gageNotes": "Needs manual review. Nearby candidates are South Fork Boise, upper Boise near Twin Springs, and unrelated basins; none clearly represent Middle Fork Boise near Atlanta.",
+      "usgsSites": ["13185000"],
+      "primaryUsgsSite": "13185000",
+      "gageNotes": "Boise River near Twin Springs provides same-river upper Boise drainage context for the Middle Fork/Atlanta decision. Treat as representative enough for MVP flow scoring, but validate against local Middle Fork access and runoff observations.",
+      "conditionRules": {
+        "flowCfs": { "idealMin": 250, "idealMax": 900, "usableMin": 150, "usableMax": 1300 },
+        "flowProfile": "Remote mountain freestone. Fishability depends heavily on runoff, clarity, and road access; Twin Springs flow is useful upper-drainage context but still needs local validation for the exact Middle Fork reach.",
+        "confidence": "medium"
+      },
       "reportSources": ["Idaho Angler"]
     },
     {
@@ -41,6 +56,11 @@
       "usgsSites": ["13042500"],
       "primaryUsgsSite": "13042500",
       "gageNotes": "Henrys Fork near Island Park is the closest likely release/Box Canyon representative. Confirm relation to exact Box Canyon section.",
+      "conditionRules": {
+        "flowCfs": { "idealMin": 700, "idealMax": 1400, "usableMin": 400, "usableMax": 1800 },
+        "flowProfile": "Tailwater canyon water. Productive at stronger releases than meadow sections; very low flows reduce habitat and very high releases make presentation and wading harder.",
+        "confidence": "medium"
+      },
       "reportSources": ["Henry's Fork Anglers", "TroutHunter"]
     },
     {
@@ -52,6 +72,11 @@
       "primaryUsgsSite": "13042500",
       "secondaryUsgsSites": ["13046000"],
       "gageNotes": "Island Park gage is upstream context; Henrys Fork near Ashton provides downstream context. Ranch-specific interpretation may need both.",
+      "conditionRules": {
+        "flowCfs": { "idealMin": 600, "idealMax": 1200, "usableMin": 400, "usableMax": 1600 },
+        "flowProfile": "Technical meadow dry-fly water. Stable, moderate flows are more important than raw volume; wind and hatch timing often decide the day.",
+        "confidence": "medium"
+      },
       "reportSources": ["TroutHunter", "Henry's Fork Anglers"]
     },
     {
@@ -63,6 +88,11 @@
       "primaryUsgsSite": "13032500",
       "secondaryUsgsSites": ["13037500"],
       "gageNotes": "Snake River near Irwin is the closest South Fork canyon candidate; Snake River near Heise provides downstream context.",
+      "conditionRules": {
+        "flowCfs": { "idealMin": 8000, "idealMax": 14000, "usableMin": 6000, "usableMax": 18000 },
+        "flowProfile": "Large tailwater float reach. It fishes well at volumes that would be too high for smaller rivers; wind, releases, and boat control matter more than wading comfort.",
+        "confidence": "medium"
+      },
       "reportSources": ["The Lodge at Palisades Creek", "WorldCast Anglers"]
     },
     {
@@ -74,6 +104,11 @@
       "primaryUsgsSite": "13139510",
       "secondaryUsgsSites": ["13140800"],
       "gageNotes": "Big Wood River at Ketchum is geographically ideal but did not return current IV flow. Big Wood River at Hailey total flow is the best live-flow context for now; Stanton Crossing provides lower-valley context. This reach still needs local validation.",
+      "conditionRules": {
+        "flowCfs": { "idealMin": 150, "idealMax": 500, "usableMin": 80, "usableMax": 800 },
+        "flowProfile": "Medium freestone walk-wade river. Lower summer flows can fish well if temperatures stay cool; high runoff quickly limits safe wading and clarity.",
+        "confidence": "medium"
+      },
       "reportSources": ["Silver Creek Outfitters", "Picabo Angler"]
     },
     {
@@ -85,6 +120,11 @@
       "primaryUsgsSite": "13150430",
       "secondaryUsgsSites": ["131504301"],
       "gageNotes": "Silver Creek at Sportsman Access near Picabo is the clearest named Silver Creek gage; West Campground may provide additional local context.",
+      "conditionRules": {
+        "flowCfs": { "idealMin": 80, "idealMax": 180, "usableMin": 50, "usableMax": 250 },
+        "flowProfile": "Spring creek. Stable clarity, wind, hatch timing, and temperature matter more than high volume; very low warm flows should trigger caution.",
+        "confidence": "medium"
+      },
       "reportSources": ["Picabo Angler", "Silver Creek Outfitters"]
     },
     {
@@ -95,6 +135,11 @@
       "usgsSites": ["13052200"],
       "primaryUsgsSite": "13052200",
       "gageNotes": "Teton River above South Leigh Creek near Driggs is the nearest same-river candidate for the Driggs/Victor reach.",
+      "conditionRules": {
+        "flowCfs": { "idealMin": 300, "idealMax": 900, "usableMin": 150, "usableMax": 1400 },
+        "flowProfile": "Valley freestone/meadow water. Clarity and storm pulses are major constraints; moderate flows are best for mixed wade and float options.",
+        "confidence": "medium"
+      },
       "reportSources": ["WorldCast Anglers", "Teton Valley Lodge"]
     },
     {
@@ -105,6 +150,11 @@
       "usgsSites": [],
       "primaryUsgsSite": null,
       "gageNotes": "Needs manual review. Nearest candidate is Valley Creek, which is not the Salmon River. Salmon River below Yankee Fork is downstream context, not necessarily representative of Upper Stanley.",
+      "conditionRules": {
+        "flowCfs": { "idealMin": 400, "idealMax": 1200, "usableMin": 250, "usableMax": 1800 },
+        "flowProfile": "Cold mountain freestone. Runoff and water temperature dominate; range is a placeholder until a representative Upper Stanley gage is verified.",
+        "confidence": "low"
+      },
       "reportSources": ["Regional guide notes"]
     },
     {
@@ -115,6 +165,11 @@
       "usgsSites": [],
       "primaryUsgsSite": null,
       "gageNotes": "Needs manual review. Candidate list includes South Fork Clearwater, Lawyer Creek, Upper Clear Creek, Lolo Creek, and Lochsa River; none is a clean Middle Fork Clearwater at Kooskia match.",
+      "conditionRules": {
+        "flowCfs": { "idealMin": 1200, "idealMax": 4500, "usableMin": 700, "usableMax": 6500 },
+        "flowProfile": "Larger North Idaho freestone system. It can fish at higher volume than small walk-wade rivers, but clarity and tributary influence need local confirmation.",
+        "confidence": "low"
+      },
       "reportSources": ["North Idaho shops"]
     },
     {
@@ -125,6 +180,11 @@
       "usgsSites": ["12414500"],
       "primaryUsgsSite": "12414500",
       "gageNotes": "St. Joe River at Calder is the nearest same-river candidate, though it may be downstream of the upper reach. Treat as contextual until section is refined.",
+      "conditionRules": {
+        "flowCfs": { "idealMin": 800, "idealMax": 3000, "usableMin": 500, "usableMax": 5000 },
+        "flowProfile": "Large cutthroat freestone. Falling post-runoff flows are often the key signal; high water can limit wading even when fish are active.",
+        "confidence": "medium"
+      },
       "reportSources": ["North 40 Fly Shop"]
     }
   ]

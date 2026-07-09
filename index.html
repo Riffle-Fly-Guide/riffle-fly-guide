@@ -1357,34 +1357,83 @@
       return `<a class="source-link" href="${url}" target="_blank" rel="noopener noreferrer">${source}</a>`;
     }
 
+    function waterTempValue(reach) {
+      const match = String(reach.water || "").match(/-?\d+(\.\d+)?/);
+      return match ? Number(match[0]) : null;
+    }
+
+    function conditionText(reach) {
+      return `${reach.flow || ""} ${reach.flowNote || ""} ${reach.weather || ""} ${reach.why || ""}`.toLowerCase();
+    }
+
     function flyRecommendations(reach) {
       const hatchText = reach.hatch.toLowerCase();
+      const waterTemp = waterTempValue(reach);
+      const conditions = conditionText(reach);
+      const isWarm = waterTemp !== null && waterTemp >= 65;
+      const isTooWarm = waterTemp !== null && waterTemp >= 68;
+      const isCold = waterTemp !== null && waterTemp < 45;
+      const isHighOrOffColor = ["runoff", "high", "murky", "rising", "off-color", "pushy"].some((word) => conditions.includes(word));
+      const isTechnical = reach.id.includes("ranch") || reach.id.includes("silver-creek") || conditions.includes("technical");
+
+      if (isTooWarm || (reach.status === "skip" && conditions.includes("warm"))) {
+        return [
+          { name: "No Trout Recommendation", size: "n/a", type: "Conservation", note: "Water is at or above the warm-water stress threshold. Pick colder water or stop before trout are stressed." },
+          { name: "Zebra Midge", size: "20-22", type: "Observation / backup", note: "Only consider tiny subsurface patterns in a cool early window if temperatures are safely below the threshold." },
+          { name: "Foam Ant", size: "14-18", type: "Terrestrial", note: "Save this for cooler mornings or a colder reach instead of forcing a warm-water session." }
+        ];
+      }
+
+      if (isCold) {
+        return [
+          { name: "Zebra Midge", size: "18-22", type: "Nymph", note: "Cold water slows trout metabolism; fish small and deep in the softest productive water." },
+          { name: "Pheasant Tail", size: "18-20", type: "Nymph", note: "A slim mayfly nymph is a better bet than searching dries before water warms." },
+          { name: "Soft Hackle", size: "16-20", type: "Wet fly", note: "Swing slowly through tailouts during brief feeding windows." }
+        ];
+      }
+
+      if (isHighOrOffColor) {
+        return [
+          { name: "Pat's Rubber Legs", size: "6-10", type: "Nymph", note: "High or colored water calls for a larger profile close to banks, shelves, and slower edges." },
+          { name: "San Juan Worm", size: "10-14", type: "Attractor", note: "Useful after bumps in flow or rain, especially when natural drift is disrupted." },
+          { name: "Woolly Bugger", size: "6-10", type: "Streamer", note: "Cover soft edges and structure when visibility supports a moving fly." }
+        ];
+      }
+
+      if (isTechnical && (hatchText.includes("pmd") || hatchText.includes("baetis") || hatchText.includes("callibaetis") || hatchText.includes("spinner"))) {
+        return [
+          { name: "PMD Comparadun", size: "16-18", type: "Dry", note: "Match the flat-water mayfly window with a low-riding dry and careful approach." },
+          { name: "Baetis Sparkle Dun", size: "18-22", type: "Dry / emerger", note: "Use for selective fish during clouds, cooler periods, or sparse baetis activity." },
+          { name: "Pheasant Tail", size: "18-22", type: "Nymph", note: "Trail this before visible heads appear or when fish feed just below the surface." }
+        ];
+      }
+
       if (hatchText.includes("salmon") || hatchText.includes("golden") || hatchText.includes("stones")) {
         return [
-          { name: "Chubby Chernobyl", size: "6-10", type: "Dry / attractor", note: "Use near banks, structure, and soft seams when stoneflies are active." },
-          { name: "Pat's Rubber Legs", size: "6-10", type: "Nymph", note: "Anchor fly for higher or slightly off-color water." },
-          { name: "Golden Stone Nymph", size: "8-12", type: "Nymph", note: "Best when fish are eating subsurface before the dry window." }
+          { name: "Chubby Chernobyl", size: "6-10", type: "Dry / attractor", note: "Best on banks, structure, and shade lines when flows are stable enough for fish to look up." },
+          { name: "Pat's Rubber Legs", size: "6-10", type: "Nymph", note: "Anchor fly for pre-hatch, deeper slots, or slightly elevated flows." },
+          { name: "Golden Stone Nymph", size: "8-12", type: "Nymph", note: "Use before the dry window or under a large foam dry on tailwaters and canyon water." }
         ];
       }
       if (hatchText.includes("pmd") || hatchText.includes("baetis") || hatchText.includes("blue")) {
         return [
-          { name: "PMD Comparadun", size: "16-18", type: "Dry", note: "Primary technical dry when PMDs are hatching in softer current." },
-          { name: "Baetis Sparkle Dun", size: "18-20", type: "Dry / emerger", note: "Good under cloud cover or during cooler unsettled weather." },
-          { name: "Pheasant Tail", size: "16-20", type: "Nymph", note: "Use before visible heads appear or when the hatch is inconsistent." }
+          { name: "PMD Comparadun", size: "16-18", type: "Dry", note: "Primary dry when PMDs are active and flows let fish hold in softer lanes." },
+          { name: "Baetis Sparkle Dun", size: "18-22", type: "Dry / emerger", note: "Best under cloud cover, cooler weather, or slower technical water." },
+          { name: "Pheasant Tail", size: "16-20", type: "Nymph", note: "Use before visible heads appear, in riffle drops, or when the hatch is inconsistent." }
         ];
       }
       if (hatchText.includes("caddis")) {
         return [
-          { name: "Elk Hair Caddis", size: "14-18", type: "Dry", note: "Search riffles and edges during evening or broken-light windows." },
-          { name: "X-Caddis", size: "14-18", type: "Emerger", note: "Better for picky fish feeding just under the film." },
-          { name: "Soft Hackle", size: "14-18", type: "Wet fly", note: "Swing through riffle tails when caddis are moving." }
+          { name: "Elk Hair Caddis", size: "14-18", type: "Dry", note: "Search riffles, banks, and edges during evening or broken-light windows." },
+          { name: "X-Caddis", size: "14-18", type: "Emerger", note: "Better for picky fish feeding in the film, especially on clearer water." },
+          { name: "Soft Hackle", size: "14-18", type: "Wet fly", note: "Swing through riffle tails when caddis are moving but fish are not fully on top." }
         ];
       }
       if (hatchText.includes("minimal") || hatchText.includes("limited")) {
         return [
-          { name: "Woolly Bugger", size: "6-10", type: "Streamer", note: "Use only where clarity and temperature make sense." },
-          { name: "Zebra Midge", size: "18-22", type: "Nymph", note: "Small confidence fly for cold or low-activity windows." },
-          { name: "San Juan Worm", size: "10-14", type: "Attractor", note: "Useful after bumps in flow, but not a magic answer in blown-out water." }
+          { name: "Zebra Midge", size: "18-22", type: "Nymph", note: "Small confidence fly for cold, clear, or low-activity windows." },
+          { name: "Woolly Bugger", size: "6-10", type: "Streamer", note: "Use where clarity, temperature, and cover support a searching presentation." },
+          { name: "Hare's Ear", size: "14-18", type: "Nymph", note: "General prospecting nymph when hatch data is thin but conditions are otherwise fishable." }
         ];
       }
       return [
@@ -1709,7 +1758,23 @@
     function mergeDailyConditions(snapshot) {
       if (!snapshot || !Array.isArray(snapshot.reaches)) return;
       const byId = new Map(snapshot.reaches.map((reach) => [reach.id, reach]));
-      reaches = reaches.map((reach) => ({ ...reach, ...(byId.get(reach.id) || {}) }));
+      reaches = reaches.map((reach) => {
+        const live = byId.get(reach.id);
+        if (!live) return reach;
+        const resetLiveFields = {
+          flow: "not available",
+          flowNote: "live CFS unavailable",
+          flowCfs: null,
+          gageHeight: null,
+          gageHeightFt: null,
+          water: "not reported",
+          waterTempF: null
+        };
+        const merged = { ...reach, ...resetLiveFields, ...live };
+        if (live.flow && !live.flowNote) merged.flowNote = "live USGS CFS";
+        if (live.water && live.waterTempF == null) merged.waterTempF = waterTempValue(live);
+        return merged;
+      });
       if (snapshot.generatedAt) {
         const date = new Date(snapshot.generatedAt);
         const label = Number.isNaN(date.getTime()) ? snapshot.generatedAt : date.toLocaleString([], { dateStyle: "medium", timeStyle: "short" });
