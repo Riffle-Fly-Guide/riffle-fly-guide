@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T13:06:23.293076+00:00",
+  "generatedAt": "2026-08-20T13:08:44.026273+00:00",
   "sourceStatus": {
     "usgs": "live where gage IDs are mapped",
     "nws": "live point/hourly forecasts",
@@ -16,36 +16,36 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "66F",
-          "wind": "3 mph",
+          "temp": "72F",
+          "wind": "1 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "84F",
+          "temp": "90F",
           "wind": "2 mph",
-          "note": "sunny"
+          "note": "patchy smoke"
         },
         {
           "label": "Afternoon",
-          "temp": "96F",
+          "temp": "98F",
           "wind": "5 mph",
-          "note": "sunny"
+          "note": "mostly sunny"
         },
         {
           "label": "Evening",
-          "temp": "92F",
+          "temp": "95F",
           "wind": "7 mph",
-          "note": "mostly clear"
+          "note": "mostly cloudy"
         }
       ],
       "sourceErrors": [],
-      "flow": "739 cfs",
+      "flow": "797 cfs",
       "flowSourceSite": "13206000",
-      "flowCfs": 739,
-      "gageHeight": "4.24 ft",
+      "flowCfs": 797,
+      "gageHeight": "4.34 ft",
       "gageHeightSourceSite": "13206000",
-      "gageHeightFt": 4.24,
+      "gageHeightFt": 4.34,
       "status": "watch",
       "score": 75,
       "pressure": "forecast-driven",
@@ -57,80 +57,80 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "66F",
+          "temp": "70F",
           "wind": "7 mph",
-          "note": "mostly sunny"
+          "note": "patchy smoke"
         },
         {
           "label": "Midday",
-          "temp": "89F",
-          "wind": "2 mph",
+          "temp": "94F",
+          "wind": "7 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "94F",
-          "wind": "10 mph",
-          "note": "mostly sunny"
+          "temp": "98F",
+          "wind": "9 mph",
+          "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "82F",
-          "wind": "7 mph",
-          "note": "clear"
+          "temp": "88F",
+          "wind": "9 mph",
+          "note": "mostly cloudy"
         }
       ],
       "sourceErrors": [],
-      "flow": "807 cfs",
+      "flow": "814 cfs",
       "flowSourceSite": "13190500",
-      "flowCfs": 807,
-      "gageHeight": "3.88 ft",
+      "flowCfs": 814,
+      "gageHeight": "3.89 ft",
       "gageHeightSourceSite": "13190500",
-      "gageHeightFt": 3.88,
+      "gageHeightFt": 3.89,
       "water": "50F",
       "waterTempSourceSite": "13190500",
-      "waterTempF": 50.0,
+      "waterTempF": 49.8,
       "status": "good",
-      "score": 89,
+      "score": 85,
       "pressure": "forecast-driven",
-      "weather": "mostly sunny",
-      "why": "Condition score uses reach-specific flow range, trout temperature, weather, and gage confidence; flow is in this reach's ideal range (600-1,600 cfs), water temperature is in the prime trout feeding window, forecast window is available, wind data is available, gage confidence is moderate."
+      "weather": "patchy smoke",
+      "why": "Condition score uses reach-specific flow range, trout temperature, weather, and gage confidence; flow is in this reach's ideal range (600-1,600 cfs), water temperature is productive for trout, forecast window is available, wind data is available, gage confidence is moderate."
     },
     {
       "id": "boise-middle-fork",
       "forecast": [
         {
           "label": "Morning",
-          "temp": "61F",
+          "temp": "62F",
           "wind": "5 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "84F",
-          "wind": "6 mph",
+          "temp": "90F",
+          "wind": "7 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "90F",
+          "temp": "94F",
           "wind": "12 mph",
           "note": "mostly sunny"
         },
         {
           "label": "Evening",
-          "temp": "74F",
-          "wind": "7 mph",
-          "note": "mostly clear"
+          "temp": "80F",
+          "wind": "9 mph",
+          "note": "partly cloudy"
         }
       ],
       "sourceErrors": [],
-      "flow": "300 cfs",
+      "flow": "296 cfs",
       "flowSourceSite": "13185000",
-      "flowCfs": 300,
-      "gageHeight": "5.22 ft",
+      "flowCfs": 296,
+      "gageHeight": "5.21 ft",
       "gageHeightSourceSite": "13185000",
-      "gageHeightFt": 5.22,
+      "gageHeightFt": 5.21,
       "status": "watch",
       "score": 75,
       "pressure": "forecast-driven",
@@ -142,36 +142,36 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "53F",
-          "wind": "2 mph",
-          "note": "sunny"
-        },
-        {
-          "label": "Midday",
-          "temp": "72F",
+          "temp": "56F",
           "wind": "3 mph",
           "note": "sunny"
         },
         {
+          "label": "Midday",
+          "temp": "78F",
+          "wind": "2 mph",
+          "note": "sunny"
+        },
+        {
           "label": "Afternoon",
-          "temp": "77F",
+          "temp": "84F",
           "wind": "7 mph",
           "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "65F",
-          "wind": "3 mph",
+          "temp": "72F",
+          "wind": "2 mph",
           "note": "partly cloudy"
         }
       ],
       "sourceErrors": [],
-      "flow": "755 cfs",
+      "flow": "730 cfs",
       "flowSourceSite": "13042500",
-      "flowCfs": 755,
-      "gageHeight": "4.27 ft",
+      "flowCfs": 730,
+      "gageHeight": "4.23 ft",
       "gageHeightSourceSite": "13042500",
-      "gageHeightFt": 4.27,
+      "gageHeightFt": 4.23,
       "status": "watch",
       "score": 75,
       "pressure": "forecast-driven",
@@ -183,36 +183,36 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "52F",
+          "temp": "56F",
           "wind": "2 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "74F",
-          "wind": "3 mph",
+          "temp": "79F",
+          "wind": "2 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "78F",
+          "temp": "85F",
           "wind": "8 mph",
           "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "66F",
+          "temp": "73F",
           "wind": "3 mph",
-          "note": "mostly clear"
+          "note": "mostly cloudy"
         }
       ],
       "sourceErrors": [],
-      "flow": "755 cfs",
+      "flow": "730 cfs",
       "flowSourceSite": "13042500",
-      "flowCfs": 755,
-      "gageHeight": "4.27 ft",
+      "flowCfs": 730,
+      "gageHeight": "4.23 ft",
       "gageHeightSourceSite": "13042500",
-      "gageHeightFt": 4.27,
+      "gageHeightFt": 4.23,
       "status": "watch",
       "score": 75,
       "pressure": "forecast-driven",
@@ -224,36 +224,36 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "56F",
-          "wind": "5 mph",
+          "temp": "59F",
+          "wind": "9 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "78F",
-          "wind": "3 mph",
+          "temp": "86F",
+          "wind": "5 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "83F",
-          "wind": "8 mph",
+          "temp": "93F",
+          "wind": "7 mph",
           "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "72F",
-          "wind": "3 mph",
-          "note": "mostly clear"
+          "temp": "80F",
+          "wind": "5 mph",
+          "note": "partly cloudy"
         }
       ],
       "sourceErrors": [],
-      "flow": "10,300 cfs",
+      "flow": "10,400 cfs",
       "flowSourceSite": "13032500",
-      "flowCfs": 10300,
-      "gageHeight": "8.26 ft",
+      "flowCfs": 10400,
+      "gageHeight": "8.27 ft",
       "gageHeightSourceSite": "13032500",
-      "gageHeightFt": 8.26,
+      "gageHeightFt": 8.27,
       "status": "watch",
       "score": 75,
       "pressure": "forecast-driven",
@@ -265,36 +265,36 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "56F",
-          "wind": "6 mph",
+          "temp": "61F",
+          "wind": "5 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "81F",
+          "temp": "86F",
           "wind": "3 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "86F",
-          "wind": "6 mph",
+          "temp": "92F",
+          "wind": "8 mph",
           "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "76F",
-          "wind": "5 mph",
-          "note": "mostly clear"
+          "temp": "81F",
+          "wind": "6 mph",
+          "note": "partly cloudy"
         }
       ],
       "sourceErrors": [],
-      "flow": "136 cfs",
+      "flow": "131 cfs",
       "flowSourceSite": "13139510",
-      "flowCfs": 136,
-      "gageHeight": "1.51 ft",
+      "flowCfs": 131,
+      "gageHeight": "1.48 ft",
       "gageHeightSourceSite": "13139510",
-      "gageHeightFt": 1.51,
+      "gageHeightFt": 1.48,
       "status": "watch",
       "score": 68,
       "pressure": "forecast-driven",
@@ -306,39 +306,39 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "62F",
-          "wind": "5 mph",
+          "temp": "67F",
+          "wind": "6 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "82F",
-          "wind": "3 mph",
+          "temp": "88F",
+          "wind": "6 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "90F",
-          "wind": "9 mph",
+          "temp": "95F",
+          "wind": "7 mph",
           "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "81F",
-          "wind": "9 mph",
-          "note": "mostly clear"
+          "temp": "86F",
+          "wind": "10 mph",
+          "note": "partly cloudy"
         }
       ],
       "sourceErrors": [],
-      "flow": "93 cfs",
+      "flow": "95 cfs",
       "flowSourceSite": "13150430",
-      "flowCfs": 93,
-      "gageHeight": "6.69 ft",
+      "flowCfs": 95,
+      "gageHeight": "6.70 ft",
       "gageHeightSourceSite": "13150430",
-      "gageHeightFt": 6.69,
-      "water": "60F",
+      "gageHeightFt": 6.7,
+      "water": "62F",
       "waterTempSourceSite": "13150430",
-      "waterTempF": 60.1,
+      "waterTempF": 61.5,
       "status": "good",
       "score": 85,
       "pressure": "forecast-driven",
@@ -350,36 +350,36 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "58F",
-          "wind": "2 mph",
+          "temp": "61F",
+          "wind": "5 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "76F",
+          "temp": "84F",
           "wind": "3 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "79F",
-          "wind": "6 mph",
+          "temp": "87F",
+          "wind": "7 mph",
           "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "66F",
-          "wind": "3 mph",
-          "note": "mostly clear"
+          "temp": "72F",
+          "wind": "5 mph",
+          "note": "partly cloudy"
         }
       ],
       "sourceErrors": [],
-      "flow": "249 cfs",
+      "flow": "235 cfs",
       "flowSourceSite": "13052200",
-      "flowCfs": 249,
-      "gageHeight": "1.99 ft",
+      "flowCfs": 235,
+      "gageHeight": "1.96 ft",
       "gageHeightSourceSite": "13052200",
-      "gageHeightFt": 1.99,
+      "gageHeightFt": 1.96,
       "status": "watch",
       "score": 68,
       "pressure": "forecast-driven",
@@ -391,27 +391,27 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "43F",
+          "temp": "47F",
           "wind": "1 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "73F",
-          "wind": "5 mph",
+          "temp": "80F",
+          "wind": "2 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "83F",
-          "wind": "10 mph",
-          "note": "sunny"
+          "temp": "90F",
+          "wind": "12 mph",
+          "note": "mostly sunny"
         },
         {
           "label": "Evening",
-          "temp": "72F",
-          "wind": "6 mph",
-          "note": "mostly clear"
+          "temp": "78F",
+          "wind": "8 mph",
+          "note": "mostly cloudy"
         }
       ],
       "sourceErrors": [],
@@ -426,27 +426,27 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "62F",
-          "wind": "1 mph",
+          "temp": "63F",
+          "wind": "0 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "87F",
+          "temp": "90F",
           "wind": "1 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "94F",
-          "wind": "3 mph",
-          "note": "mostly sunny"
+          "temp": "99F",
+          "wind": "5 mph",
+          "note": "patchy smoke"
         },
         {
           "label": "Evening",
-          "temp": "83F",
-          "wind": "1 mph",
-          "note": "clear"
+          "temp": "87F",
+          "wind": "2 mph",
+          "note": "partly cloudy"
         }
       ],
       "sourceErrors": [],
@@ -461,36 +461,36 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "64F",
+          "temp": "65F",
           "wind": "1 mph",
           "note": "mostly sunny"
         },
         {
           "label": "Midday",
-          "temp": "81F",
-          "wind": "3 mph",
+          "temp": "86F",
+          "wind": "2 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "84F",
-          "wind": "3 mph",
-          "note": "mostly sunny"
+          "temp": "88F",
+          "wind": "5 mph",
+          "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "74F",
+          "temp": "78F",
           "wind": "1 mph",
-          "note": "partly cloudy"
+          "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
-      "flow": "403 cfs",
+      "flow": "395 cfs",
       "flowSourceSite": "12414500",
-      "flowCfs": 403,
-      "gageHeight": "5.45 ft",
+      "flowCfs": 395,
+      "gageHeight": "5.43 ft",
       "gageHeightSourceSite": "12414500",
-      "gageHeightFt": 5.45,
+      "gageHeightFt": 5.43,
       "status": "limited",
       "score": 55,
       "pressure": "forecast-driven",
