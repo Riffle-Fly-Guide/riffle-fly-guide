@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T19:39:13.485179+00:00",
+  "generatedAt": "2026-09-29T18:03:35.284584+00:00",
   "sourceStatus": {
     "usgs": "live where gage IDs are mapped",
     "nws": "live point/hourly forecasts",
@@ -16,36 +16,36 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "64F",
-          "wind": "8 mph",
+          "temp": "65F",
+          "wind": "6 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "67F",
-          "wind": "8 mph",
+          "temp": "68F",
+          "wind": "6 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "74F",
-          "wind": "10 mph",
+          "temp": "75F",
+          "wind": "9 mph",
           "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "66F",
-          "wind": "8 mph",
-          "note": "clear"
+          "temp": "67F",
+          "wind": "6 mph",
+          "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
-      "flow": "618 cfs",
+      "flow": "427 cfs",
       "flowSourceSite": "13206000",
-      "flowCfs": 618,
-      "gageHeight": "4.02 ft",
+      "flowCfs": 427,
+      "gageHeight": "3.63 ft",
       "gageHeightSourceSite": "13206000",
-      "gageHeightFt": 4.02,
+      "gageHeightFt": 3.63,
       "status": "watch",
       "score": 75,
       "pressure": "forecast-driven",
@@ -58,26 +58,26 @@
         {
           "label": "Morning",
           "temp": "69F",
-          "wind": "9 mph",
+          "wind": "10 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "70F",
-          "wind": "9 mph",
+          "temp": "71F",
+          "wind": "10 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "71F",
-          "wind": "12 mph",
+          "temp": "73F",
+          "wind": "13 mph",
           "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "60F",
-          "wind": "12 mph",
-          "note": "clear"
+          "temp": "62F",
+          "wind": "10 mph",
+          "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
@@ -87,9 +87,9 @@
       "gageHeight": "3.06 ft",
       "gageHeightSourceSite": "13190500",
       "gageHeightFt": 3.06,
-      "water": "53F",
+      "water": "51F",
       "waterTempSourceSite": "13190500",
-      "waterTempF": 52.7,
+      "waterTempF": 51.1,
       "status": "good",
       "score": 82,
       "pressure": "forecast-driven",
@@ -101,7 +101,7 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "67F",
+          "temp": "65F",
           "wind": "5 mph",
           "note": "sunny"
         },
@@ -113,15 +113,15 @@
         },
         {
           "label": "Afternoon",
-          "temp": "70F",
+          "temp": "72F",
           "wind": "8 mph",
           "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "53F",
-          "wind": "8 mph",
-          "note": "clear"
+          "temp": "56F",
+          "wind": "6 mph",
+          "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
@@ -142,82 +142,82 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "59F",
+          "temp": "56F",
           "wind": "5 mph",
-          "note": "slight chance showers and thunderstorms"
+          "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "60F",
+          "temp": "59F",
           "wind": "5 mph",
-          "note": "slight chance showers and thunderstorms"
+          "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "60F",
-          "wind": "5 mph",
-          "note": "showers and thunderstorms likely"
+          "temp": "63F",
+          "wind": "6 mph",
+          "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "51F",
-          "wind": "2 mph",
-          "note": "chance showers and thunderstorms"
+          "temp": "52F",
+          "wind": "3 mph",
+          "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
-      "flow": "188 cfs",
+      "flow": "184 cfs",
       "flowSourceSite": "13042500",
-      "flowCfs": 188,
-      "gageHeight": "2.56 ft",
+      "flowCfs": 184,
+      "gageHeight": "2.55 ft",
       "gageHeightSourceSite": "13042500",
-      "gageHeightFt": 2.56,
+      "gageHeightFt": 2.55,
       "status": "skip",
-      "score": 50,
+      "score": 55,
       "pressure": "forecast-driven",
-      "weather": "slight chance showers and thunderstorms",
-      "why": "Condition score uses reach-specific flow range, trout temperature, weather, and gage confidence; flow is below this reach's usable range (400-1,800 cfs), water temperature is missing, so temperature confidence is limited, forecast window is available, wind data is available, storm or precipitation risk lowers confidence, gage confidence is moderate."
+      "weather": "sunny",
+      "why": "Condition score uses reach-specific flow range, trout temperature, weather, and gage confidence; flow is below this reach's usable range (400-1,800 cfs), water temperature is missing, so temperature confidence is limited, forecast window is available, wind data is available, gage confidence is moderate."
     },
     {
       "id": "henrys-fork-ranch",
       "forecast": [
         {
           "label": "Morning",
-          "temp": "59F",
-          "wind": "6 mph",
-          "note": "slight chance showers and thunderstorms"
+          "temp": "56F",
+          "wind": "5 mph",
+          "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "60F",
-          "wind": "6 mph",
-          "note": "slight chance showers and thunderstorms"
+          "temp": "59F",
+          "wind": "5 mph",
+          "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "61F",
+          "temp": "63F",
           "wind": "7 mph",
-          "note": "chance showers and thunderstorms"
+          "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "51F",
-          "wind": "2 mph",
-          "note": "chance showers and thunderstorms"
+          "temp": "52F",
+          "wind": "3 mph",
+          "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
-      "flow": "188 cfs",
+      "flow": "184 cfs",
       "flowSourceSite": "13042500",
-      "flowCfs": 188,
-      "gageHeight": "2.56 ft",
+      "flowCfs": 184,
+      "gageHeight": "2.55 ft",
       "gageHeightSourceSite": "13042500",
-      "gageHeightFt": 2.56,
+      "gageHeightFt": 2.55,
       "status": "skip",
-      "score": 50,
+      "score": 55,
       "pressure": "forecast-driven",
-      "weather": "slight chance showers and thunderstorms",
-      "why": "Condition score uses reach-specific flow range, trout temperature, weather, and gage confidence; flow is below this reach's usable range (400-1,600 cfs), water temperature is missing, so temperature confidence is limited, forecast window is available, wind data is available, storm or precipitation risk lowers confidence, gage confidence is moderate."
+      "weather": "sunny",
+      "why": "Condition score uses reach-specific flow range, trout temperature, weather, and gage confidence; flow is below this reach's usable range (400-1,600 cfs), water temperature is missing, so temperature confidence is limited, forecast window is available, wind data is available, gage confidence is moderate."
     },
     {
       "id": "snake-south-fork-canyon",
@@ -226,75 +226,75 @@
           "label": "Morning",
           "temp": "60F",
           "wind": "3 mph",
-          "note": "showers and thunderstorms likely"
+          "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "60F",
+          "temp": "62F",
           "wind": "3 mph",
-          "note": "showers and thunderstorms likely"
+          "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "63F",
-          "wind": "3 mph",
-          "note": "showers and thunderstorms likely"
+          "temp": "66F",
+          "wind": "6 mph",
+          "note": "sunny"
         },
         {
           "label": "Evening",
           "temp": "56F",
-          "wind": "2 mph",
-          "note": "mostly cloudy"
+          "wind": "3 mph",
+          "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
-      "flow": "3,940 cfs",
+      "flow": "3,760 cfs",
       "flowSourceSite": "13032500",
-      "flowCfs": 3940,
-      "gageHeight": "6.14 ft",
+      "flowCfs": 3760,
+      "gageHeight": "6.06 ft",
       "gageHeightSourceSite": "13032500",
-      "gageHeightFt": 6.14,
+      "gageHeightFt": 6.06,
       "status": "limited",
-      "score": 50,
+      "score": 55,
       "pressure": "forecast-driven",
-      "weather": "showers and thunderstorms likely",
-      "why": "Condition score uses reach-specific flow range, trout temperature, weather, and gage confidence; flow is below this reach's usable range (6,000-18,000 cfs), water temperature is missing, so temperature confidence is limited, forecast window is available, wind data is available, storm or precipitation risk lowers confidence, gage confidence is moderate."
+      "weather": "sunny",
+      "why": "Condition score uses reach-specific flow range, trout temperature, weather, and gage confidence; flow is below this reach's usable range (6,000-18,000 cfs), water temperature is missing, so temperature confidence is limited, forecast window is available, wind data is available, gage confidence is moderate."
     },
     {
       "id": "big-wood-ketchum",
       "forecast": [
         {
           "label": "Morning",
-          "temp": "65F",
-          "wind": "3 mph",
+          "temp": "64F",
+          "wind": "2 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "66F",
-          "wind": "3 mph",
+          "temp": "67F",
+          "wind": "2 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "67F",
+          "temp": "71F",
           "wind": "6 mph",
-          "note": "partly sunny"
+          "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "55F",
-          "wind": "3 mph",
-          "note": "partly cloudy"
+          "temp": "58F",
+          "wind": "2 mph",
+          "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
-      "flow": "134 cfs",
+      "flow": "132 cfs",
       "flowSourceSite": "13139510",
-      "flowCfs": 134,
-      "gageHeight": "1.54 ft",
+      "flowCfs": 132,
+      "gageHeight": "1.53 ft",
       "gageHeightSourceSite": "13139510",
-      "gageHeightFt": 1.54,
+      "gageHeightFt": 1.53,
       "status": "watch",
       "score": 68,
       "pressure": "forecast-driven",
@@ -306,7 +306,7 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "64F",
+          "temp": "62F",
           "wind": "6 mph",
           "note": "sunny"
         },
@@ -318,14 +318,14 @@
         },
         {
           "label": "Afternoon",
-          "temp": "68F",
-          "wind": "8 mph",
+          "temp": "71F",
+          "wind": "9 mph",
           "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "58F",
-          "wind": "8 mph",
+          "temp": "60F",
+          "wind": "9 mph",
           "note": "mostly clear"
         }
       ],
@@ -336,9 +336,9 @@
       "gageHeight": "6.58 ft",
       "gageHeightSourceSite": "13150430",
       "gageHeightFt": 6.58,
-      "water": "56F",
+      "water": "53F",
       "waterTempSourceSite": "13150430",
-      "waterTempF": 55.8,
+      "waterTempF": 53.1,
       "status": "good",
       "score": 82,
       "pressure": "forecast-driven",
@@ -350,67 +350,67 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "60F",
+          "temp": "59F",
           "wind": "2 mph",
-          "note": "showers and thunderstorms likely"
+          "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "60F",
+          "temp": "61F",
           "wind": "2 mph",
-          "note": "showers and thunderstorms likely"
+          "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "60F",
-          "wind": "3 mph",
-          "note": "showers and thunderstorms likely"
+          "temp": "64F",
+          "wind": "5 mph",
+          "note": "sunny"
         },
         {
           "label": "Evening",
           "temp": "52F",
           "wind": "2 mph",
-          "note": "mostly cloudy"
+          "note": "mostly clear"
         }
       ],
       "sourceErrors": [],
-      "flow": "240 cfs",
+      "flow": "258 cfs",
       "flowSourceSite": "13052200",
-      "flowCfs": 240,
-      "gageHeight": "1.97 ft",
+      "flowCfs": 258,
+      "gageHeight": "2.01 ft",
       "gageHeightSourceSite": "13052200",
-      "gageHeightFt": 1.97,
-      "status": "limited",
-      "score": 63,
+      "gageHeightFt": 2.01,
+      "status": "watch",
+      "score": 68,
       "pressure": "forecast-driven",
-      "weather": "showers and thunderstorms likely",
-      "why": "Condition score uses reach-specific flow range, trout temperature, weather, and gage confidence; flow is usable but below the ideal range (300-900 cfs), water temperature is missing, so temperature confidence is limited, forecast window is available, wind data is available, storm or precipitation risk lowers confidence, gage confidence is moderate."
+      "weather": "sunny",
+      "why": "Condition score uses reach-specific flow range, trout temperature, weather, and gage confidence; flow is usable but below the ideal range (300-900 cfs), water temperature is missing, so temperature confidence is limited, forecast window is available, wind data is available, gage confidence is moderate."
     },
     {
       "id": "salmon-upper-stanley",
       "forecast": [
         {
           "label": "Morning",
-          "temp": "59F",
-          "wind": "3 mph",
+          "temp": "55F",
+          "wind": "2 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
           "temp": "60F",
-          "wind": "3 mph",
+          "wind": "2 mph",
           "note": "sunny"
         },
         {
           "label": "Afternoon",
-          "temp": "64F",
+          "temp": "67F",
           "wind": "6 mph",
           "note": "sunny"
         },
         {
           "label": "Evening",
-          "temp": "51F",
-          "wind": "5 mph",
+          "temp": "54F",
+          "wind": "3 mph",
           "note": "mostly clear"
         }
       ],
@@ -426,27 +426,27 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "63F",
-          "wind": "2 mph",
+          "temp": "62F",
+          "wind": "3 mph",
           "note": "sunny"
         },
         {
           "label": "Midday",
-          "temp": "66F",
-          "wind": "2 mph",
-          "note": "sunny"
-        },
-        {
-          "label": "Afternoon",
           "temp": "68F",
           "wind": "3 mph",
           "note": "sunny"
         },
         {
+          "label": "Afternoon",
+          "temp": "73F",
+          "wind": "3 mph",
+          "note": "sunny"
+        },
+        {
           "label": "Evening",
-          "temp": "55F",
-          "wind": "2 mph",
-          "note": "mostly clear"
+          "temp": "62F",
+          "wind": "7 mph",
+          "note": "partly cloudy"
         }
       ],
       "sourceErrors": [],
@@ -461,27 +461,27 @@
       "forecast": [
         {
           "label": "Morning",
-          "temp": "60F",
-          "wind": "5 mph",
-          "note": "sunny"
+          "temp": "55F",
+          "wind": "7 mph",
+          "note": "mostly cloudy"
         },
         {
           "label": "Midday",
-          "temp": "62F",
-          "wind": "5 mph",
-          "note": "sunny"
+          "temp": "58F",
+          "wind": "7 mph",
+          "note": "mostly cloudy"
         },
         {
           "label": "Afternoon",
-          "temp": "61F",
-          "wind": "5 mph",
-          "note": "sunny"
+          "temp": "60F",
+          "wind": "6 mph",
+          "note": "mostly cloudy"
         },
         {
           "label": "Evening",
-          "temp": "49F",
-          "wind": "2 mph",
-          "note": "mostly clear"
+          "temp": "57F",
+          "wind": "3 mph",
+          "note": "mostly cloudy"
         }
       ],
       "sourceErrors": [],
@@ -494,7 +494,7 @@
       "status": "limited",
       "score": 55,
       "pressure": "forecast-driven",
-      "weather": "sunny",
+      "weather": "mostly cloudy",
       "why": "Condition score uses reach-specific flow range, trout temperature, weather, and gage confidence; flow is below this reach's usable range (500-5,000 cfs), water temperature is missing, so temperature confidence is limited, forecast window is available, wind data is available, gage confidence is moderate."
     }
   ]
